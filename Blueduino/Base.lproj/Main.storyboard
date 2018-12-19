@@ -164,6 +164,11 @@
                                                             <state key="normal" title="CONNECT">
                                                                 <color key="titleColor" white="0.94015918430000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="8"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </button>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZvO-0V-OwI">
                                                             <rect key="frame" x="20" y="12" width="80" height="80"/>
@@ -178,22 +183,27 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xVr-Gu-yBg">
-                                                            <rect key="frame" x="346" y="56" width="48" height="48"/>
+                                                            <rect key="frame" x="347" y="57" width="35" height="35"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <state key="normal" image="plus.png">
+                                                            <state key="normal" image="white35x35plus.png">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C4L-wd-iEm">
-                                                            <rect key="frame" x="344" y="8" width="48" height="48"/>
+                                                            <rect key="frame" x="348" y="12" width="35" height="35"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <state key="normal" image="GREEN_bluetooth.png">
+                                                            <state key="normal" image="green35x35bluetooth.png">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
                                                         </button>
                                                     </subviews>
                                                 </view>
                                                 <color key="backgroundColor" red="0.16078431369999999" green="0.21960784310000001" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <outlet property="deviceName" destination="ZzU-9J-ujd" id="jEa-HN-Uq2"/>
                                                 </connections>
@@ -247,8 +257,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="GREEN_bluetooth.png" width="48" height="48"/>
-        <image name="plus.png" width="48" height="48"/>
+        <image name="green35x35bluetooth.png" width="35" height="35"/>
         <image name="update.png" width="48" height="48"/>
+        <image name="white35x35plus.png" width="35" height="35"/>
     </resources>
 </document>

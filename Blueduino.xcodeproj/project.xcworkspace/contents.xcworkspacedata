@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Blueduino.xcodeproj">
+      location = "group:/Users/KirillShteffen/Blueduino/Blueduino/icons/green35x35bluetooth.png">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/KirillShteffen/Blueduino/Blueduino/icons/white35x35plus.png">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>

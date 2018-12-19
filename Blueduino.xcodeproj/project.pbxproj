@@ -20,6 +20,9 @@
 		0E8A3D4721CA482A00EA680D /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E8A3D4221CA482900EA680D /* plus.png */; };
 		0E8A3D4821CA482A00EA680D /* GREEN_bluetooth.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E8A3D4321CA482900EA680D /* GREEN_bluetooth.png */; };
 		0E8A3D4A21CA4EDB00EA680D /* update.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E8A3D4921CA4EDB00EA680D /* update.png */; };
+		0EB363CE21CA5BCA00492C45 /* green35x35bluetooth.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ED1149721CA58C3007ABC8B /* green35x35bluetooth.png */; };
+		0EB363CF21CA5BCE00492C45 /* white35x35plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ED1149821CA58C3007ABC8B /* white35x35plus.png */; };
+		0ED1149621CA57C6007ABC8B /* red20x20bluetooth.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ED1149521CA57C6007ABC8B /* red20x20bluetooth.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		0E8A3D4221CA482900EA680D /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
 		0E8A3D4321CA482900EA680D /* GREEN_bluetooth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GREEN_bluetooth.png; sourceTree = "<group>"; };
 		0E8A3D4921CA4EDB00EA680D /* update.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = update.png; sourceTree = "<group>"; };
+		0ED1149521CA57C6007ABC8B /* red20x20bluetooth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red20x20bluetooth.png; sourceTree = "<group>"; };
+		0ED1149721CA58C3007ABC8B /* green35x35bluetooth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = green35x35bluetooth.png; path = /Users/KirillShteffen/Blueduino/Blueduino/icons/green35x35bluetooth.png; sourceTree = "<absolute>"; };
+		0ED1149821CA58C3007ABC8B /* white35x35plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = white35x35plus.png; path = /Users/KirillShteffen/Blueduino/Blueduino/icons/white35x35plus.png; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +92,9 @@
 		0E8A3D3E21CA47FD00EA680D /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				0ED1149721CA58C3007ABC8B /* green35x35bluetooth.png */,
+				0ED1149821CA58C3007ABC8B /* white35x35plus.png */,
+				0ED1149521CA57C6007ABC8B /* red20x20bluetooth.png */,
 				0E8A3D4921CA4EDB00EA680D /* update.png */,
 				0E8A3D4021CA482900EA680D /* check.png */,
 				0E8A3D4321CA482900EA680D /* GREEN_bluetooth.png */,
@@ -156,13 +165,16 @@
 			files = (
 				0E8A3D4421CA482A00EA680D /* YELLOW_bluetooth.png in Resources */,
 				0E8A3D4521CA482A00EA680D /* check.png in Resources */,
+				0EB363CF21CA5BCE00492C45 /* white35x35plus.png in Resources */,
 				0E8A3D3321C8B63C00EA680D /* LaunchScreen.storyboard in Resources */,
 				0E8A3D3021C8B63C00EA680D /* Assets.xcassets in Resources */,
 				0E8A3D4821CA482A00EA680D /* GREEN_bluetooth.png in Resources */,
+				0ED1149621CA57C6007ABC8B /* red20x20bluetooth.png in Resources */,
 				0E8A3D4621CA482A00EA680D /* RED_bluetooth.png in Resources */,
 				0E8A3D4721CA482A00EA680D /* plus.png in Resources */,
 				0E8A3D4A21CA4EDB00EA680D /* update.png in Resources */,
 				0E8A3D2E21C8B62C00EA680D /* Main.storyboard in Resources */,
+				0EB363CE21CA5BCA00492C45 /* green35x35bluetooth.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
