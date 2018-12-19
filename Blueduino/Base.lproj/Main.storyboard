@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,14 +15,134 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MultiLightViewController" customModule="Blueduino" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="If5-ef-vRn">
+                                <rect key="frame" x="156" y="87" width="100" height="100"/>
+                                <color key="backgroundColor" white="0.94015918427230039" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="hFi-QK-Knp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Light On">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="lightOn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k9o-D3-iUK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWY-Fc-w2T">
+                                <rect key="frame" x="156" y="303" width="100" height="100"/>
+                                <color key="backgroundColor" white="0.94015918430000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="dtr-Tt-xPt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="10%">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="light10:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pto-n9-SyV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1q-XC-asO">
+                                <rect key="frame" x="156" y="411" width="100" height="100"/>
+                                <color key="backgroundColor" white="0.94015918430000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="lgb-Cg-0By"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="30%">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="light30:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gmq-9G-UVQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMI-tx-fhI">
+                                <rect key="frame" x="158" y="519" width="100" height="100"/>
+                                <color key="backgroundColor" white="0.94015918430000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Qtx-EQ-rXs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="50%">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="light50:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4YI-4G-Dvu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pDJ-xm-JSn">
+                                <rect key="frame" x="158" y="195" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="3Sr-fa-c0J"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Light Off">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="lightOff:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XCy-TX-EAB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xYr-ft-PHF">
+                                <rect key="frame" x="158" y="627" width="100" height="100"/>
+                                <color key="backgroundColor" white="0.94015918430000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="90%">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="light90:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2JR-7V-jtH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14297328955224775" green="0.19593970620309309" blue="0.24940773260362692" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="pDJ-xm-JSn" firstAttribute="trailing" secondItem="IMI-tx-fhI" secondAttribute="trailing" id="0RD-N0-H4R"/>
+                            <constraint firstItem="If5-ef-vRn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="67" id="0ry-Al-NQP"/>
+                            <constraint firstItem="IMI-tx-fhI" firstAttribute="trailing" secondItem="xYr-ft-PHF" secondAttribute="trailing" id="Cy6-bb-KGQ"/>
+                            <constraint firstItem="xYr-ft-PHF" firstAttribute="top" secondItem="IMI-tx-fhI" secondAttribute="bottom" constant="8" symbolic="YES" id="FFU-2T-FTJ"/>
+                            <constraint firstItem="If5-ef-vRn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="156" id="GnD-mz-KUB"/>
+                            <constraint firstItem="IMI-tx-fhI" firstAttribute="top" secondItem="f1q-XC-asO" secondAttribute="bottom" constant="8" symbolic="YES" id="Hbn-NF-hwv"/>
+                            <constraint firstItem="pDJ-xm-JSn" firstAttribute="top" secondItem="If5-ef-vRn" secondAttribute="bottom" constant="8" symbolic="YES" id="RkP-cs-kEh"/>
+                            <constraint firstItem="f1q-XC-asO" firstAttribute="top" secondItem="ZWY-Fc-w2T" secondAttribute="bottom" constant="8" symbolic="YES" id="Upl-ti-fk3"/>
+                            <constraint firstItem="ZWY-Fc-w2T" firstAttribute="trailing" secondItem="f1q-XC-asO" secondAttribute="trailing" id="UvM-6I-XYa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="If5-ef-vRn" secondAttribute="trailing" constant="158" id="WRH-7c-RcM"/>
+                            <constraint firstItem="If5-ef-vRn" firstAttribute="leading" secondItem="ZWY-Fc-w2T" secondAttribute="leading" id="YI9-TK-ALq"/>
+                            <constraint firstItem="pDJ-xm-JSn" firstAttribute="leading" secondItem="IMI-tx-fhI" secondAttribute="leading" id="YYF-PL-EKd"/>
+                            <constraint firstItem="IMI-tx-fhI" firstAttribute="leading" secondItem="xYr-ft-PHF" secondAttribute="leading" id="aAV-ql-lKD"/>
+                            <constraint firstItem="pDJ-xm-JSn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="158" id="fOZ-kQ-JV2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pDJ-xm-JSn" secondAttribute="trailing" constant="156" id="m7O-EB-OUO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xYr-ft-PHF" secondAttribute="bottom" constant="9" id="mzG-BY-Tui"/>
+                            <constraint firstItem="If5-ef-vRn" firstAttribute="trailing" secondItem="ZWY-Fc-w2T" secondAttribute="trailing" id="vMc-Ve-SSz"/>
+                            <constraint firstItem="ZWY-Fc-w2T" firstAttribute="leading" secondItem="f1q-XC-asO" secondAttribute="leading" id="wsx-aL-lA5"/>
+                            <constraint firstItem="ZWY-Fc-w2T" firstAttribute="top" secondItem="pDJ-xm-JSn" secondAttribute="bottom" constant="8" symbolic="YES" id="yDl-SJ-iCU"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="132" y="88.605697151424295"/>
+        </scene>
+        <!--Devices Search View Controller-->
+        <scene sceneID="hss-a3-p82">
+            <objects>
+                <viewController id="Vl2-KF-FjT" customClass="DevicesSearchViewController" customModule="Blueduino" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5a4-Ox-SW7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="CM3-9I-LYV"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HYg-35-oEm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="839" y="84"/>
         </scene>
     </scenes>
 </document>

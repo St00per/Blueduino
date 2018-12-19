@@ -9,27 +9,135 @@
 import UIKit
 import CoreBluetooth
 
-let multiLightCBUUID = CBUUID(string: "0xFFE0")
-let moduleFunctionConfigurationCBUUID = CBUUID(string: "FFE2")
-//let unhandledCharacteristicCBUUID = CBUUID(string: "0xFEC2")
+//let multiLightCBUUID = CBUUID(string: "0xFFE0")
+//let moduleFunctionConfigurationCBUUID = CBUUID(string: "FFE2")
+
 
 class MultiLightViewController: UIViewController {
 
     var centralManager: CBCentralManager!
     var multiLightPeripheral: CBPeripheral!
+    var multiLightCharacteristic: CBCharacteristic!
+    
+    @IBAction func lightOn(_ sender: UIButton) {
+        multiLightPeripheral.writeValue(lightsOn(), for: multiLightCharacteristic, type: CBCharacteristicWriteType.withResponse)
+    }
+    @IBAction func lightOff(_ sender: UIButton) {
+        multiLightPeripheral.writeValue(lightsOff(), for: multiLightCharacteristic, type: CBCharacteristicWriteType.withResponse)
+    }
+    
+    @IBAction func light10(_ sender: UIButton) {
+        multiLightPeripheral.writeValue(lights10(), for: multiLightCharacteristic, type: CBCharacteristicWriteType.withResponse)
+    }
+    
+    @IBAction func light30(_ sender: UIButton) {
+        multiLightPeripheral.writeValue(lights30(), for: multiLightCharacteristic, type: CBCharacteristicWriteType.withResponse)
+    }
+    
+    @IBAction func light50(_ sender: UIButton) {
+        multiLightPeripheral.writeValue(lights50(), for: multiLightCharacteristic, type: CBCharacteristicWriteType.withResponse)
+    }
+    
+    @IBAction func light90(_ sender: UIButton) {
+        multiLightPeripheral.writeValue(lights90(), for: multiLightCharacteristic, type: CBCharacteristicWriteType.withResponse)
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         centralManager = CBCentralManager(delegate: self, queue: nil)
-        // Do any additional setup after loading the view, typically from a nib.
+        
         
     }
     
-    func dataToWrite(data: String) -> Data {
-        guard let valueString = (data as NSString).data(using: String.Encoding.utf8.rawValue) else { return Data()}
-        return valueString
+    func OnOff() -> Data {
+        
+        var dataToWrite = Data()
+        dataToWrite.append(0xE8)
+        dataToWrite.append(0xA1)
+        dataToWrite.append(0x02)
+        
+        return dataToWrite
     }
+    
+    func frequency1000() -> Data {
+        
+        var dataToWrite = Data()
+        
+        dataToWrite.append(0xE8)
+        dataToWrite.append(0xA2)
+        dataToWrite.append(0x03)
+        dataToWrite.append(0xE8)
+        
+        return dataToWrite
+    }
+    
+    func lightsOn() -> Data {
+        
+        var dataToWrite = Data()
+        
+        dataToWrite.append(0xE8)
+        dataToWrite.append(0xA6)
+        dataToWrite.append(0x00)
+        
+        return dataToWrite
+    }
+    
+    func lightsOff() -> Data {
+        
+        var dataToWrite = Data()
+        
+        dataToWrite.append(0xE8)
+        dataToWrite.append(0xA6)
+        dataToWrite.append(0xFF)
+        
+        return dataToWrite
+    }
+    
+    func lights10() -> Data {
+        
+        var dataToWrite = Data()
+        
+        dataToWrite.append(0xE8)
+        dataToWrite.append(0xA6)
+        dataToWrite.append(0xCA)
+        
+        return dataToWrite
+    }
+    
+    func lights30() -> Data {
+        
+        var dataToWrite = Data()
+        
+        dataToWrite.append(0xE8)
+        dataToWrite.append(0xA6)
+        dataToWrite.append(0x7D)
+        
+        return dataToWrite
+    }
+    
+    func lights50() -> Data {
+        
+        var dataToWrite = Data()
+        
+        dataToWrite.append(0xE8)
+        dataToWrite.append(0xA6)
+        dataToWrite.append(0x4C)
+        
+        return dataToWrite
+    }
+    
+    func lights90() -> Data {
+        
+        var dataToWrite = Data()
+        
+        dataToWrite.append(0xE8)
+        dataToWrite.append(0xA6)
+        dataToWrite.append(0x19)
+        
+        return dataToWrite
+    }
+    
 }
 
 extension MultiLightViewController: CBCentralManagerDelegate {
@@ -86,25 +194,18 @@ extension MultiLightViewController: CBPeripheralDelegate {
         for characteristic in characteristics {
             print(characteristic)
 
-            if characteristic.properties.contains(.notify) {
-                print("\(characteristic.uuid): properties contains .notify")
+            if characteristic.properties.contains(.write) {
+                print("\(characteristic.uuid): properties contains .write")
             if characteristic.uuid == moduleFunctionConfigurationCBUUID {
-                print ("Characteristic FFE2 is found! TRY TO WRITE...")
-                peripheral.writeValue(dataToWrite(data: "E8A101"), for: characteristic, type: CBCharacteristicWriteType.withResponse)
+                multiLightCharacteristic = characteristic
+                peripheral.writeValue(OnOff(), for: characteristic, type: CBCharacteristicWriteType.withResponse)
+                peripheral.writeValue(frequency1000(), for: characteristic, type: CBCharacteristicWriteType.withResponse)
+                print ("Characteristic FFE2 is found! READY TO WRITE...")
                 }
             }
         }
     }
     
-//    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic,
-//                    error: Error?) {
-//        switch characteristic.uuid {
-//        case moduleFunctionConfigurationCBUUID:
-//            print("FFE2 Properties: \(characteristic.properties)")
-//        default:
-//            print("Unhandled Characteristic UUID: \(characteristic.uuid)")
-//        }
-//    }
 
     func peripheral(_ peripheral: CBPeripheral, didWriteValueFor characteristic: CBCharacteristic, error: Error?) {
         guard error == nil else {
@@ -113,5 +214,4 @@ extension MultiLightViewController: CBPeripheralDelegate {
         }
         print("Message sent")
     }
-
 }
