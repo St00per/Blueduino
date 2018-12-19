@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E8A3D2921C8B62C00EA680D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8A3D2821C8B62C00EA680D /* AppDelegate.swift */; };
-		0E8A3D2B21C8B62C00EA680D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8A3D2A21C8B62C00EA680D /* ViewController.swift */; };
+		0E8A3D2B21C8B62C00EA680D /* MultiLightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8A3D2A21C8B62C00EA680D /* MultiLightViewController.swift */; };
 		0E8A3D2E21C8B62C00EA680D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E8A3D2C21C8B62C00EA680D /* Main.storyboard */; };
 		0E8A3D3021C8B63C00EA680D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E8A3D2F21C8B63C00EA680D /* Assets.xcassets */; };
 		0E8A3D3321C8B63C00EA680D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E8A3D3121C8B63C00EA680D /* LaunchScreen.storyboard */; };
@@ -17,7 +17,7 @@
 /* Begin PBXFileReference section */
 		0E8A3D2521C8B62C00EA680D /* Blueduino.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blueduino.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E8A3D2821C8B62C00EA680D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0E8A3D2A21C8B62C00EA680D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0E8A3D2A21C8B62C00EA680D /* MultiLightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiLightViewController.swift; sourceTree = "<group>"; };
 		0E8A3D2D21C8B62C00EA680D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0E8A3D2F21C8B63C00EA680D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E8A3D3221C8B63C00EA680D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				0E8A3D2821C8B62C00EA680D /* AppDelegate.swift */,
-				0E8A3D2A21C8B62C00EA680D /* ViewController.swift */,
+				0E8A3D2A21C8B62C00EA680D /* MultiLightViewController.swift */,
 				0E8A3D2C21C8B62C00EA680D /* Main.storyboard */,
 				0E8A3D2F21C8B63C00EA680D /* Assets.xcassets */,
 				0E8A3D3121C8B63C00EA680D /* LaunchScreen.storyboard */,
@@ -135,7 +135,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E8A3D2B21C8B62C00EA680D /* ViewController.swift in Sources */,
+				0E8A3D2B21C8B62C00EA680D /* MultiLightViewController.swift in Sources */,
 				0E8A3D2921C8B62C00EA680D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,8 +283,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A4283R63P3;
+				DEVELOPMENT_TEAM = L59JFSX5QN;
 				INFOPLIST_FILE = Blueduino/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -301,8 +302,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A4283R63P3;
+				DEVELOPMENT_TEAM = L59JFSX5QN;
 				INFOPLIST_FILE = Blueduino/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
