@@ -1,2 +1,2 @@
-# MultiLight
+# Blueduino
 App for Bluetooth Light Device
