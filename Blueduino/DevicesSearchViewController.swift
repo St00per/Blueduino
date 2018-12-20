@@ -16,20 +16,20 @@ let moduleFunctionConfigurationCBUUID = CBUUID(string: "FFE2")
 class DevicesSearchViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    
-
-    
+    @IBAction func scanForDevices(_ sender: UIButton) {
+        centralManager.scanForPeripherals(withServices: [multiLightCBUUID])
+    }
     
     var centralManager: CBCentralManager!
     var multiLightPeripheral: CBPeripheral!
     var multiLightCharacteristic: CBCharacteristic!
     
     var foundDevices: [CBPeripheral] = []
+    var addedDevices: [CBPeripheral] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         centralManager = CBCentralManager(delegate: self, queue: nil)
-        // Do any additional setup after loading the view.
     }
 }
 
@@ -60,11 +60,6 @@ extension DevicesSearchViewController: CBCentralManagerDelegate {
                 foundDevices.append(peripheral)
         }
         collectionView.reloadData()
-//        if peripheral.name == "JDY-08" {
-//            multiLightPeripheral = peripheral
-//            multiLightPeripheral.delegate = self
-//            centralManager.stopScan()
-//            centralManager.connect(multiLightPeripheral)}
     }
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
@@ -72,11 +67,19 @@ extension DevicesSearchViewController: CBCentralManagerDelegate {
         //multiLightPeripheral.discoverServices(nil)
     }
     
+    func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
+        print("Disconnected!")
+    }
+    
     func connect(peripheral: CBPeripheral) {
         centralManager.stopScan()
         multiLightPeripheral = peripheral
         multiLightPeripheral.delegate = self
         centralManager.connect(multiLightPeripheral)
+    }
+    
+    func disconnect(peripheral: CBPeripheral) {
+        centralManager.cancelPeripheralConnection(peripheral)
     }
     
 }
@@ -91,6 +94,8 @@ extension DevicesSearchViewController: CBPeripheralDelegate {
             //peripheral.discoverCharacteristics(nil, for: service)
         }
     }
+    
+
     
 //    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService,
 //                    error: Error?) {
@@ -133,7 +138,7 @@ extension DevicesSearchViewController: UICollectionViewDataSource, UICollectionV
         }
         cell.viewController = self
         cell.peripheral = foundDevices[indexPath.row]
-        cell.setLabel(name: deviceName)
+        cell.configure(name: deviceName)
         return cell
     }
     
@@ -167,20 +172,4 @@ extension UIColor {
         return String(format:"#%06x", rgb)
     }
 }
-//extension UIColor {
-//    convenience init(red: Int, green: Int, blue: Int) {
-//        assert(red >= 0 && red <= 255, "Invalid red component")
-//        assert(green >= 0 && green <= 255, "Invalid green component")
-//        assert(blue >= 0 && blue <= 255, "Invalid blue component")
-//
-//        self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
-//    }
-//
-//    convenience init(rgb: Int) {
-//        self.init(
-//            red: (rgb >> 16) & 0xFF,
-//            green: (rgb >> 8) & 0xFF,
-//            blue: rgb & 0xFF
-//        )
-//    }
-//}
+
