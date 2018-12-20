@@ -157,18 +157,19 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="402" height="104"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SwA-GQ-rUy">
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SwA-GQ-rUy">
                                                             <rect key="frame" x="108" y="54" width="225" height="38"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <color key="backgroundColor" red="0.16078431369999999" green="0.21960784310000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <state key="normal" title="CONNECT">
-                                                                <color key="titleColor" white="0.94015918430000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </state>
+                                                            <state key="normal" title="CONNECT"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                     <integer key="value" value="8"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="connect:" destination="SBa-Hz-DJ2" eventType="touchUpInside" id="C5d-L2-27Z"/>
+                                                            </connections>
                                                         </button>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZvO-0V-OwI">
                                                             <rect key="frame" x="20" y="12" width="80" height="80"/>
@@ -205,6 +206,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
+                                                    <outlet property="connectButton" destination="SwA-GQ-rUy" id="FDv-dt-8LY"/>
                                                     <outlet property="deviceName" destination="ZzU-9J-ujd" id="jEa-HN-Uq2"/>
                                                 </connections>
                                             </collectionViewCell>
@@ -214,20 +216,20 @@
                                             <outlet property="delegate" destination="Vl2-KF-FjT" id="Afq-u6-3qC"/>
                                         </connections>
                                     </collectionView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search Device" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrJ-Ly-Ooc">
-                                        <rect key="frame" x="129" y="31" width="156" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KlU-u6-QQi">
-                                        <rect key="frame" x="341" y="22" width="48" height="48"/>
+                                        <rect key="frame" x="348" y="29" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="update.png">
+                                        <state key="normal" image="white35x35refresh.png">
                                             <color key="titleColor" white="0.94015918430000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search Device" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrJ-Ly-Ooc">
+                                        <rect key="frame" x="132" y="29" width="150" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.1167286676" green="0.1599724039" blue="0.20362567300000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -258,7 +260,7 @@
     </scenes>
     <resources>
         <image name="green35x35bluetooth.png" width="35" height="35"/>
-        <image name="update.png" width="48" height="48"/>
         <image name="white35x35plus.png" width="35" height="35"/>
+        <image name="white35x35refresh.png" width="35" height="35"/>
     </resources>
 </document>
