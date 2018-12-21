@@ -29,7 +29,9 @@
 		0EB363DD21CBAF0100492C45 /* UserDeviceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB363DC21CBAF0100492C45 /* UserDeviceCollectionViewCell.swift */; };
 		0EB363DF21CBB86C00492C45 /* Back Arrow White.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EB363DE21CBB86C00492C45 /* Back Arrow White.png */; };
 		0EB363E121CCBBC900492C45 /* ic_settings_remote_48px.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EB363E021CCBBC700492C45 /* ic_settings_remote_48px.png */; };
+		0EB363E321CCF0D000492C45 /* gray_ic_settings_remote_48px.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EB363E221CCF0CF00492C45 /* gray_ic_settings_remote_48px.png */; };
 		0ED1149621CA57C6007ABC8B /* red20x20bluetooth.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ED1149521CA57C6007ABC8B /* red20x20bluetooth.png */; };
+		3032B76DE909F3B4CAAFDD34 /* Pods_Blueduino.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96C2BE54C17475F9865D864 /* Pods_Blueduino.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,9 +57,13 @@
 		0EB363DC21CBAF0100492C45 /* UserDeviceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDeviceCollectionViewCell.swift; sourceTree = "<group>"; };
 		0EB363DE21CBB86C00492C45 /* Back Arrow White.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Back Arrow White.png"; sourceTree = "<group>"; };
 		0EB363E021CCBBC700492C45 /* ic_settings_remote_48px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_settings_remote_48px.png; sourceTree = "<group>"; };
+		0EB363E221CCF0CF00492C45 /* gray_ic_settings_remote_48px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gray_ic_settings_remote_48px.png; sourceTree = "<group>"; };
 		0ED1149521CA57C6007ABC8B /* red20x20bluetooth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red20x20bluetooth.png; sourceTree = "<group>"; };
 		0ED1149721CA58C3007ABC8B /* green35x35bluetooth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = green35x35bluetooth.png; path = /Users/KirillShteffen/Blueduino/Blueduino/icons/green35x35bluetooth.png; sourceTree = "<absolute>"; };
 		0ED1149821CA58C3007ABC8B /* white35x35plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = white35x35plus.png; path = /Users/KirillShteffen/Blueduino/Blueduino/icons/white35x35plus.png; sourceTree = "<absolute>"; };
+		5A9C29AEE017841A53E96045 /* Pods-Blueduino.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blueduino.release.xcconfig"; path = "Pods/Target Support Files/Pods-Blueduino/Pods-Blueduino.release.xcconfig"; sourceTree = "<group>"; };
+		79DC811E221771CB79C9D772 /* Pods-Blueduino.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blueduino.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Blueduino/Pods-Blueduino.debug.xcconfig"; sourceTree = "<group>"; };
+		B96C2BE54C17475F9865D864 /* Pods_Blueduino.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Blueduino.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3032B76DE909F3B4CAAFDD34 /* Pods_Blueduino.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +83,8 @@
 			children = (
 				0E8A3D2721C8B62C00EA680D /* Blueduino */,
 				0E8A3D2621C8B62C00EA680D /* Products */,
+				CD9476D792B001DEF0DC1502 /* Pods */,
+				A5FE70DEB2BC39B036A903C6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,6 +117,7 @@
 		0E8A3D3E21CA47FD00EA680D /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				0EB363E221CCF0CF00492C45 /* gray_ic_settings_remote_48px.png */,
 				0EB363E021CCBBC700492C45 /* ic_settings_remote_48px.png */,
 				0EB363DE21CBB86C00492C45 /* Back Arrow White.png */,
 				0EB363D821CB9A1500492C45 /* ic_network_cell_48px.png */,
@@ -126,6 +136,23 @@
 			path = icons;
 			sourceTree = "<group>";
 		};
+		A5FE70DEB2BC39B036A903C6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B96C2BE54C17475F9865D864 /* Pods_Blueduino.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CD9476D792B001DEF0DC1502 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				79DC811E221771CB79C9D772 /* Pods-Blueduino.debug.xcconfig */,
+				5A9C29AEE017841A53E96045 /* Pods-Blueduino.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -133,9 +160,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0E8A3D3721C8B63C00EA680D /* Build configuration list for PBXNativeTarget "Blueduino" */;
 			buildPhases = (
+				8D950D5FDA00846692C60EBB /* [CP] Check Pods Manifest.lock */,
 				0E8A3D2121C8B62C00EA680D /* Sources */,
 				0E8A3D2221C8B62C00EA680D /* Frameworks */,
 				0E8A3D2321C8B62C00EA680D /* Resources */,
+				603A695FFB85B170CA63042A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -190,6 +219,7 @@
 				0EB363CF21CA5BCE00492C45 /* white35x35plus.png in Resources */,
 				0E8A3D3321C8B63C00EA680D /* LaunchScreen.storyboard in Resources */,
 				0E8A3D3021C8B63C00EA680D /* Assets.xcassets in Resources */,
+				0EB363E321CCF0D000492C45 /* gray_ic_settings_remote_48px.png in Resources */,
 				0E8A3D4821CA482A00EA680D /* GREEN_bluetooth.png in Resources */,
 				0ED1149621CA57C6007ABC8B /* red20x20bluetooth.png in Resources */,
 				0E8A3D4621CA482A00EA680D /* RED_bluetooth.png in Resources */,
@@ -205,6 +235,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		603A695FFB85B170CA63042A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Blueduino/Pods-Blueduino-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MSPeekCollectionViewDelegateImplementation/MSPeekCollectionViewDelegateImplementation.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MSPeekCollectionViewDelegateImplementation.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Blueduino/Pods-Blueduino-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D950D5FDA00846692C60EBB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Blueduino-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0E8A3D2121C8B62C00EA680D /* Sources */ = {
@@ -360,6 +437,7 @@
 		};
 		0E8A3D3821C8B63C00EA680D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79DC811E221771CB79C9D772 /* Pods-Blueduino.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -379,6 +457,7 @@
 		};
 		0E8A3D3921C8B63C00EA680D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A9C29AEE017841A53E96045 /* Pods-Blueduino.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

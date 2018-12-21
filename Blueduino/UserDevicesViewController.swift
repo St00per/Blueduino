@@ -7,24 +7,35 @@
 //
 
 import UIKit
+import CoreBluetooth
 
 class UserDevicesViewController: UIViewController {
 
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var noUserDevices: UIView!
+    
     
     @IBAction func toSearch(_ sender: UIButton) {
         performSegue(withIdentifier: "ShowSearch", sender: nil)
     }
     
+    var userDevices: [CBPeripheral] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        if userDevices.count != 0 {
+            noUserDevices.isHidden = true }
     }
+    
     
 }
 
-extension UserDevicesViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension UserDevicesViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -33,5 +44,6 @@ extension UserDevicesViewController: UICollectionViewDelegate, UICollectionViewD
         return cell
     }
     
+
     
 }
