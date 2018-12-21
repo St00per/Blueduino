@@ -20,6 +20,11 @@ class DevicesSearchViewController: UIViewController {
         centralManager.scanForPeripherals(withServices: [multiLightCBUUID])
     }
     
+    @IBAction func back(_ sender: UIButton) {
+        performSegue(withIdentifier: "ShowUserDevices", sender: nil)
+    }
+    
+    
     var centralManager: CBCentralManager!
     var multiLightPeripheral: CBPeripheral!
     var multiLightCharacteristic: CBCharacteristic!
