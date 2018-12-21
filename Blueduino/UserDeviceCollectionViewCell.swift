@@ -38,18 +38,18 @@ class UserDeviceCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        let switch1 = CustomSwitch(frame: CGRect(x: 0, y: 5, width: 55, height: 25))
-        switch1.isOn = false
-        switch1.onTintColor = UIColor(hexString: "#67A5A9", alpha: 0.4)
-        switch1.offTintColor = UIColor.lightGray
-        switch1.cornerRadius = 0.5
-        switch1.thumbCornerRadius = 0.5
-        switch1.thumbSize = CGSize(width: 30, height: 30)
-        switch1.thumbTintColor = UIColor.white
-        switch1.padding = 0
-        switch1.animationDuration = 0.25
+        let customSwitch = CustomSwitch(frame: CGRect(x: 0, y: 5, width: 55, height: 25))
+        customSwitch.isOn = false
+        customSwitch.onTintColor = UIColor(hexString: "#67A5A9", alpha: 0.4)
+        customSwitch.offTintColor = UIColor.lightGray
+        customSwitch.cornerRadius = 0.5
+        customSwitch.thumbCornerRadius = 0.5
+        customSwitch.thumbSize = CGSize(width: 30, height: 30)
+        customSwitch.thumbTintColor = UIColor.white
+        customSwitch.padding = 0
+        customSwitch.animationDuration = 0.25
         
-        switchView.addSubview(switch1)
+        switchView.addSubview(customSwitch)
     }
     
     func configure(name: String) {

@@ -486,6 +486,7 @@
                         <outlet property="collectionView" destination="kdW-5E-4bo" id="BgC-Ls-Vwh"/>
                         <outlet property="devicesCountLabel" destination="9m2-1Y-s0h" id="4Zq-RX-8OQ"/>
                         <outlet property="noUserDevices" destination="BJB-IC-M8n" id="nji-ZA-5Hu"/>
+                        <outlet property="pageControl" destination="FR8-eq-C4X" id="e5a-YD-qWv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vvY-Kz-Z9k" userLabel="First Responder" sceneMemberID="firstResponder"/>

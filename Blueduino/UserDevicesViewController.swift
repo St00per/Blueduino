@@ -15,6 +15,7 @@ class UserDevicesViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var noUserDevices: UIView!
     @IBOutlet weak var devicesCountLabel: UILabel!
+    @IBOutlet weak var pageControl: UIPageControl!
     
     
     @IBAction func toSearch(_ sender: UIButton) {
@@ -47,6 +48,8 @@ extension UserDevicesViewController: UICollectionViewDataSource, UICollectionVie
         return cell
     }
     
-
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        pageControl.currentPage += 1
+    }
     
 }
