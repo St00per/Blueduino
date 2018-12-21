@@ -14,6 +14,7 @@ class UserDevicesViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var noUserDevices: UIView!
+    @IBOutlet weak var devicesCountLabel: UILabel!
     
     
     @IBAction func toSearch(_ sender: UIButton) {
@@ -25,7 +26,9 @@ class UserDevicesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if userDevices.count != 0 {
-            noUserDevices.isHidden = true }
+            noUserDevices.isHidden = true
+            devicesCountLabel.text = "Devices: \(String(userDevices.count))"
+        }
     }
     
     
@@ -35,7 +38,7 @@ extension UserDevicesViewController: UICollectionViewDataSource, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 0
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

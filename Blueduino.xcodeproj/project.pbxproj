@@ -30,6 +30,8 @@
 		0EB363DF21CBB86C00492C45 /* Back Arrow White.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EB363DE21CBB86C00492C45 /* Back Arrow White.png */; };
 		0EB363E121CCBBC900492C45 /* ic_settings_remote_48px.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EB363E021CCBBC700492C45 /* ic_settings_remote_48px.png */; };
 		0EB363E321CCF0D000492C45 /* gray_ic_settings_remote_48px.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EB363E221CCF0CF00492C45 /* gray_ic_settings_remote_48px.png */; };
+		0EB363E521CCF8EC00492C45 /* CustomSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB363E421CCF8EC00492C45 /* CustomSwitch.swift */; };
+		0EB363E721CCF96700492C45 /* CustomThumbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB363E621CCF96700492C45 /* CustomThumbView.swift */; };
 		0ED1149621CA57C6007ABC8B /* red20x20bluetooth.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ED1149521CA57C6007ABC8B /* red20x20bluetooth.png */; };
 		3032B76DE909F3B4CAAFDD34 /* Pods_Blueduino.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96C2BE54C17475F9865D864 /* Pods_Blueduino.framework */; };
 /* End PBXBuildFile section */
@@ -58,6 +60,8 @@
 		0EB363DE21CBB86C00492C45 /* Back Arrow White.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Back Arrow White.png"; sourceTree = "<group>"; };
 		0EB363E021CCBBC700492C45 /* ic_settings_remote_48px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_settings_remote_48px.png; sourceTree = "<group>"; };
 		0EB363E221CCF0CF00492C45 /* gray_ic_settings_remote_48px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gray_ic_settings_remote_48px.png; sourceTree = "<group>"; };
+		0EB363E421CCF8EC00492C45 /* CustomSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitch.swift; sourceTree = "<group>"; };
+		0EB363E621CCF96700492C45 /* CustomThumbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomThumbView.swift; sourceTree = "<group>"; };
 		0ED1149521CA57C6007ABC8B /* red20x20bluetooth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red20x20bluetooth.png; sourceTree = "<group>"; };
 		0ED1149721CA58C3007ABC8B /* green35x35bluetooth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = green35x35bluetooth.png; path = /Users/KirillShteffen/Blueduino/Blueduino/icons/green35x35bluetooth.png; sourceTree = "<absolute>"; };
 		0ED1149821CA58C3007ABC8B /* white35x35plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = white35x35plus.png; path = /Users/KirillShteffen/Blueduino/Blueduino/icons/white35x35plus.png; sourceTree = "<absolute>"; };
@@ -104,6 +108,8 @@
 				0EB363DC21CBAF0100492C45 /* UserDeviceCollectionViewCell.swift */,
 				0E8A3D3C21CA3F9000EA680D /* LightDeviceCollectionViewCell.swift */,
 				0E8A3D2A21C8B62C00EA680D /* MultiLightViewController.swift */,
+				0EB363E421CCF8EC00492C45 /* CustomSwitch.swift */,
+				0EB363E621CCF96700492C45 /* CustomThumbView.swift */,
 				0E8A3D2C21C8B62C00EA680D /* Main.storyboard */,
 				0E8A3D3E21CA47FD00EA680D /* icons */,
 				0E8A3D2F21C8B63C00EA680D /* Assets.xcassets */,
@@ -292,7 +298,9 @@
 				0E8A3D2B21C8B62C00EA680D /* MultiLightViewController.swift in Sources */,
 				0E8A3D3D21CA3F9000EA680D /* LightDeviceCollectionViewCell.swift in Sources */,
 				0EB363DD21CBAF0100492C45 /* UserDeviceCollectionViewCell.swift in Sources */,
+				0EB363E521CCF8EC00492C45 /* CustomSwitch.swift in Sources */,
 				0E8A3D3B21CA3C3C00EA680D /* DevicesSearchViewController.swift in Sources */,
+				0EB363E721CCF96700492C45 /* CustomThumbView.swift in Sources */,
 				0E8A3D2921C8B62C00EA680D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
