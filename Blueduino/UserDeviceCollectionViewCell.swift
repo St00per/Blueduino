@@ -36,19 +36,23 @@ class UserDeviceCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func configure(name: String) {
+    override func awakeFromNib() {
+        super.awakeFromNib()
         let switch1 = CustomSwitch(frame: CGRect(x: 0, y: 5, width: 55, height: 25))
         switch1.isOn = false
-        switch1.onTintColor = UIColor(red: 127/255, green: 202/255, blue: 196/255, alpha: 1)
+        switch1.onTintColor = UIColor(hexString: "#67A5A9", alpha: 0.4)
         switch1.offTintColor = UIColor.lightGray
         switch1.cornerRadius = 0.5
         switch1.thumbCornerRadius = 0.5
         switch1.thumbSize = CGSize(width: 30, height: 30)
-        switch1.thumbTintColor = UIColor(red: 1/255, green: 150/255, blue: 137/255, alpha: 1)
+        switch1.thumbTintColor = UIColor.white
         switch1.padding = 0
         switch1.animationDuration = 0.25
         
         switchView.addSubview(switch1)
+    }
+    
+    func configure(name: String) {
         connectButton.backgroundColor = UIColor(hexString: "#94ed74", alpha: 0.4)
         pickColorButton.backgroundColor = UIColor(hexString: "#67A5A9", alpha: 0.4)
         deviceName.text = name
