@@ -15,6 +15,7 @@ let moduleFunctionConfigurationCBUUID = CBUUID(string: "FFE2")
 
 class DevicesSearchViewController: UIViewController {
 
+    @IBOutlet weak var noDevicesView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBAction func scanForDevices(_ sender: UIButton) {
         centralManager.scanForPeripherals(withServices: [multiLightCBUUID])
@@ -34,6 +35,7 @@ class DevicesSearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        noDevicesView.isHidden = true
         centralManager = CBCentralManager(delegate: self, queue: nil)
     }
 }
@@ -57,6 +59,11 @@ extension DevicesSearchViewController: CBCentralManagerDelegate {
             print("central.state is .poweredOn")
             centralManager.scanForPeripherals(withServices: [multiLightCBUUID])
         }
+        if foundDevices.isEmpty {
+            noDevicesView.isHidden = false
+        } else {
+            noDevicesView.isHidden = true
+        }
     }
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
@@ -65,6 +72,11 @@ extension DevicesSearchViewController: CBCentralManagerDelegate {
                 foundDevices.append(peripheral)
         }
         collectionView.reloadData()
+        if foundDevices.isEmpty {
+            noDevicesView.isHidden = false
+        } else {
+            noDevicesView.isHidden = true
+        }
     }
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {

@@ -263,6 +263,23 @@
                                     <constraint firstItem="YMm-nd-8SR" firstAttribute="top" secondItem="oGD-d7-KhD" secondAttribute="top" constant="88" id="nIq-Oe-r5u"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RZk-h2-Fe5">
+                                <rect key="frame" x="87" y="304" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_settings_remote_48px.png" translatesAutoresizingMaskIntoConstraints="NO" id="xKL-oV-WK8">
+                                        <rect key="frame" x="82" y="8" width="76" height="77"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Other devices not found" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mhv-Zz-MJy">
+                                        <rect key="frame" x="24" y="99" width="193" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.1167286676" green="0.1599724039" blue="0.20362567300000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -275,6 +292,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="YMm-nd-8SR" id="EG7-Kb-jph"/>
+                        <outlet property="noDevicesView" destination="RZk-h2-Fe5" id="d0J-bK-RdW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HYg-35-oEm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -373,6 +391,7 @@
         <image name="Back Arrow White.png" width="15" height="23"/>
         <image name="ic_cached_48px.png" width="50" height="50"/>
         <image name="ic_network_cell_48px.png" width="36" height="36"/>
+        <image name="ic_settings_remote_48px.png" width="97" height="96"/>
         <image name="white35x35plus.png" width="35" height="35"/>
     </resources>
 </document>
