@@ -14,6 +14,7 @@ class UserDevicesViewController: UIViewController {
     @IBOutlet var popoverView: UIView!
     @IBOutlet weak var customColorButton: UIButton!
     
+    @IBOutlet weak var userDeviceView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var noUserDevices: UIView!
     @IBOutlet weak var devicesCountLabel: UILabel!
@@ -25,7 +26,9 @@ class UserDevicesViewController: UIViewController {
     }
     
     @IBAction func pickColor(_ sender: UIButton) {
+        
         self.view.addSubview(popoverView)
+        userDeviceView.alpha = 0.4
         popoverView.center = self.view.center
         customColorButton.addDashedBorder()
     }
@@ -100,6 +103,7 @@ extension UserDevicesViewController: UICollectionViewDataSource, UICollectionVie
     }
     
 }
+
 
 extension UIView {
     
