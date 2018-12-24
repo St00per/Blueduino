@@ -43,6 +43,17 @@ class UserDevicesViewController: UIViewController {
             devicesCountLabel.text = "Devices: \(String(userDevices.count))"
         }
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        var touch: UITouch? = touches.first
+        //location is relative to the current view
+        // do something with the touched point
+        if touch?.view != popoverView {
+            popoverView.removeFromSuperview()
+            userDeviceView.alpha = 1
+        }
+    }
+    
 }
 
 extension UserDevicesViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -58,9 +69,6 @@ extension UserDevicesViewController: UICollectionViewDataSource, UICollectionVie
         return cell
     }
     
-//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-//        pageControl.currentPage += 1
-//    }
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         targetContentOffset.pointee = scrollView.contentOffset
@@ -98,12 +106,9 @@ extension UserDevicesViewController: UICollectionViewDataSource, UICollectionVie
         if velocity.x > -1 , velocity.x < 1,
             position < comparedCellWidth {
             self.collectionView.scrollToItem(at: localIndex , at: .left, animated: true )
-            
         }
     }
-    
 }
-
 
 extension UIView {
     
