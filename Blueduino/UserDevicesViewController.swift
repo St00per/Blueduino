@@ -43,10 +43,11 @@ class UserDevicesViewController: UIViewController {
     @IBAction func customColor(_ sender: UIButton) {
         self.view.addSubview(customColorView)
         customColorView.center = self.view.center
-//        let colorPicker = SwiftHSVColorPicker(frame: CGRect(x: -10, y: -10, width: 350, height: 350))
-//        customColorWheel.addSubview(colorPicker)
-//        colorPicker.setViewColor(UIColor.white)
-        addCircleSlider(frame: CGRect(x: -10, y: -10, width: 350, height: 350))
+        addCircleSlider(frame: CGRect(x: 27, y: 60, width: 350, height: 350))
+        let colorPicker = SwiftHSVColorPicker(frame: CGRect(x: -10, y: -10, width: 350, height: 350))
+        customColorWheel.addSubview(colorPicker)
+        colorPicker.setViewColor(UIColor.white)
+        
     }
     
     @IBAction func closeCustomColor(_ sender: UIButton) {
@@ -68,18 +69,18 @@ class UserDevicesViewController: UIViewController {
     func addCircleSlider(frame: CGRect) {
         let attributes = [
             /* Track */
-            Attributes.minTrackTint(.lightGray),
-            Attributes.maxTrackTint(.lightGray),
-            Attributes.trackWidth(CGFloat(12)),
+            Attributes.minTrackTint(.red),
+            Attributes.maxTrackTint(UIColor(hexString: "#67A5A9", alpha: 0.4)),
+            Attributes.trackWidth(CGFloat(25)),
             Attributes.trackShadowRadius(CGFloat(0)),
             Attributes.trackShadowDepth(CGFloat(0)),
-            Attributes.trackMinAngle(CGFloat(180)),
-            Attributes.trackMaxAngle(CGFloat(270)),
+            Attributes.trackMinAngle(CGFloat(-80)),
+            Attributes.trackMaxAngle(CGFloat(260)),
             
             /* Thumb */
             Attributes.hasThumb(true),
-            Attributes.thumbTint(UIColor.darkGray),
-            Attributes.thumbRadius(8),
+            Attributes.thumbTint(UIColor.white),
+            Attributes.thumbRadius(15),
             Attributes.thumbShadowRadius(0),
             Attributes.thumbShadowDepth(0)
         ]
