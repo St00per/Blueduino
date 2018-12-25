@@ -8,11 +8,12 @@
 
 import UIKit
 import CoreBluetooth
-import ChromaColorPicker
 import SwiftHSVColorPicker
+import HGCircularSlider
+import MTCircularSlider
 
 
-class UserDevicesViewController: UIViewController, ChromaColorPickerDelegate {
+class UserDevicesViewController: UIViewController {
     
 
     @IBOutlet var popoverView: UIView!
@@ -42,16 +43,10 @@ class UserDevicesViewController: UIViewController, ChromaColorPickerDelegate {
     @IBAction func customColor(_ sender: UIButton) {
         self.view.addSubview(customColorView)
         customColorView.center = self.view.center
-        let colorPicker = SwiftHSVColorPicker(frame: CGRect(x: -10, y: -10, width: 350, height: 350))
-        customColorWheel.addSubview(colorPicker)
-        colorPicker.setViewColor(UIColor.red)
-//        let neatColorPicker = ChromaColorPicker(frame: CGRect(x: -10, y: -10, width: 350, height: 350))
-//        neatColorPicker.delegate = self //ChromaColorPickerDelegate
-//        neatColorPicker.padding = 5
-//        neatColorPicker.stroke = 3
-//        neatColorPicker.hexLabel.textColor = UIColor.white
-//
-//        customColorWheel.addSubview(neatColorPicker)
+//        let colorPicker = SwiftHSVColorPicker(frame: CGRect(x: -10, y: -10, width: 350, height: 350))
+//        customColorWheel.addSubview(colorPicker)
+//        colorPicker.setViewColor(UIColor.white)
+        addCircleSlider(frame: CGRect(x: -10, y: -10, width: 350, height: 350))
     }
     
     @IBAction func closeCustomColor(_ sender: UIButton) {
@@ -70,10 +65,31 @@ class UserDevicesViewController: UIViewController, ChromaColorPickerDelegate {
         }
     }
     
-    func colorPickerDidChooseColor(_ colorPicker: ChromaColorPicker, color: UIColor) {
+    func addCircleSlider(frame: CGRect) {
+        let attributes = [
+            /* Track */
+            Attributes.minTrackTint(.lightGray),
+            Attributes.maxTrackTint(.lightGray),
+            Attributes.trackWidth(CGFloat(12)),
+            Attributes.trackShadowRadius(CGFloat(0)),
+            Attributes.trackShadowDepth(CGFloat(0)),
+            Attributes.trackMinAngle(CGFloat(180)),
+            Attributes.trackMaxAngle(CGFloat(270)),
+            
+            /* Thumb */
+            Attributes.hasThumb(true),
+            Attributes.thumbTint(UIColor.darkGray),
+            Attributes.thumbRadius(8),
+            Attributes.thumbShadowRadius(0),
+            Attributes.thumbShadowDepth(0)
+        ]
+        
+        let slider = MTCircularSlider(frame: frame)
+        slider.applyAttributes(attributes)
+        //self.slider?.addTarget(self, action: Selector("valueChange:"), forControlEvents: .ValueChanged)
+        customColorView.addSubview(slider)
         
     }
-    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         var touch: UITouch? = touches.first
