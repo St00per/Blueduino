@@ -8,11 +8,13 @@
 
 import UIKit
 import CoreBluetooth
+import FlexColorPicker
 
 class UserDevicesViewController: UIViewController {
 
     @IBOutlet var popoverView: UIView!
     @IBOutlet weak var customColorButton: UIButton!
+    @IBOutlet var customColorView: UIView!
     
     @IBOutlet weak var userDeviceView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -33,6 +35,14 @@ class UserDevicesViewController: UIViewController {
         customColorButton.addDashedBorder()
     }
     
+    @IBAction func customColor(_ sender: UIButton) {
+        self.view.addSubview(customColorView)
+        customColorView.center = self.view.center
+//        let colorPickerController = DefaultColorPickerViewController()
+//        colorPickerController.delegate = self as? ColorPickerDelegate
+//        let navigationController = UINavigationController(rootViewController: colorPickerController)
+//        present(navigationController, animated: true, completion: nil)
+    }
     
     var userDevices: [CBPeripheral] = []
     
@@ -43,6 +53,8 @@ class UserDevicesViewController: UIViewController {
             devicesCountLabel.text = "Devices: \(String(userDevices.count))"
         }
     }
+    
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         var touch: UITouch? = touches.first
