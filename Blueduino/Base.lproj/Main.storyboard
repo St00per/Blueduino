@@ -501,6 +501,7 @@
                         <outlet property="collectionView" destination="kdW-5E-4bo" id="BgC-Ls-Vwh"/>
                         <outlet property="customColorButton" destination="x3Y-83-VoL" id="Ryq-OO-UUi"/>
                         <outlet property="customColorView" destination="VNW-FG-Az8" id="lma-oR-tnS"/>
+                        <outlet property="customColorWheel" destination="qOF-Fs-YNS" id="DrM-Eg-7Iz"/>
                         <outlet property="devicesCountLabel" destination="9m2-1Y-s0h" id="4Zq-RX-8OQ"/>
                         <outlet property="noUserDevices" destination="BJB-IC-M8n" id="nji-ZA-5Hu"/>
                         <outlet property="pageControl" destination="FR8-eq-C4X" id="e5a-YD-qWv"/>
@@ -695,6 +696,10 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qOF-Fs-YNS">
+                            <rect key="frame" x="37" y="70" width="326" height="331"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" red="0.1803921568627451" green="0.21568627450980393" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <viewLayoutGuide key="safeArea" id="udR-Xs-3OG"/>

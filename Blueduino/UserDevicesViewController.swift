@@ -8,13 +8,16 @@
 
 import UIKit
 import CoreBluetooth
-import FlexColorPicker
+import ChromaColorPicker
 
-class UserDevicesViewController: UIViewController {
+
+class UserDevicesViewController: UIViewController, ChromaColorPickerDelegate {
+    
 
     @IBOutlet var popoverView: UIView!
     @IBOutlet weak var customColorButton: UIButton!
     @IBOutlet var customColorView: UIView!
+    @IBOutlet weak var customColorWheel: UIView!
     
     @IBOutlet weak var userDeviceView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -38,14 +41,19 @@ class UserDevicesViewController: UIViewController {
     @IBAction func customColor(_ sender: UIButton) {
         self.view.addSubview(customColorView)
         customColorView.center = self.view.center
-//        let colorPickerController = DefaultColorPickerViewController()
-//        colorPickerController.delegate = self as? ColorPickerDelegate
-//        let navigationController = UINavigationController(rootViewController: colorPickerController)
-//        present(navigationController, animated: true, completion: nil)
+        let neatColorPicker = ChromaColorPicker(frame: CGRect(x: -10, y: -10, width: 350, height: 350))
+        neatColorPicker.delegate = self //ChromaColorPickerDelegate
+        neatColorPicker.padding = 5
+        neatColorPicker.stroke = 3
+        neatColorPicker.hexLabel.textColor = UIColor.white
+        
+        customColorWheel.addSubview(neatColorPicker)
+        //neatColorPicker.center = customColorWheel.center
     }
     
     @IBAction func closeCustomColor(_ sender: UIButton) {
         customColorView.removeFromSuperview()
+        customColorWheel.removeFromSuperview()
     }
     
     var userDevices: [CBPeripheral] = []
@@ -55,11 +63,14 @@ class UserDevicesViewController: UIViewController {
         if userDevices.count != 0 {
             noUserDevices.isHidden = true
             devicesCountLabel.text = "Devices: \(String(userDevices.count))"
+            
+            //customColorView.delegate = self
         }
     }
     
-    
-    
+    func colorPickerDidChooseColor(_ colorPicker: ChromaColorPicker, color: UIColor) {
+        
+    }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         var touch: UITouch? = touches.first
         //location is relative to the current view
