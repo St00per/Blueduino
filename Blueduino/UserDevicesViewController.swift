@@ -9,6 +9,7 @@
 import UIKit
 import CoreBluetooth
 import ChromaColorPicker
+import SwiftHSVColorPicker
 
 
 class UserDevicesViewController: UIViewController, ChromaColorPickerDelegate {
@@ -41,14 +42,16 @@ class UserDevicesViewController: UIViewController, ChromaColorPickerDelegate {
     @IBAction func customColor(_ sender: UIButton) {
         self.view.addSubview(customColorView)
         customColorView.center = self.view.center
-        let neatColorPicker = ChromaColorPicker(frame: CGRect(x: -10, y: -10, width: 350, height: 350))
-        neatColorPicker.delegate = self //ChromaColorPickerDelegate
-        neatColorPicker.padding = 5
-        neatColorPicker.stroke = 3
-        neatColorPicker.hexLabel.textColor = UIColor.white
-        
-        customColorWheel.addSubview(neatColorPicker)
-        //neatColorPicker.center = customColorWheel.center
+        let colorPicker = SwiftHSVColorPicker(frame: CGRect(x: -10, y: -10, width: 350, height: 350))
+        customColorWheel.addSubview(colorPicker)
+        colorPicker.setViewColor(UIColor.red)
+//        let neatColorPicker = ChromaColorPicker(frame: CGRect(x: -10, y: -10, width: 350, height: 350))
+//        neatColorPicker.delegate = self //ChromaColorPickerDelegate
+//        neatColorPicker.padding = 5
+//        neatColorPicker.stroke = 3
+//        neatColorPicker.hexLabel.textColor = UIColor.white
+//
+//        customColorWheel.addSubview(neatColorPicker)
     }
     
     @IBAction func closeCustomColor(_ sender: UIButton) {
@@ -64,13 +67,14 @@ class UserDevicesViewController: UIViewController, ChromaColorPickerDelegate {
             noUserDevices.isHidden = true
             devicesCountLabel.text = "Devices: \(String(userDevices.count))"
             
-            //customColorView.delegate = self
         }
     }
     
     func colorPickerDidChooseColor(_ colorPicker: ChromaColorPicker, color: UIColor) {
         
     }
+    
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         var touch: UITouch? = touches.first
         //location is relative to the current view
