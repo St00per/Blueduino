@@ -44,6 +44,10 @@ class UserDevicesViewController: UIViewController {
 //        present(navigationController, animated: true, completion: nil)
     }
     
+    @IBAction func closeCustomColor(_ sender: UIButton) {
+        customColorView.removeFromSuperview()
+    }
+    
     var userDevices: [CBPeripheral] = []
     
     override func viewDidLoad() {
