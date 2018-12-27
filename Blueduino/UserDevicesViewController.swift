@@ -46,14 +46,15 @@ class UserDevicesViewController: UIViewController {
         customColorView.center = self.view.center
         
         let colorPicker = SwiftHSVColorPicker(frame: CGRect(x: -10, y: -10, width: 350, height: 350))
-        colorPicker.setViewColor(UIColor.green)
+        colorPicker.setViewColor(UIColor.blue)
         colorPicker.delegate = self
         customColorWheel.addSubview(colorPicker)
         
-        let circleSlider = addCircleSlider(frame: CGRect(x: 27, y: 60, width: 350, height: 350))
-        circleSlider.isUserInteractionEnabled = true
+        addCircleSlider()
+        
+        slider.isUserInteractionEnabled = true
         gradientRing.tintColor = colorPicker.color
-        customColorView.insertSubview(circleSlider, belowSubview: customColorWheel)
+        customColorView.insertSubview(slider, belowSubview: customColorWheel)
         
     }
     
@@ -62,7 +63,12 @@ class UserDevicesViewController: UIViewController {
         customColorWheel.removeFromSuperview()
     }
     
+    
+    
     var userDevices: [CBPeripheral] = []
+    var slider = MTCircularSlider(frame: CGRect(x: 27, y: 60, width: 350, height: 350))
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,7 +81,7 @@ class UserDevicesViewController: UIViewController {
     
     
     
-    func addCircleSlider(frame: CGRect) -> MTCircularSlider {
+    func addCircleSlider()  {
         
         let attributes = [
             /* Track */
@@ -96,11 +102,14 @@ class UserDevicesViewController: UIViewController {
             Attributes.thumbShadowDepth(10)
         ]
         
-        let slider = MTCircularSlider(frame: frame)
         slider.applyAttributes(attributes)
-        //self.slider?.addTarget(self, action: Selector("valueChange:"), forControlEvents: .ValueChanged)
-        //customColorView.ins(slider)
-        return slider
+        slider.addTarget(self, action: #selector(brightnessUpdate), for: .valueChanged)
+        
+    }
+    
+    @objc func brightnessUpdate() {
+        
+        print("SLIDERANGLE: \(slider.getThumbAngle())")
         
     }
     

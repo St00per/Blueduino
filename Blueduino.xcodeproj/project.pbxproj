@@ -111,13 +111,13 @@
 		0E8A3D2721C8B62C00EA680D /* Blueduino */ = {
 			isa = PBXGroup;
 			children = (
-				0EECA48021D4C3F300862D4E /* MTCircularSlider.swift */,
 				0EECA46D21D4A72000862D4E /* ColorPicker */,
 				0EB363DA21CBAB8D00492C45 /* UserDevicesViewController.swift */,
 				0E8A3D3A21CA3C3C00EA680D /* DevicesSearchViewController.swift */,
 				0EB363DC21CBAF0100492C45 /* UserDeviceCollectionViewCell.swift */,
 				0E8A3D3C21CA3F9000EA680D /* LightDeviceCollectionViewCell.swift */,
 				0E8A3D2A21C8B62C00EA680D /* MultiLightViewController.swift */,
+				0EECA48021D4C3F300862D4E /* MTCircularSlider.swift */,
 				0EB363E421CCF8EC00492C45 /* CustomSwitch.swift */,
 				0EB363E621CCF96700492C45 /* CustomThumbView.swift */,
 				0E8A3D2C21C8B62C00EA680D /* Main.storyboard */,

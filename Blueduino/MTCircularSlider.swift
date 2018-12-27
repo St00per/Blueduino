@@ -200,7 +200,7 @@ open class MTCircularSlider: UIControl {
 		return controlRadius + trackWidth * 0.5
 	}
 
-	fileprivate var thumbAngle: CGFloat {
+    var thumbAngle: CGFloat {
 		let normalizedValue = (value - valueMinimum) / valueRange()
 		let degrees = normalizedValue * (trackMaxAngle - trackMinAngle) + trackMinAngle
 		// Rotate 180 degrees so that 0 degrees would be on the left and
