@@ -45,7 +45,7 @@ class UserDevicesViewController: UIViewController {
         self.view.addSubview(customColorView)
         customColorView.center = self.view.center
         
-        let colorPicker = SwiftHSVColorPicker(frame: CGRect(x: -10, y: -10, width: 350, height: 350))
+        
         colorPicker.setViewColor(UIColor.blue)
         colorPicker.delegate = self
         customColorWheel.addSubview(colorPicker)
@@ -67,7 +67,7 @@ class UserDevicesViewController: UIViewController {
     
     var userDevices: [CBPeripheral] = []
     var slider = MTCircularSlider(frame: CGRect(x: 27, y: 60, width: 350, height: 350))
-    
+    let colorPicker = SwiftHSVColorPicker(frame: CGRect(x: -10, y: -10, width: 350, height: 350))
     
     
     override func viewDidLoad() {
@@ -109,8 +109,11 @@ class UserDevicesViewController: UIViewController {
     
     @objc func brightnessUpdate() {
         
-        print("SLIDERANGLE: \(slider.getThumbAngle())")
-        
+        //print("SLIDER_ANGLE: \(slider.getThumbAngle())")
+        let sliderAngle = slider.getThumbAngle()
+        let brightness = (sliderAngle - 1.65)/6.11
+        colorPicker.brightnessSelected(brightness)
+        //(slider.getThumbAngle())
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
