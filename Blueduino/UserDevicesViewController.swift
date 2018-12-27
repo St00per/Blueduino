@@ -13,6 +13,8 @@ import HGCircularSlider
 import MTCircularSlider
 
 
+
+
 class UserDevicesViewController: UIViewController {
     
 
@@ -20,6 +22,7 @@ class UserDevicesViewController: UIViewController {
     @IBOutlet weak var customColorButton: UIButton!
     @IBOutlet var customColorView: UIView!
     @IBOutlet weak var customColorWheel: UIView!
+    
     
     @IBOutlet weak var userDeviceView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -43,10 +46,15 @@ class UserDevicesViewController: UIViewController {
     @IBAction func customColor(_ sender: UIButton) {
         self.view.addSubview(customColorView)
         customColorView.center = self.view.center
-        addCircleSlider(frame: CGRect(x: 27, y: 60, width: 350, height: 350))
+        
         let colorPicker = SwiftHSVColorPicker(frame: CGRect(x: -10, y: -10, width: 350, height: 350))
-        customColorWheel.addSubview(colorPicker)
         colorPicker.setViewColor(UIColor.white)
+        customColorWheel.addSubview(colorPicker)
+
+        let circleSlider = addCircleSlider(frame: CGRect(x: 27, y: 60, width: 350, height: 350))
+        
+        customColorView.insertSubview(circleSlider, belowSubview: customColorWheel)
+        
         
     }
     
@@ -66,34 +74,39 @@ class UserDevicesViewController: UIViewController {
         }
     }
     
-    func addCircleSlider(frame: CGRect) {
+    
+    
+    func addCircleSlider(frame: CGRect) -> MTCircularSlider {
+        
         let attributes = [
             /* Track */
-            Attributes.minTrackTint(.red),
+            Attributes.minTrackTint(UIColor(hexString: "#67A5A9", alpha: 0.4)),
             Attributes.maxTrackTint(UIColor(hexString: "#67A5A9", alpha: 0.4)),
             Attributes.trackWidth(CGFloat(25)),
             Attributes.trackShadowRadius(CGFloat(0)),
             Attributes.trackShadowDepth(CGFloat(0)),
-            Attributes.trackMinAngle(CGFloat(-80)),
-            Attributes.trackMaxAngle(CGFloat(260)),
+            Attributes.trackMinAngle(CGFloat(-85)),
+            Attributes.trackMaxAngle(CGFloat(265)),
+            
             
             /* Thumb */
             Attributes.hasThumb(true),
             Attributes.thumbTint(UIColor.white),
             Attributes.thumbRadius(15),
-            Attributes.thumbShadowRadius(0),
-            Attributes.thumbShadowDepth(0)
+            Attributes.thumbShadowRadius(16),
+            Attributes.thumbShadowDepth(10)
         ]
         
         let slider = MTCircularSlider(frame: frame)
         slider.applyAttributes(attributes)
         //self.slider?.addTarget(self, action: Selector("valueChange:"), forControlEvents: .ValueChanged)
-        customColorView.addSubview(slider)
+        //customColorView.ins(slider)
+        return slider
         
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        var touch: UITouch? = touches.first
+        let touch: UITouch? = touches.first
         //location is relative to the current view
         // do something with the touched point
         if touch?.view != popoverView {
@@ -179,3 +192,5 @@ extension UIView {
         self.layer.addSublayer(shapeLayer)
     }
 }
+
+

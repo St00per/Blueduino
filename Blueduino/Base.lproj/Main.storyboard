@@ -127,7 +127,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-680" y="-71"/>
+            <point key="canvasLocation" x="-1135" y="-51"/>
         </scene>
         <!--Devices Search View Controller-->
         <scene sceneID="hss-a3-p82">
@@ -696,7 +696,11 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qOF-Fs-YNS">
+                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gradient ring.png" translatesAutoresizingMaskIntoConstraints="NO" id="bDb-Dw-hFj">
+                            <rect key="frame" x="30" y="65" width="340" height="340"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qOF-Fs-YNS">
                             <rect key="frame" x="37" y="70" width="326" height="331"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </view>
@@ -708,6 +712,11 @@
                             <integer key="value" value="8"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <variation key="default">
+                        <mask key="subviews">
+                            <exclude reference="qOF-Fs-YNS"/>
+                        </mask>
+                    </variation>
                 </view>
             </objects>
             <point key="canvasLocation" x="-10.144927536231885" y="636.68478260869574"/>
@@ -716,6 +725,7 @@
     <resources>
         <image name="Back Arrow White.png" width="15" height="23"/>
         <image name="dots-vertical.png" width="48" height="48"/>
+        <image name="gradient ring.png" width="500" height="498"/>
         <image name="gray_ic_settings_remote_48px.png" width="64" height="64"/>
         <image name="ic_cached_48px.png" width="50" height="50"/>
         <image name="ic_network_cell_48px.png" width="36" height="36"/>
