@@ -51,7 +51,7 @@ public enum Attributes {
 }
 
 @IBDesignable
-open class MTCircularSlider: UIControl {
+open class MTCircularSlider: SSAlphaPassButton {
 	@IBInspectable
 	var minTrackTint: UIColor = UIColor(red: 0.0, green: 0.478, blue: 1.0, alpha: 1.0)
 
@@ -406,6 +406,8 @@ extension MTCircularSlider {
 
         return true
     }
+    
+    
 
     @discardableResult
     fileprivate func calculatePseudoValue(at point: CGPoint) -> CGFloat {

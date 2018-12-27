@@ -11,7 +11,7 @@ protocol ColorWheelDelegate: class {
     func hueAndSaturationSelected(_ hue: CGFloat, saturation: CGFloat)
 }
 
-class ColorWheel: UIView {
+class ColorWheel: SSAlphaPassView {
     var color: UIColor!
 
     // Layer for the Hue and Saturation wheel
@@ -76,6 +76,8 @@ class ColorWheel: UIView {
         indicatorCircleRadius = 12.0
         touchHandler(touches)
     }
+    
+    
     
     func touchHandler(_ touches: Set<UITouch>) {
         // Set reference to the location of the touch in member point

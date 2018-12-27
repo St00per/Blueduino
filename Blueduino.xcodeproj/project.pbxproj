@@ -37,6 +37,9 @@
 		0EECA48721D4C40700862D4E /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EECA48321D4C40700862D4E /* ColorUtils.swift */; };
 		0EECA48821D4C40700862D4E /* SwiftHSVColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EECA48421D4C40700862D4E /* SwiftHSVColorPicker.swift */; };
 		0EECA48921D4C40700862D4E /* ColorWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EECA48521D4C40700862D4E /* ColorWheel.swift */; };
+		0EECA49321D4F11A00862D4E /* SSAlphaPassView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EECA48D21D4F11A00862D4E /* SSAlphaPassView.m */; };
+		0EECA49421D4F11A00862D4E /* SSAlphaPass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EECA48E21D4F11A00862D4E /* SSAlphaPass.m */; };
+		0EECA49521D4F11A00862D4E /* SSAlphaPassButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EECA48F21D4F11A00862D4E /* SSAlphaPassButton.m */; };
 		3032B76DE909F3B4CAAFDD34 /* Pods_Blueduino.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96C2BE54C17475F9865D864 /* Pods_Blueduino.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +76,13 @@
 		0EECA48321D4C40700862D4E /* ColorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
 		0EECA48421D4C40700862D4E /* SwiftHSVColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftHSVColorPicker.swift; sourceTree = "<group>"; };
 		0EECA48521D4C40700862D4E /* ColorWheel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorWheel.swift; sourceTree = "<group>"; };
+		0EECA48C21D4F11900862D4E /* Blueduino-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Blueduino-Bridging-Header.h"; sourceTree = "<group>"; };
+		0EECA48D21D4F11A00862D4E /* SSAlphaPassView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSAlphaPassView.m; sourceTree = "<group>"; };
+		0EECA48E21D4F11A00862D4E /* SSAlphaPass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSAlphaPass.m; sourceTree = "<group>"; };
+		0EECA48F21D4F11A00862D4E /* SSAlphaPassButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSAlphaPassButton.m; sourceTree = "<group>"; };
+		0EECA49021D4F11A00862D4E /* SSAlphaPass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSAlphaPass.h; sourceTree = "<group>"; };
+		0EECA49121D4F11A00862D4E /* SSAlphaPassButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSAlphaPassButton.h; sourceTree = "<group>"; };
+		0EECA49221D4F11A00862D4E /* SSAlphaPassView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSAlphaPassView.h; sourceTree = "<group>"; };
 		5A9C29AEE017841A53E96045 /* Pods-Blueduino.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blueduino.release.xcconfig"; path = "Pods/Target Support Files/Pods-Blueduino/Pods-Blueduino.release.xcconfig"; sourceTree = "<group>"; };
 		79DC811E221771CB79C9D772 /* Pods-Blueduino.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blueduino.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Blueduino/Pods-Blueduino.debug.xcconfig"; sourceTree = "<group>"; };
 		B96C2BE54C17475F9865D864 /* Pods_Blueduino.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Blueduino.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +121,7 @@
 		0E8A3D2721C8B62C00EA680D /* Blueduino */ = {
 			isa = PBXGroup;
 			children = (
+				0EECA49621D4F12400862D4E /* SSAlphaPass */,
 				0EECA46D21D4A72000862D4E /* ColorPicker */,
 				0EB363DA21CBAB8D00492C45 /* UserDevicesViewController.swift */,
 				0E8A3D3A21CA3C3C00EA680D /* DevicesSearchViewController.swift */,
@@ -126,6 +137,7 @@
 				0E8A3D2821C8B62C00EA680D /* AppDelegate.swift */,
 				0E8A3D3121C8B63C00EA680D /* LaunchScreen.storyboard */,
 				0E8A3D3421C8B63C00EA680D /* Info.plist */,
+				0EECA48C21D4F11900862D4E /* Blueduino-Bridging-Header.h */,
 			);
 			path = Blueduino;
 			sourceTree = "<group>";
@@ -160,6 +172,20 @@
 				0EECA47C21D4C1C800862D4E /* BrightnessView.swift */,
 			);
 			path = ColorPicker;
+			sourceTree = "<group>";
+		};
+		0EECA49621D4F12400862D4E /* SSAlphaPass */ = {
+			isa = PBXGroup;
+			children = (
+				0EECA49021D4F11A00862D4E /* SSAlphaPass.h */,
+				0EECA48E21D4F11A00862D4E /* SSAlphaPass.m */,
+				0EECA49121D4F11A00862D4E /* SSAlphaPassButton.h */,
+				0EECA48F21D4F11A00862D4E /* SSAlphaPassButton.m */,
+				0EECA49221D4F11A00862D4E /* SSAlphaPassView.h */,
+				0EECA48D21D4F11A00862D4E /* SSAlphaPassView.m */,
+			);
+			name = SSAlphaPass;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		A5FE70DEB2BC39B036A903C6 /* Frameworks */ = {
@@ -212,6 +238,7 @@
 				TargetAttributes = {
 					0E8A3D2421C8B62C00EA680D = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -289,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EECA49321D4F11A00862D4E /* SSAlphaPassView.m in Sources */,
 				0EB363DB21CBAB8D00492C45 /* UserDevicesViewController.swift in Sources */,
 				0E8A3D2B21C8B62C00EA680D /* MultiLightViewController.swift in Sources */,
 				0E8A3D3D21CA3F9000EA680D /* LightDeviceCollectionViewCell.swift in Sources */,
@@ -299,9 +327,11 @@
 				0EECA48121D4C3F300862D4E /* MTCircularSlider.swift in Sources */,
 				0E8A3D3B21CA3C3C00EA680D /* DevicesSearchViewController.swift in Sources */,
 				0EB363E721CCF96700492C45 /* CustomThumbView.swift in Sources */,
+				0EECA49421D4F11A00862D4E /* SSAlphaPass.m in Sources */,
 				0E8A3D2921C8B62C00EA680D /* AppDelegate.swift in Sources */,
 				0EECA48921D4C40700862D4E /* ColorWheel.swift in Sources */,
 				0EECA47D21D4C1C800862D4E /* BrightnessView.swift in Sources */,
+				0EECA49521D4F11A00862D4E /* SSAlphaPassButton.m in Sources */,
 				0EECA48621D4C40700862D4E /* SelectedColorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -449,6 +479,7 @@
 			baseConfigurationReference = 79DC811E221771CB79C9D772 /* Pods-Blueduino.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L59JFSX5QN;
 				INFOPLIST_FILE = Blueduino/Info.plist;
@@ -459,6 +490,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = BlackBricks.Blueduino;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Blueduino/Blueduino-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -469,6 +502,7 @@
 			baseConfigurationReference = 5A9C29AEE017841A53E96045 /* Pods-Blueduino.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L59JFSX5QN;
 				INFOPLIST_FILE = Blueduino/Info.plist;
@@ -479,6 +513,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = BlackBricks.Blueduino;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Blueduino/Blueduino-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

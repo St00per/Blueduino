@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SelectedColorView: UIView {
+class SelectedColorView: SSAlphaPassView {
     var color: UIColor!
     
     required init?(coder aDecoder: NSCoder) {
