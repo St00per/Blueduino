@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreBluetooth
-import MTCircularSlider
+//import MTCircularSlider
 
 
 

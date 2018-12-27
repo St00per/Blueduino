@@ -31,11 +31,12 @@
 		0EECA46821D4951C00862D4E /* transparent white gradient ring.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EECA46621D4951B00862D4E /* transparent white gradient ring.png */; };
 		0EECA46921D4951C00862D4E /* transparent black gradient ring.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EECA46721D4951C00862D4E /* transparent black gradient ring.png */; };
 		0EECA46B21D49A8D00862D4E /* narrow gradient ring 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EECA46A21D49A8D00862D4E /* narrow gradient ring 2.png */; };
-		0EECA47321D4A73800862D4E /* BrightnessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EECA46E21D4A73800862D4E /* BrightnessView.swift */; };
-		0EECA47421D4A73800862D4E /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EECA46F21D4A73800862D4E /* ColorUtils.swift */; };
-		0EECA47521D4A73800862D4E /* SwiftHSVColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EECA47021D4A73800862D4E /* SwiftHSVColorPicker.swift */; };
-		0EECA47621D4A73800862D4E /* ColorWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EECA47121D4A73800862D4E /* ColorWheel.swift */; };
-		0EECA47721D4A73800862D4E /* SelectedColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EECA47221D4A73800862D4E /* SelectedColorView.swift */; };
+		0EECA47D21D4C1C800862D4E /* BrightnessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EECA47C21D4C1C800862D4E /* BrightnessView.swift */; };
+		0EECA48121D4C3F300862D4E /* MTCircularSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EECA48021D4C3F300862D4E /* MTCircularSlider.swift */; };
+		0EECA48621D4C40700862D4E /* SelectedColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EECA48221D4C40700862D4E /* SelectedColorView.swift */; };
+		0EECA48721D4C40700862D4E /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EECA48321D4C40700862D4E /* ColorUtils.swift */; };
+		0EECA48821D4C40700862D4E /* SwiftHSVColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EECA48421D4C40700862D4E /* SwiftHSVColorPicker.swift */; };
+		0EECA48921D4C40700862D4E /* ColorWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EECA48521D4C40700862D4E /* ColorWheel.swift */; };
 		3032B76DE909F3B4CAAFDD34 /* Pods_Blueduino.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96C2BE54C17475F9865D864 /* Pods_Blueduino.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,11 +67,12 @@
 		0EECA46621D4951B00862D4E /* transparent white gradient ring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transparent white gradient ring.png"; sourceTree = "<group>"; };
 		0EECA46721D4951C00862D4E /* transparent black gradient ring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transparent black gradient ring.png"; sourceTree = "<group>"; };
 		0EECA46A21D49A8D00862D4E /* narrow gradient ring 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "narrow gradient ring 2.png"; sourceTree = "<group>"; };
-		0EECA46E21D4A73800862D4E /* BrightnessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrightnessView.swift; path = Pods/SwiftHSVColorPicker/Source/BrightnessView.swift; sourceTree = SOURCE_ROOT; };
-		0EECA46F21D4A73800862D4E /* ColorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorUtils.swift; path = Pods/SwiftHSVColorPicker/Source/ColorUtils.swift; sourceTree = SOURCE_ROOT; };
-		0EECA47021D4A73800862D4E /* SwiftHSVColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftHSVColorPicker.swift; path = Pods/SwiftHSVColorPicker/Source/SwiftHSVColorPicker.swift; sourceTree = SOURCE_ROOT; };
-		0EECA47121D4A73800862D4E /* ColorWheel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorWheel.swift; path = Pods/SwiftHSVColorPicker/Source/ColorWheel.swift; sourceTree = SOURCE_ROOT; };
-		0EECA47221D4A73800862D4E /* SelectedColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectedColorView.swift; path = Pods/SwiftHSVColorPicker/Source/SelectedColorView.swift; sourceTree = SOURCE_ROOT; };
+		0EECA47C21D4C1C800862D4E /* BrightnessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrightnessView.swift; sourceTree = "<group>"; };
+		0EECA48021D4C3F300862D4E /* MTCircularSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTCircularSlider.swift; sourceTree = "<group>"; };
+		0EECA48221D4C40700862D4E /* SelectedColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedColorView.swift; sourceTree = "<group>"; };
+		0EECA48321D4C40700862D4E /* ColorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
+		0EECA48421D4C40700862D4E /* SwiftHSVColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftHSVColorPicker.swift; sourceTree = "<group>"; };
+		0EECA48521D4C40700862D4E /* ColorWheel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorWheel.swift; sourceTree = "<group>"; };
 		5A9C29AEE017841A53E96045 /* Pods-Blueduino.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blueduino.release.xcconfig"; path = "Pods/Target Support Files/Pods-Blueduino/Pods-Blueduino.release.xcconfig"; sourceTree = "<group>"; };
 		79DC811E221771CB79C9D772 /* Pods-Blueduino.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blueduino.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Blueduino/Pods-Blueduino.debug.xcconfig"; sourceTree = "<group>"; };
 		B96C2BE54C17475F9865D864 /* Pods_Blueduino.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Blueduino.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +111,7 @@
 		0E8A3D2721C8B62C00EA680D /* Blueduino */ = {
 			isa = PBXGroup;
 			children = (
+				0EECA48021D4C3F300862D4E /* MTCircularSlider.swift */,
 				0EECA46D21D4A72000862D4E /* ColorPicker */,
 				0EB363DA21CBAB8D00492C45 /* UserDevicesViewController.swift */,
 				0E8A3D3A21CA3C3C00EA680D /* DevicesSearchViewController.swift */,
@@ -150,11 +153,11 @@
 		0EECA46D21D4A72000862D4E /* ColorPicker */ = {
 			isa = PBXGroup;
 			children = (
-				0EECA46E21D4A73800862D4E /* BrightnessView.swift */,
-				0EECA46F21D4A73800862D4E /* ColorUtils.swift */,
-				0EECA47121D4A73800862D4E /* ColorWheel.swift */,
-				0EECA47221D4A73800862D4E /* SelectedColorView.swift */,
-				0EECA47021D4A73800862D4E /* SwiftHSVColorPicker.swift */,
+				0EECA48321D4C40700862D4E /* ColorUtils.swift */,
+				0EECA48521D4C40700862D4E /* ColorWheel.swift */,
+				0EECA48221D4C40700862D4E /* SelectedColorView.swift */,
+				0EECA48421D4C40700862D4E /* SwiftHSVColorPicker.swift */,
+				0EECA47C21D4C1C800862D4E /* BrightnessView.swift */,
 			);
 			path = ColorPicker;
 			sourceTree = "<group>";
@@ -187,7 +190,6 @@
 				0E8A3D2121C8B62C00EA680D /* Sources */,
 				0E8A3D2221C8B62C00EA680D /* Frameworks */,
 				0E8A3D2321C8B62C00EA680D /* Resources */,
-				603A695FFB85B170CA63042A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -258,30 +260,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		603A695FFB85B170CA63042A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Blueduino/Pods-Blueduino-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/MTCircularSlider/MTCircularSlider.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftHSVColorPicker/SwiftHSVColorPicker.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MTCircularSlider.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftHSVColorPicker.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Blueduino/Pods-Blueduino-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		8D950D5FDA00846692C60EBB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -312,18 +290,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EB363DB21CBAB8D00492C45 /* UserDevicesViewController.swift in Sources */,
-				0EECA47421D4A73800862D4E /* ColorUtils.swift in Sources */,
 				0E8A3D2B21C8B62C00EA680D /* MultiLightViewController.swift in Sources */,
 				0E8A3D3D21CA3F9000EA680D /* LightDeviceCollectionViewCell.swift in Sources */,
+				0EECA48721D4C40700862D4E /* ColorUtils.swift in Sources */,
 				0EB363DD21CBAF0100492C45 /* UserDeviceCollectionViewCell.swift in Sources */,
+				0EECA48821D4C40700862D4E /* SwiftHSVColorPicker.swift in Sources */,
 				0EB363E521CCF8EC00492C45 /* CustomSwitch.swift in Sources */,
-				0EECA47521D4A73800862D4E /* SwiftHSVColorPicker.swift in Sources */,
+				0EECA48121D4C3F300862D4E /* MTCircularSlider.swift in Sources */,
 				0E8A3D3B21CA3C3C00EA680D /* DevicesSearchViewController.swift in Sources */,
 				0EB363E721CCF96700492C45 /* CustomThumbView.swift in Sources */,
 				0E8A3D2921C8B62C00EA680D /* AppDelegate.swift in Sources */,
-				0EECA47321D4A73800862D4E /* BrightnessView.swift in Sources */,
-				0EECA47721D4A73800862D4E /* SelectedColorView.swift in Sources */,
-				0EECA47621D4A73800862D4E /* ColorWheel.swift in Sources */,
+				0EECA48921D4C40700862D4E /* ColorWheel.swift in Sources */,
+				0EECA47D21D4C1C800862D4E /* BrightnessView.swift in Sources */,
+				0EECA48621D4C40700862D4E /* SelectedColorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
