@@ -503,6 +503,7 @@
                         <outlet property="customColorView" destination="VNW-FG-Az8" id="lma-oR-tnS"/>
                         <outlet property="customColorWheel" destination="qOF-Fs-YNS" id="DrM-Eg-7Iz"/>
                         <outlet property="devicesCountLabel" destination="9m2-1Y-s0h" id="4Zq-RX-8OQ"/>
+                        <outlet property="gradientRing" destination="bDb-Dw-hFj" id="gsk-Yv-xKH"/>
                         <outlet property="noUserDevices" destination="BJB-IC-M8n" id="nji-ZA-5Hu"/>
                         <outlet property="pageControl" destination="FR8-eq-C4X" id="e5a-YD-qWv"/>
                         <outlet property="popoverView" destination="un7-Vz-RC4" id="tYl-fd-pU8"/>
@@ -696,11 +697,17 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gradient ring.png" translatesAutoresizingMaskIntoConstraints="NO" id="bDb-Dw-hFj">
-                            <rect key="frame" x="30" y="65" width="340" height="340"/>
+                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="transparent black gradient ring" translatesAutoresizingMaskIntoConstraints="NO" id="bDb-Dw-hFj">
+                            <rect key="frame" x="30" y="65" width="344" height="340"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </imageView>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qOF-Fs-YNS">
+                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="transparent white gradient ring" translatesAutoresizingMaskIntoConstraints="NO" id="a8S-gH-Vh2">
+                            <rect key="frame" x="30" y="65" width="344" height="340"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qOF-Fs-YNS" customClass="SwiftHSVColorPicker" customModule="Blueduino" customModuleProvider="target">
                             <rect key="frame" x="37" y="70" width="326" height="331"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </view>
@@ -712,11 +719,6 @@
                             <integer key="value" value="8"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
-                    <variation key="default">
-                        <mask key="subviews">
-                            <exclude reference="qOF-Fs-YNS"/>
-                        </mask>
-                    </variation>
                 </view>
             </objects>
             <point key="canvasLocation" x="-10.144927536231885" y="636.68478260869574"/>
@@ -725,12 +727,13 @@
     <resources>
         <image name="Back Arrow White.png" width="15" height="23"/>
         <image name="dots-vertical.png" width="48" height="48"/>
-        <image name="gradient ring.png" width="500" height="498"/>
         <image name="gray_ic_settings_remote_48px.png" width="64" height="64"/>
         <image name="ic_cached_48px.png" width="50" height="50"/>
         <image name="ic_network_cell_48px.png" width="36" height="36"/>
         <image name="ic_search_48px.png" width="37" height="36"/>
         <image name="ic_settings_remote_48px.png" width="97" height="96"/>
+        <image name="transparent black gradient ring" width="120" height="119.51999664306641"/>
+        <image name="transparent white gradient ring" width="120" height="119.51999664306641"/>
         <image name="white35x35plus.png" width="35" height="35"/>
     </resources>
 </document>

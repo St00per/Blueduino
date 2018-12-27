@@ -8,10 +8,7 @@
 
 import UIKit
 import CoreBluetooth
-import SwiftHSVColorPicker
-import HGCircularSlider
 import MTCircularSlider
-
 
 
 
@@ -23,6 +20,7 @@ class UserDevicesViewController: UIViewController {
     @IBOutlet var customColorView: UIView!
     @IBOutlet weak var customColorWheel: UIView!
     
+    @IBOutlet weak var gradientRing: UIImageView!
     
     @IBOutlet weak var userDeviceView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -48,13 +46,14 @@ class UserDevicesViewController: UIViewController {
         customColorView.center = self.view.center
         
         let colorPicker = SwiftHSVColorPicker(frame: CGRect(x: -10, y: -10, width: 350, height: 350))
-        colorPicker.setViewColor(UIColor.white)
+        colorPicker.setViewColor(UIColor.green)
+        colorPicker.delegate = self
         customColorWheel.addSubview(colorPicker)
-
+        
         let circleSlider = addCircleSlider(frame: CGRect(x: 27, y: 60, width: 350, height: 350))
-        
+        circleSlider.isUserInteractionEnabled = true
+        gradientRing.tintColor = colorPicker.color
         customColorView.insertSubview(circleSlider, belowSubview: customColorWheel)
-        
         
     }
     
@@ -80,8 +79,8 @@ class UserDevicesViewController: UIViewController {
         
         let attributes = [
             /* Track */
-            Attributes.minTrackTint(UIColor(hexString: "#67A5A9", alpha: 0.4)),
-            Attributes.maxTrackTint(UIColor(hexString: "#67A5A9", alpha: 0.4)),
+            Attributes.minTrackTint(UIColor(white: 1, alpha: 0)),
+            Attributes.maxTrackTint(UIColor(white: 1, alpha: 0)),
             Attributes.trackWidth(CGFloat(25)),
             Attributes.trackShadowRadius(CGFloat(0)),
             Attributes.trackShadowDepth(CGFloat(0)),
@@ -192,5 +191,11 @@ extension UIView {
         self.layer.addSublayer(shapeLayer)
     }
 }
-
+extension UserDevicesViewController: GradientRingDelegate {
+    func updateGradientRingColor(color: UIColor) {
+        gradientRing.tintColor = color
+    }
+    
+    
+}
 

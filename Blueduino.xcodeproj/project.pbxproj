@@ -28,7 +28,14 @@
 		0EB363E321CCF0D000492C45 /* gray_ic_settings_remote_48px.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EB363E221CCF0CF00492C45 /* gray_ic_settings_remote_48px.png */; };
 		0EB363E521CCF8EC00492C45 /* CustomSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB363E421CCF8EC00492C45 /* CustomSwitch.swift */; };
 		0EB363E721CCF96700492C45 /* CustomThumbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB363E621CCF96700492C45 /* CustomThumbView.swift */; };
-		0EECA46321D3A1E500862D4E /* gradient ring.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EECA46221D3A1E500862D4E /* gradient ring.png */; };
+		0EECA46821D4951C00862D4E /* transparent white gradient ring.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EECA46621D4951B00862D4E /* transparent white gradient ring.png */; };
+		0EECA46921D4951C00862D4E /* transparent black gradient ring.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EECA46721D4951C00862D4E /* transparent black gradient ring.png */; };
+		0EECA46B21D49A8D00862D4E /* narrow gradient ring 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EECA46A21D49A8D00862D4E /* narrow gradient ring 2.png */; };
+		0EECA47321D4A73800862D4E /* BrightnessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EECA46E21D4A73800862D4E /* BrightnessView.swift */; };
+		0EECA47421D4A73800862D4E /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EECA46F21D4A73800862D4E /* ColorUtils.swift */; };
+		0EECA47521D4A73800862D4E /* SwiftHSVColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EECA47021D4A73800862D4E /* SwiftHSVColorPicker.swift */; };
+		0EECA47621D4A73800862D4E /* ColorWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EECA47121D4A73800862D4E /* ColorWheel.swift */; };
+		0EECA47721D4A73800862D4E /* SelectedColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EECA47221D4A73800862D4E /* SelectedColorView.swift */; };
 		3032B76DE909F3B4CAAFDD34 /* Pods_Blueduino.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96C2BE54C17475F9865D864 /* Pods_Blueduino.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,7 +63,14 @@
 		0EB363E421CCF8EC00492C45 /* CustomSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitch.swift; sourceTree = "<group>"; };
 		0EB363E621CCF96700492C45 /* CustomThumbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomThumbView.swift; sourceTree = "<group>"; };
 		0ED1149821CA58C3007ABC8B /* white35x35plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = white35x35plus.png; path = /Users/KirillShteffen/Blueduino/Blueduino/icons/white35x35plus.png; sourceTree = "<absolute>"; };
-		0EECA46221D3A1E500862D4E /* gradient ring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gradient ring.png"; sourceTree = "<group>"; };
+		0EECA46621D4951B00862D4E /* transparent white gradient ring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transparent white gradient ring.png"; sourceTree = "<group>"; };
+		0EECA46721D4951C00862D4E /* transparent black gradient ring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transparent black gradient ring.png"; sourceTree = "<group>"; };
+		0EECA46A21D49A8D00862D4E /* narrow gradient ring 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "narrow gradient ring 2.png"; sourceTree = "<group>"; };
+		0EECA46E21D4A73800862D4E /* BrightnessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrightnessView.swift; path = Pods/SwiftHSVColorPicker/Source/BrightnessView.swift; sourceTree = SOURCE_ROOT; };
+		0EECA46F21D4A73800862D4E /* ColorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorUtils.swift; path = Pods/SwiftHSVColorPicker/Source/ColorUtils.swift; sourceTree = SOURCE_ROOT; };
+		0EECA47021D4A73800862D4E /* SwiftHSVColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftHSVColorPicker.swift; path = Pods/SwiftHSVColorPicker/Source/SwiftHSVColorPicker.swift; sourceTree = SOURCE_ROOT; };
+		0EECA47121D4A73800862D4E /* ColorWheel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorWheel.swift; path = Pods/SwiftHSVColorPicker/Source/ColorWheel.swift; sourceTree = SOURCE_ROOT; };
+		0EECA47221D4A73800862D4E /* SelectedColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectedColorView.swift; path = Pods/SwiftHSVColorPicker/Source/SelectedColorView.swift; sourceTree = SOURCE_ROOT; };
 		5A9C29AEE017841A53E96045 /* Pods-Blueduino.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blueduino.release.xcconfig"; path = "Pods/Target Support Files/Pods-Blueduino/Pods-Blueduino.release.xcconfig"; sourceTree = "<group>"; };
 		79DC811E221771CB79C9D772 /* Pods-Blueduino.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blueduino.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Blueduino/Pods-Blueduino.debug.xcconfig"; sourceTree = "<group>"; };
 		B96C2BE54C17475F9865D864 /* Pods_Blueduino.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Blueduino.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +109,7 @@
 		0E8A3D2721C8B62C00EA680D /* Blueduino */ = {
 			isa = PBXGroup;
 			children = (
+				0EECA46D21D4A72000862D4E /* ColorPicker */,
 				0EB363DA21CBAB8D00492C45 /* UserDevicesViewController.swift */,
 				0E8A3D3A21CA3C3C00EA680D /* DevicesSearchViewController.swift */,
 				0EB363DC21CBAF0100492C45 /* UserDeviceCollectionViewCell.swift */,
@@ -115,7 +130,9 @@
 		0E8A3D3E21CA47FD00EA680D /* icons */ = {
 			isa = PBXGroup;
 			children = (
-				0EECA46221D3A1E500862D4E /* gradient ring.png */,
+				0EECA46A21D49A8D00862D4E /* narrow gradient ring 2.png */,
+				0EECA46721D4951C00862D4E /* transparent black gradient ring.png */,
+				0EECA46621D4951B00862D4E /* transparent white gradient ring.png */,
 				0E2556E521D099DF0081A2E4 /* ic_search_48px.png */,
 				0E2556E321D098DB0081A2E4 /* dots-vertical.png */,
 				0EB363E221CCF0CF00492C45 /* gray_ic_settings_remote_48px.png */,
@@ -128,6 +145,18 @@
 				0E8A3D4221CA482900EA680D /* plus.png */,
 			);
 			path = icons;
+			sourceTree = "<group>";
+		};
+		0EECA46D21D4A72000862D4E /* ColorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				0EECA46E21D4A73800862D4E /* BrightnessView.swift */,
+				0EECA46F21D4A73800862D4E /* ColorUtils.swift */,
+				0EECA47121D4A73800862D4E /* ColorWheel.swift */,
+				0EECA47221D4A73800862D4E /* SelectedColorView.swift */,
+				0EECA47021D4A73800862D4E /* SwiftHSVColorPicker.swift */,
+			);
+			path = ColorPicker;
 			sourceTree = "<group>";
 		};
 		A5FE70DEB2BC39B036A903C6 /* Frameworks */ = {
@@ -208,15 +237,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E8A3D4521CA482A00EA680D /* check.png in Resources */,
+				0EECA46821D4951C00862D4E /* transparent white gradient ring.png in Resources */,
 				0EB363CF21CA5BCE00492C45 /* white35x35plus.png in Resources */,
 				0E8A3D3321C8B63C00EA680D /* LaunchScreen.storyboard in Resources */,
 				0E8A3D3021C8B63C00EA680D /* Assets.xcassets in Resources */,
 				0EB363E321CCF0D000492C45 /* gray_ic_settings_remote_48px.png in Resources */,
+				0EECA46B21D49A8D00862D4E /* narrow gradient ring 2.png in Resources */,
+				0EECA46921D4951C00862D4E /* transparent black gradient ring.png in Resources */,
 				0E8A3D4721CA482A00EA680D /* plus.png in Resources */,
 				0EB363DF21CBB86C00492C45 /* Back Arrow White.png in Resources */,
 				0E2556E621D099DF0081A2E4 /* ic_search_48px.png in Resources */,
 				0EB363D721CB91CE00492C45 /* ic_cached_48px.png in Resources */,
-				0EECA46321D3A1E500862D4E /* gradient ring.png in Resources */,
 				0E2556E421D098DB0081A2E4 /* dots-vertical.png in Resources */,
 				0E8A3D2E21C8B62C00EA680D /* Main.storyboard in Resources */,
 				0EB363D921CB9A1500492C45 /* ic_network_cell_48px.png in Resources */,
@@ -236,8 +267,6 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Blueduino/Pods-Blueduino-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AEConicalGradient/AEConicalGradient.framework",
-				"${BUILT_PRODUCTS_DIR}/HGCircularSlider/HGCircularSlider.framework",
 				"${BUILT_PRODUCTS_DIR}/MTCircularSlider/MTCircularSlider.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftHSVColorPicker/SwiftHSVColorPicker.framework",
 			);
@@ -245,8 +274,6 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AEConicalGradient.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HGCircularSlider.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MTCircularSlider.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftHSVColorPicker.framework",
 			);
@@ -285,13 +312,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EB363DB21CBAB8D00492C45 /* UserDevicesViewController.swift in Sources */,
+				0EECA47421D4A73800862D4E /* ColorUtils.swift in Sources */,
 				0E8A3D2B21C8B62C00EA680D /* MultiLightViewController.swift in Sources */,
 				0E8A3D3D21CA3F9000EA680D /* LightDeviceCollectionViewCell.swift in Sources */,
 				0EB363DD21CBAF0100492C45 /* UserDeviceCollectionViewCell.swift in Sources */,
 				0EB363E521CCF8EC00492C45 /* CustomSwitch.swift in Sources */,
+				0EECA47521D4A73800862D4E /* SwiftHSVColorPicker.swift in Sources */,
 				0E8A3D3B21CA3C3C00EA680D /* DevicesSearchViewController.swift in Sources */,
 				0EB363E721CCF96700492C45 /* CustomThumbView.swift in Sources */,
 				0E8A3D2921C8B62C00EA680D /* AppDelegate.swift in Sources */,
+				0EECA47321D4A73800862D4E /* BrightnessView.swift in Sources */,
+				0EECA47721D4A73800862D4E /* SelectedColorView.swift in Sources */,
+				0EECA47621D4A73800862D4E /* ColorWheel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
