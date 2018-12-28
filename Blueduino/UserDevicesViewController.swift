@@ -30,6 +30,11 @@ class UserDevicesViewController: UIViewController {
         performSegue(withIdentifier: "ShowSearch", sender: nil)
     }
     
+    @IBAction func colorSelection(_ sender: UIButton) {
+        guard let buttonColor = sender.backgroundColor else { return }
+        setColor(color: buttonColor, pressedButton: sender)
+    }
+    
     @IBAction func pickColor(_ sender: UIButton) {
         
         self.view.addSubview(popoverView)
@@ -44,7 +49,7 @@ class UserDevicesViewController: UIViewController {
         self.view.addSubview(customColorView)
         customColorView.center = self.view.center
         
-        colorPicker.setViewColor(UIColor.white)
+        colorPicker.setViewColor(selectedColor)
         colorPicker.delegate = self
         customColorWheel.addSubview(colorPicker)
         
@@ -60,22 +65,30 @@ class UserDevicesViewController: UIViewController {
     }
     
     
-    
     var userDevices: [CBPeripheral] = []
     
     let slider = MTCircularSlider(frame: CGRect(x: 27, y: 60, width: 350, height: 350))
     
     let colorPicker = SwiftHSVColorPicker(frame: CGRect(x: -10, y: -10, width: 350, height: 350))
-    
-    
+    let checkMark = UIImageView.self
+    var selectedColor = UIColor.lightGray
+    var selectedCustomColor: UIColor?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         if userDevices.count != 0 {
             noUserDevices.isHidden = true
             devicesCountLabel.text = "Devices: \(String(userDevices.count))"
-            
         }
+    }
+    
+    func setColor(color: UIColor, pressedButton: UIButton) {
+//        selectedColor = color
+        checkMark(frame: CGRect(pressedButton.frame))
+//        popoverView.removeFromSuperview()
+//        collectionView.isUserInteractionEnabled = true
+//        userDeviceView.alpha = 1
+//        collectionView.reloadData()
     }
     
     func сircleSliderConfigure()  {
@@ -100,7 +113,6 @@ class UserDevicesViewController: UIViewController {
         slider.isUserInteractionEnabled = true
         slider.applyAttributes(attributes)
         slider.addTarget(self, action: #selector(brightnessUpdate), for: .valueChanged)
-        
     }
     
     @objc func brightnessUpdate() {
@@ -130,7 +142,8 @@ extension UserDevicesViewController: UICollectionViewDataSource, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserDeviceCollectionViewCell", for: indexPath) as? UserDeviceCollectionViewCell else { return UICollectionViewCell() }
-        cell.configure(name: "DeviceName")
+        cell.deviceColor = selectedColor
+        cell.configure(name: "DeviceName", color: selectedColor)
         return cell
     }
     
@@ -155,7 +168,6 @@ extension UserDevicesViewController: UICollectionViewDataSource, UICollectionVie
         if velocity.x < -1 {
             pageControl.currentPage -= 1
             self.collectionView.scrollToItem(at: localIndex, at: .left, animated: true)
-            
         }
         
         //slow swipe
@@ -164,7 +176,6 @@ extension UserDevicesViewController: UICollectionViewDataSource, UICollectionVie
             position > comparedCellWidth {
             localIndex.row = (localIndex.row) + 1
             self.collectionView.scrollToItem(at: localIndex , at: .left, animated: true )
-            
         }
         
         if  velocity.x > -1 ,
@@ -201,7 +212,4 @@ extension UserDevicesViewController: GradientRingDelegate {
     func updateGradientRingColor(color: UIColor) {
         gradientRing.tintColor = color
     }
-    
-    
 }
-

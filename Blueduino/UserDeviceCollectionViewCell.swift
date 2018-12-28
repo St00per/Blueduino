@@ -12,6 +12,7 @@ import CoreBluetooth
 class UserDeviceCollectionViewCell: UICollectionViewCell {
     
     var device: CBPeripheral?
+    var deviceColor = UIColor.white
     
     @IBOutlet weak var deviceName: UILabel!
     @IBOutlet weak var pickColorButton: UIButton!
@@ -40,7 +41,7 @@ class UserDeviceCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         let customSwitch = CustomSwitch(frame: CGRect(x: 0, y: 5, width: 55, height: 25))
         customSwitch.isOn = false
-        customSwitch.onTintColor = UIColor(hexString: "#67A5A9", alpha: 0.4)
+        customSwitch.onTintColor = deviceColor
         customSwitch.offTintColor = UIColor.lightGray
         customSwitch.cornerRadius = 0.5
         customSwitch.thumbCornerRadius = 0.5
@@ -52,9 +53,9 @@ class UserDeviceCollectionViewCell: UICollectionViewCell {
         switchView.addSubview(customSwitch)
     }
     
-    func configure(name: String) {
+    func configure(name: String, color: UIColor) {
         connectButton.backgroundColor = UIColor(hexString: "#94ed74", alpha: 0.4)
-        pickColorButton.backgroundColor = UIColor(hexString: "#67A5A9", alpha: 0.4)
+        pickColorButton.backgroundColor = color
         deviceName.text = name
     }
 }

@@ -547,6 +547,9 @@
                                     <integer key="value" value="8"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="colorSelection:" destination="qmY-Vx-yP5" eventType="touchUpInside" id="hVH-DI-rB0"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="khj-gb-gtq">
                             <rect key="frame" x="81" y="42" width="40" height="40"/>
@@ -557,6 +560,9 @@
                                     <integer key="value" value="8"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="colorSelection:" destination="qmY-Vx-yP5" eventType="touchUpInside" id="Hg3-Dc-iQX"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OIT-Tv-gfu">
                             <rect key="frame" x="136" y="42" width="40" height="40"/>
@@ -567,6 +573,9 @@
                                     <integer key="value" value="8"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="colorSelection:" destination="qmY-Vx-yP5" eventType="touchUpInside" id="mvg-Wo-Ph3"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qT7-Nq-NSd">
                             <rect key="frame" x="192" y="42" width="40" height="40"/>
@@ -577,6 +586,9 @@
                                     <integer key="value" value="8"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="colorSelection:" destination="qmY-Vx-yP5" eventType="touchUpInside" id="KH3-ft-omS"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mek-Lb-JzG">
                             <rect key="frame" x="248" y="42" width="40" height="40"/>
@@ -587,6 +599,9 @@
                                     <integer key="value" value="8"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="colorSelection:" destination="qmY-Vx-yP5" eventType="touchUpInside" id="6mf-Wc-d0U"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7L-yH-MyO">
                             <rect key="frame" x="304" y="42" width="40" height="40"/>
@@ -597,6 +612,9 @@
                                     <integer key="value" value="8"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="colorSelection:" destination="qmY-Vx-yP5" eventType="touchUpInside" id="L1y-Ju-vsJ"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5p-Ba-daZ">
                             <rect key="frame" x="26" y="95" width="40" height="40"/>
@@ -607,6 +625,9 @@
                                     <integer key="value" value="8"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="colorSelection:" destination="qmY-Vx-yP5" eventType="touchUpInside" id="8ZV-8r-n4O"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="plX-Fs-xNq">
                             <rect key="frame" x="81" y="95" width="40" height="40"/>
@@ -617,6 +638,9 @@
                                     <integer key="value" value="8"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="colorSelection:" destination="qmY-Vx-yP5" eventType="touchUpInside" id="f8T-wn-LRl"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="raB-DB-aIv">
                             <rect key="frame" x="136" y="95" width="40" height="40"/>
@@ -627,6 +651,9 @@
                                     <integer key="value" value="8"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="colorSelection:" destination="qmY-Vx-yP5" eventType="touchUpInside" id="Oes-cZ-Fgr"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFc-Tb-shH">
                             <rect key="frame" x="192" y="95" width="40" height="40"/>
@@ -637,6 +664,9 @@
                                     <integer key="value" value="8"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="colorSelection:" destination="qmY-Vx-yP5" eventType="touchUpInside" id="I6F-bw-XlL"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1QH-LZ-D9h">
                             <rect key="frame" x="248" y="95" width="40" height="40"/>
@@ -647,6 +677,9 @@
                                     <integer key="value" value="8"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="colorSelection:" destination="qmY-Vx-yP5" eventType="touchUpInside" id="BnL-fJ-MAk"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0n-SB-wau">
                             <rect key="frame" x="304" y="95" width="40" height="40"/>
@@ -657,6 +690,9 @@
                                     <integer key="value" value="8"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="colorSelection:" destination="qmY-Vx-yP5" eventType="touchUpInside" id="pHj-wz-Gx2"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.1803921568627451" green="0.21568627450980393" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
