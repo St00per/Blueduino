@@ -63,9 +63,10 @@ class UserDevicesViewController: UIViewController {
     
     var userDevices: [CBPeripheral] = []
     
-    var slider = MTCircularSlider(frame: CGRect(x: 27, y: 60, width: 350, height: 350))
+    let slider = MTCircularSlider(frame: CGRect(x: 27, y: 60, width: 350, height: 350))
     
     let colorPicker = SwiftHSVColorPicker(frame: CGRect(x: -10, y: -10, width: 350, height: 350))
+    
     
     
     override func viewDidLoad() {
