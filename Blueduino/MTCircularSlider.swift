@@ -53,7 +53,7 @@ public enum Attributes {
 @IBDesignable
 open class MTCircularSlider: SSAlphaPassButton {
 	@IBInspectable
-	var minTrackTint: UIColor = UIColor(red: 0.0, green: 0.478, blue: 1.0, alpha: 1.0)
+	var minTrackTint: UIColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
 
 	@IBInspectable
 	var maxTrackTint: UIColor = UIColor(red: 0.71, green: 0.71, blue: 0.71, alpha: 1.0)

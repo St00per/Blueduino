@@ -8,9 +8,6 @@
 
 import UIKit
 import CoreBluetooth
-//import MTCircularSlider
-
-
 
 class UserDevicesViewController: UIViewController {
     
@@ -53,7 +50,7 @@ class UserDevicesViewController: UIViewController {
         
         сircleSliderConfigure()
         gradientRing.tintColor = colorPicker.color
-        customColorView.insertSubview(slider, belowSubview: customColorWheel)
+        customColorView.insertSubview(slider, aboveSubview: customColorWheel)
     }
     
     @IBAction func closeCustomColor(_ sender: UIButton) {
@@ -84,9 +81,9 @@ class UserDevicesViewController: UIViewController {
         
         let attributes = [
             /* Track */
-            Attributes.minTrackTint(UIColor(white: 1, alpha: 0)),
-            Attributes.maxTrackTint(UIColor(white: 1, alpha: 0)),
-            Attributes.trackWidth(CGFloat(25)),
+            Attributes.minTrackTint(UIColor.clear.withAlphaComponent(0.01)),
+            Attributes.maxTrackTint(UIColor.clear.withAlphaComponent(0.01)),
+            Attributes.trackWidth(CGFloat(35)),
             Attributes.trackShadowRadius(CGFloat(0)),
             Attributes.trackShadowDepth(CGFloat(0)),
             Attributes.trackMinAngle(CGFloat(-85)),
