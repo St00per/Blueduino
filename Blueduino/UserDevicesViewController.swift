@@ -55,7 +55,7 @@ class UserDevicesViewController: UIViewController {
     
     @IBAction func closeCustomColor(_ sender: UIButton) {
         customColorView.removeFromSuperview()
-        customColorWheel.removeFromSuperview()
+        slider.removeFromSuperview()
         popoverView.isUserInteractionEnabled = true
     }
     
