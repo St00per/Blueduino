@@ -171,13 +171,13 @@ extension UserDevicesViewController: UICollectionViewDataSource, UICollectionVie
         let comparedCellWidth = (cell?.frame.size.width ?? 0)/2
         
         //fast swipe
-        if velocity.x > 1 {
+        if velocity.x > 1, pageControl.currentPage < 2 {
             pageControl.currentPage += 1
             localIndex.row = (localIndex.row) + 1
             self.collectionView.scrollToItem(at: localIndex , at: .left, animated: true )
         }
         
-        if velocity.x < -1 {
+        if velocity.x < -1, pageControl.currentPage > 0 {
             pageControl.currentPage -= 1
             self.collectionView.scrollToItem(at: localIndex, at: .left, animated: true)
         }
@@ -188,12 +188,14 @@ extension UserDevicesViewController: UICollectionViewDataSource, UICollectionVie
             position > comparedCellWidth {
             localIndex.row = (localIndex.row) + 1
             self.collectionView.scrollToItem(at: localIndex , at: .left, animated: true )
+            pageControl.currentPage = localIndex.row
         }
         
         if  velocity.x > -1 ,
             velocity.x < 1,
             position < comparedCellWidth {
             self.collectionView.scrollToItem(at: localIndex , at: .left, animated: true )
+            pageControl.currentPage = localIndex.row
         }
     }
 }
