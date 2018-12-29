@@ -9,6 +9,11 @@
 import UIKit
 import CoreBluetooth
 
+protocol DevicesSearchDelegate {
+    func addDevices(addedDevices: [CBPeripheral])
+    
+}
+
 class LightDeviceCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var deviceName: UILabel!
@@ -31,16 +36,25 @@ class LightDeviceCollectionViewCell: UICollectionViewCell {
     
     @IBAction func addToList(_ sender: UIButton) {
         guard let controller = viewController, let selectedPeripheral = peripheral else { return }
-        controller.addedDevices.append(selectedPeripheral)
+        let appendedDevice = UserDevice()
+        appendedDevice.peripheral = selectedPeripheral
+        
+        UserDevices.default.userDevices.append(appendedDevice)
+        //controller.addedDevices.append(selectedPeripheral)
+        //delegate.addDevices(addedDevices: controller.addedDevices)
         addToListButton.setImage(UIImage(named: "check"), for: .normal)
     }
     
     
     var viewController: DevicesSearchViewController?
     var peripheral: CBPeripheral?
+    //var delegate: DevicesSearchDelegate!
+    
+
     
     func configure(name: String) {
         guard let controller = viewController, let selectedPeripheral = peripheral else { return }
+        
         connectButton.backgroundColor = UIColor(hexString: "#94ed74", alpha: 0.4)
         deviceName.text = name
         if controller.addedDevices.contains(selectedPeripheral) {

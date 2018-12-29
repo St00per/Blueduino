@@ -129,10 +129,10 @@
             </objects>
             <point key="canvasLocation" x="-1135" y="-51"/>
         </scene>
-        <!--Devices Search View Controller-->
+        <!--DevicesSearchViewController-->
         <scene sceneID="hss-a3-p82">
             <objects>
-                <viewController id="Vl2-KF-FjT" customClass="DevicesSearchViewController" customModule="Blueduino" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DevicesSearchViewController" title="DevicesSearchViewController" id="Vl2-KF-FjT" customClass="DevicesSearchViewController" customModule="Blueduino" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5a4-Ox-SW7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -471,7 +471,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.090196078431372548" green="0.12549019607843137" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJB-IC-M8n">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BJB-IC-M8n">
                                 <rect key="frame" x="87" y="304" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -491,11 +491,6 @@
                         </subviews>
                         <color key="backgroundColor" red="0.090196078431372548" green="0.12549019607843137" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="npq-3E-3cp"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="BJB-IC-M8n"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="kdW-5E-4bo" id="BgC-Ls-Vwh"/>

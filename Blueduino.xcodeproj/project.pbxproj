@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0E2556E421D098DB0081A2E4 /* dots-vertical.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E2556E321D098DB0081A2E4 /* dots-vertical.png */; };
 		0E2556E621D099DF0081A2E4 /* ic_search_48px.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E2556E521D099DF0081A2E4 /* ic_search_48px.png */; };
+		0E62465F21D76BE000BC1E90 /* UserDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E62465E21D76BE000BC1E90 /* UserDevice.swift */; };
 		0E8A3D2921C8B62C00EA680D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8A3D2821C8B62C00EA680D /* AppDelegate.swift */; };
 		0E8A3D2B21C8B62C00EA680D /* MultiLightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8A3D2A21C8B62C00EA680D /* MultiLightViewController.swift */; };
 		0E8A3D2E21C8B62C00EA680D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E8A3D2C21C8B62C00EA680D /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		0E2556E321D098DB0081A2E4 /* dots-vertical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dots-vertical.png"; sourceTree = "<group>"; };
 		0E2556E521D099DF0081A2E4 /* ic_search_48px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_search_48px.png; sourceTree = "<group>"; };
+		0E62465E21D76BE000BC1E90 /* UserDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDevice.swift; sourceTree = "<group>"; };
 		0E8A3D2521C8B62C00EA680D /* Blueduino.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blueduino.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E8A3D2821C8B62C00EA680D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E8A3D2A21C8B62C00EA680D /* MultiLightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiLightViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				0EECA49621D4F12400862D4E /* SSAlphaPass */,
 				0EECA46D21D4A72000862D4E /* ColorPicker */,
 				0EB363DA21CBAB8D00492C45 /* UserDevicesViewController.swift */,
+				0E62465E21D76BE000BC1E90 /* UserDevice.swift */,
 				0E8A3D3A21CA3C3C00EA680D /* DevicesSearchViewController.swift */,
 				0EB363DC21CBAF0100492C45 /* UserDeviceCollectionViewCell.swift */,
 				0E8A3D3C21CA3F9000EA680D /* LightDeviceCollectionViewCell.swift */,
@@ -318,6 +321,7 @@
 			files = (
 				0EECA49321D4F11A00862D4E /* SSAlphaPassView.m in Sources */,
 				0EB363DB21CBAB8D00492C45 /* UserDevicesViewController.swift in Sources */,
+				0E62465F21D76BE000BC1E90 /* UserDevice.swift in Sources */,
 				0E8A3D2B21C8B62C00EA680D /* MultiLightViewController.swift in Sources */,
 				0E8A3D3D21CA3F9000EA680D /* LightDeviceCollectionViewCell.swift in Sources */,
 				0EECA48721D4C40700862D4E /* ColorUtils.swift in Sources */,

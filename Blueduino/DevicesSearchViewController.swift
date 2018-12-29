@@ -13,6 +13,7 @@ let multiLightCBUUID = CBUUID(string: "0xFFE0")
 let moduleFunctionConfigurationCBUUID = CBUUID(string: "FFE2")
 
 
+
 class DevicesSearchViewController: UIViewController {
 
     @IBOutlet weak var noDevicesView: UIView!
@@ -22,6 +23,9 @@ class DevicesSearchViewController: UIViewController {
     }
     
     @IBAction func back(_ sender: UIButton) {
+        print (addedDevices.count)
+        
+        //show(UserDevicesViewController, sender: nil)
         performSegue(withIdentifier: "ShowUserDevices", sender: nil)
     }
     
@@ -29,9 +33,11 @@ class DevicesSearchViewController: UIViewController {
     var centralManager: CBCentralManager!
     var multiLightPeripheral: CBPeripheral!
     var multiLightCharacteristic: CBCharacteristic!
+    //var userDevicesController: UserDevicesViewController!
     
     var foundDevices: [CBPeripheral] = []
     var addedDevices: [CBPeripheral] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -153,6 +159,7 @@ extension DevicesSearchViewController: UICollectionViewDataSource, UICollectionV
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LightDeviceCollectionViewCell", for: indexPath) as? LightDeviceCollectionViewCell, let deviceName = foundDevices[indexPath.row].name else {
             return UICollectionViewCell ()
         }
+        //cell.delegate = userDevicesController
         cell.viewController = self
         cell.peripheral = foundDevices[indexPath.row]
         cell.configure(name: deviceName)

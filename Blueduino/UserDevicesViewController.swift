@@ -27,7 +27,13 @@ class UserDevicesViewController: UIViewController {
     
     
     @IBAction func toSearch(_ sender: UIButton) {
-        performSegue(withIdentifier: "ShowSearch", sender: nil)
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let desVC = mainStoryboard.instantiateViewController(withIdentifier: "DevicesSearchViewController") as? DevicesSearchViewController else {
+            return
+        }
+        //desVC.userDevicesController = self
+        show(desVC, sender: nil)
+        //performSegue(withIdentifier: "ShowSearch", sender: nil)
     }
     
     @IBAction func colorSelection(_ sender: UIButton) {
@@ -77,7 +83,7 @@ class UserDevicesViewController: UIViewController {
     }
     
     
-    var userDevices: [CBPeripheral] = []
+    //var userDevices: [UserDevice] = []
     
     let slider = MTCircularSlider(frame: CGRect(x: 27, y: 60, width: 350, height: 350))
     
@@ -88,10 +94,10 @@ class UserDevicesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if userDevices.count != 0 {
+        if UserDevices.default.userDevices.count != 0 {
             noUserDevices.isHidden = true
-            devicesCountLabel.text = "Devices: \(String(userDevices.count))"
-        }
+            devicesCountLabel.text = "Devices: \(String(UserDevices.default.userDevices.count))"
+        } //else { }
     }
     
     func setColor(color: UIColor, pressedButton: UIButton) {
@@ -160,13 +166,13 @@ class UserDevicesViewController: UIViewController {
 extension UserDevicesViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return UserDevices.default.userDevices.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserDeviceCollectionViewCell", for: indexPath) as? UserDeviceCollectionViewCell else { return UICollectionViewCell() }
         cell.deviceColor = selectedColor
-        cell.configure(name: "DeviceName", color: selectedColor)
+        cell.configure(name: UserDevices.default.userDevices[indexPath.row].peripheral?.name ?? "Unnamed", color: UserDevices.default.userDevices[indexPath.row].color)
         return cell
     }
     
@@ -240,4 +246,15 @@ extension UserDevicesViewController: GradientRingDelegate {
     }
 }
 
-
+//extension UserDevicesViewController: DevicesSearchDelegate {
+//    
+//    func addDevices(addedDevices: [CBPeripheral]) {
+//        
+//        for device in addedDevices {
+//            let userDevice = UserDevice()
+//            userDevice.peripheral = device
+//            UserDevices.default.userDevices.append(userDevice)
+//            collectionView.reloadData()
+//        }
+//    }
+//}
