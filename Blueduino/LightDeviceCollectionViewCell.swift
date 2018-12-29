@@ -39,8 +39,6 @@ class LightDeviceCollectionViewCell: UICollectionViewCell {
     var viewController: DevicesSearchViewController?
     var peripheral: CBPeripheral?
     
-    
-    
     func configure(name: String) {
         guard let controller = viewController, let selectedPeripheral = peripheral else { return }
         connectButton.backgroundColor = UIColor(hexString: "#94ed74", alpha: 0.4)

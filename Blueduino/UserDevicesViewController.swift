@@ -70,9 +70,9 @@ class UserDevicesViewController: UIViewController {
     let slider = MTCircularSlider(frame: CGRect(x: 27, y: 60, width: 350, height: 350))
     
     let colorPicker = SwiftHSVColorPicker(frame: CGRect(x: -10, y: -10, width: 350, height: 350))
-    let checkMark = UIImageView.self
     var selectedColor = UIColor.lightGray
     var selectedCustomColor: UIColor?
+    let checkImage = UIImage(named: "check")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,12 +83,23 @@ class UserDevicesViewController: UIViewController {
     }
     
     func setColor(color: UIColor, pressedButton: UIButton) {
-//        selectedColor = color
-        checkMark(frame: CGRect(pressedButton.frame))
-//        popoverView.removeFromSuperview()
-//        collectionView.isUserInteractionEnabled = true
-//        userDeviceView.alpha = 1
-//        collectionView.reloadData()
+        
+        if pressedButton.image(for: UIControl.State.normal) != nil {
+            pressedButton.setImage(nil, for: .normal)
+            popoverView.removeFromSuperview()
+            collectionView.isUserInteractionEnabled = true
+            userDeviceView.alpha = 1
+            collectionView.reloadData()
+            selectedColor = UIColor.lightGray
+        } else {
+            selectedColor = color
+            
+            pressedButton.setImage(checkImage, for: .normal)
+            popoverView.removeFromSuperview()
+            collectionView.isUserInteractionEnabled = true
+            userDeviceView.alpha = 1
+            collectionView.reloadData()
+        }
     }
     
     func сircleSliderConfigure()  {
@@ -146,6 +157,7 @@ extension UserDevicesViewController: UICollectionViewDataSource, UICollectionVie
         cell.configure(name: "DeviceName", color: selectedColor)
         return cell
     }
+    
     
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
@@ -213,3 +225,5 @@ extension UserDevicesViewController: GradientRingDelegate {
         gradientRing.tintColor = color
     }
 }
+
+
