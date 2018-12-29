@@ -65,6 +65,18 @@ class UserDevicesViewController: UIViewController {
     }
     
     
+    @IBAction func customColorDone(_ sender: UIButton) {
+        selectedColor = colorPicker.color
+        customColorView.removeFromSuperview()
+        slider.removeFromSuperview()
+        popoverView.removeFromSuperview()
+        userDeviceView.alpha = 1
+        popoverView.isUserInteractionEnabled = true
+        collectionView.isUserInteractionEnabled = true
+        collectionView.reloadData()
+    }
+    
+    
     var userDevices: [CBPeripheral] = []
     
     let slider = MTCircularSlider(frame: CGRect(x: 27, y: 60, width: 350, height: 350))

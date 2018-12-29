@@ -726,6 +726,9 @@
                             <state key="normal" title="DONE">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="customColorDone:" destination="qmY-Vx-yP5" eventType="touchUpInside" id="O89-Aj-wRx"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1h-uQ-21f">
                             <rect key="frame" x="44" y="419" width="66" height="33"/>
