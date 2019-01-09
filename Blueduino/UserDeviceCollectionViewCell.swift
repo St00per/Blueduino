@@ -53,7 +53,7 @@ class UserDeviceCollectionViewCell: UICollectionViewCell {
     
     func configure(name: String, color: UIColor) {
         connectButton.backgroundColor = UIColor(hexString: "#94ed74", alpha: 0.4)
-        pickColorButton.backgroundColor = deviceColor//color
+        pickColorButton.backgroundColor = color
         deviceName.text = name
     }
 }

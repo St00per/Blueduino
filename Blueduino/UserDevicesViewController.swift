@@ -100,7 +100,7 @@ class UserDevicesViewController: UIViewController {
             noUserDevices.isHidden = true
             devicesCountLabel.text = "Devices: \(String(UserDevices.default.userDevices.count))"
             pageControl.numberOfPages = UserDevices.default.userDevices.count
-        } //else { }
+        }
     }
     
     func setColor(color: UIColor, pressedButton: UIButton) {
@@ -113,8 +113,8 @@ class UserDevicesViewController: UIViewController {
             collectionView.reloadData()
             selectedColor = UIColor.lightGray
         } else {
-            selectedColor = color
-            
+            UserDevices.default.userDevices[0].color = color
+            //selectedColor = color
             pressedButton.setImage(checkImage, for: .normal)
             popoverView.removeFromSuperview()
             collectionView.isUserInteractionEnabled = true
@@ -174,7 +174,7 @@ extension UserDevicesViewController: UICollectionViewDataSource, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserDeviceCollectionViewCell", for: indexPath) as? UserDeviceCollectionViewCell else { return UICollectionViewCell() }
-        cell.deviceColor = selectedColor
+        //cell.deviceColor = selectedColor
         cell.configure(name: UserDevices.default.userDevices[indexPath.row].peripheral?.name ?? "Unnamed",
                        color: UserDevices.default.userDevices[indexPath.row].color)
         return cell
