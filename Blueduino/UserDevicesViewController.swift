@@ -33,7 +33,7 @@ class UserDevicesViewController: UIViewController {
         }
         //desVC.userDevicesController = self
         show(desVC, sender: nil)
-        //performSegue(withIdentifier: "ShowSearch", sender: nil)
+        
     }
     
     @IBAction func colorSelection(_ sender: UIButton) {
@@ -94,9 +94,12 @@ class UserDevicesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        devicesCountLabel.text = "Devices: 0"
+        pageControl.numberOfPages = 0
         if UserDevices.default.userDevices.count != 0 {
             noUserDevices.isHidden = true
             devicesCountLabel.text = "Devices: \(String(UserDevices.default.userDevices.count))"
+            pageControl.numberOfPages = UserDevices.default.userDevices.count
         } //else { }
     }
     
@@ -172,7 +175,8 @@ extension UserDevicesViewController: UICollectionViewDataSource, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserDeviceCollectionViewCell", for: indexPath) as? UserDeviceCollectionViewCell else { return UICollectionViewCell() }
         cell.deviceColor = selectedColor
-        cell.configure(name: UserDevices.default.userDevices[indexPath.row].peripheral?.name ?? "Unnamed", color: UserDevices.default.userDevices[indexPath.row].color)
+        cell.configure(name: UserDevices.default.userDevices[indexPath.row].peripheral?.name ?? "Unnamed",
+                       color: UserDevices.default.userDevices[indexPath.row].color)
         return cell
     }
     

@@ -11,7 +11,8 @@ import CoreBluetooth
 
 class UserDeviceCollectionViewCell: UICollectionViewCell {
     
-    var device: CBPeripheral?
+    var viewController: DevicesSearchViewController?
+    var peripheral: CBPeripheral?
     var deviceColor = UIColor.white
     
     @IBOutlet weak var deviceName: UILabel!
@@ -20,9 +21,6 @@ class UserDeviceCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var switchView: UIView!
     
-    
-    var viewController: DevicesSearchViewController?
-    var peripheral: CBPeripheral?
     
     @IBAction func connect(_ sender: UIButton) {
         guard let controller = viewController, let selectedPeripheral = peripheral else { return }
@@ -55,7 +53,7 @@ class UserDeviceCollectionViewCell: UICollectionViewCell {
     
     func configure(name: String, color: UIColor) {
         connectButton.backgroundColor = UIColor(hexString: "#94ed74", alpha: 0.4)
-        pickColorButton.backgroundColor = color
+        pickColorButton.backgroundColor = deviceColor//color
         deviceName.text = name
     }
 }

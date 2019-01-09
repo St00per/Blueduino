@@ -20,6 +20,6 @@ class UserDevice {
     
     var peripheral: CBPeripheral? = nil
     
-    var color = UIColor.white
+    var color = UIColor.lightGray
     
 }

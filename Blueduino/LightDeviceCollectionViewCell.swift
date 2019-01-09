@@ -16,6 +16,9 @@ protocol DevicesSearchDelegate {
 
 class LightDeviceCollectionViewCell: UICollectionViewCell {
     
+    var viewController: DevicesSearchViewController?
+    var peripheral: CBPeripheral?
+    
     @IBOutlet weak var deviceName: UILabel!
     
     @IBOutlet weak var connectButton: UIButton!
@@ -40,17 +43,9 @@ class LightDeviceCollectionViewCell: UICollectionViewCell {
         appendedDevice.peripheral = selectedPeripheral
         
         UserDevices.default.userDevices.append(appendedDevice)
-        //controller.addedDevices.append(selectedPeripheral)
-        //delegate.addDevices(addedDevices: controller.addedDevices)
+        
         addToListButton.setImage(UIImage(named: "check"), for: .normal)
     }
-    
-    
-    var viewController: DevicesSearchViewController?
-    var peripheral: CBPeripheral?
-    //var delegate: DevicesSearchDelegate!
-    
-
     
     func configure(name: String) {
         guard let controller = viewController, let selectedPeripheral = peripheral else { return }

@@ -23,7 +23,7 @@ class DevicesSearchViewController: UIViewController {
     }
     
     @IBAction func back(_ sender: UIButton) {
-        print (addedDevices.count)
+        print (UserDevices.default.userDevices.count)
         
         //show(UserDevicesViewController, sender: nil)
         performSegue(withIdentifier: "ShowUserDevices", sender: nil)
