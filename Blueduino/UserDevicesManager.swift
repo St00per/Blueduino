@@ -9,9 +9,9 @@
 import Foundation
 import CoreBluetooth
 
-class UserDevices {
+class UserDevicesManager {
     
-    public static let `default` = UserDevices()
+    public static let `default` = UserDevicesManager()
     
     var userDevices: [UserDevice] = []
 }

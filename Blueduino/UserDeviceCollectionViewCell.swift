@@ -23,7 +23,7 @@ class UserDeviceCollectionViewCell: UICollectionViewCell {
     
     
     @IBAction func connect(_ sender: UIButton) {
-        guard let controller = viewController, let selectedPeripheral = peripheral else { return }
+        guard let selectedPeripheral = peripheral else { return }
         if connectButton.titleLabel?.text == "DISCONNECT" {
             CentralBluetoothManager.default.disconnect(peripheral: selectedPeripheral)
             connectButton.setTitle("CONNECT", for: .normal)

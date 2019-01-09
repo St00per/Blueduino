@@ -25,7 +25,7 @@ class LightDeviceCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var addToListButton: UIButton!
     
     @IBAction func connect(_ sender: UIButton) {
-        guard let controller = viewController, let selectedPeripheral = peripheral else { return }
+        guard let selectedPeripheral = peripheral else { return }
         if connectButton.titleLabel?.text == "DISCONNECT" {
             CentralBluetoothManager.default.disconnect(peripheral: selectedPeripheral)
             connectButton.setTitle("CONNECT", for: .normal)
@@ -38,18 +38,17 @@ class LightDeviceCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func addToList(_ sender: UIButton) {
-        guard let controller = viewController, let selectedPeripheral = peripheral else { return }
+        guard  let selectedPeripheral = peripheral else { return }
         let appendedDevice = UserDevice()
         appendedDevice.peripheral = selectedPeripheral
         
-        UserDevices.default.userDevices.append(appendedDevice)
+        UserDevicesManager.default.userDevices.append(appendedDevice)
         
         addToListButton.setImage(UIImage(named: "check"), for: .normal)
     }
     
     func configure(name: String) {
-        guard let controller = viewController, let selectedPeripheral = peripheral else { return }
-        
+
         connectButton.backgroundColor = UIColor(hexString: "#94ed74", alpha: 0.4)
         deviceName.text = name
 //        if UserDevices.default.userDevices.contains(selectedPeripheral) {

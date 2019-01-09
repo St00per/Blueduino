@@ -93,10 +93,10 @@ class UserDevicesViewController: UIViewController {
         super.viewDidLoad()
         devicesCountLabel.text = "Devices: 0"
         pageControl.numberOfPages = 0
-        if UserDevices.default.userDevices.count != 0 {
+        if UserDevicesManager.default.userDevices.count != 0 {
             noUserDevices.isHidden = true
-            devicesCountLabel.text = "Devices: \(String(UserDevices.default.userDevices.count))"
-            pageControl.numberOfPages = UserDevices.default.userDevices.count
+            devicesCountLabel.text = "Devices: \(String(UserDevicesManager.default.userDevices.count))"
+            pageControl.numberOfPages = UserDevicesManager.default.userDevices.count
         }
     }
     
@@ -112,7 +112,7 @@ class UserDevicesViewController: UIViewController {
         } else {
             //print ("CURRENT PAGE IS - \(pageControl.currentPage)")
             
-            UserDevices.default.userDevices[pageControl.currentPage].color = color
+            UserDevicesManager.default.userDevices[pageControl.currentPage].color = color
             
             pressedButton.setImage(checkImage, for: .normal)
             popoverView.removeFromSuperview()
@@ -168,14 +168,14 @@ class UserDevicesViewController: UIViewController {
 extension UserDevicesViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return UserDevices.default.userDevices.count
+        return UserDevicesManager.default.userDevices.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserDeviceCollectionViewCell", for: indexPath) as? UserDeviceCollectionViewCell else { return UICollectionViewCell() }
-        
-        cell.configure(name: UserDevices.default.userDevices[indexPath.row].peripheral?.name ?? "Unnamed",
-                       color: UserDevices.default.userDevices[indexPath.row].color)
+        cell.peripheral = UserDevicesManager.default.userDevices[indexPath.row].peripheral
+        cell.configure(name: UserDevicesManager.default.userDevices[indexPath.row].peripheral?.name ?? "Unnamed",
+                       color: UserDevicesManager.default.userDevices[indexPath.row].color)
         return cell
     }
     

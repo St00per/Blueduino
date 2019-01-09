@@ -20,31 +20,27 @@ class DevicesSearchViewController: UIViewController {
     
     @IBAction func scanForDevices(_ sender: UIButton) {
         CentralBluetoothManager.default.centralManager.scanForPeripherals(withServices: [multiLightCBUUID])
-        collectionView.reloadData()
+        if CentralBluetoothManager.default.foundDevices.count != 0 {
+            noDevicesView.isHidden = true
+            collectionView.reloadData()
+        }
     }
     
     @IBAction func back(_ sender: UIButton) {
-        print (UserDevices.default.userDevices.count)
-        
-        //show(UserDevicesViewController, sender: nil)
         performSegue(withIdentifier: "ShowUserDevices", sender: nil)
     }
     
     
     
-    var multiLightPeripheral: CBPeripheral!
-    var multiLightCharacteristic: CBCharacteristic!
-    //var userDevicesController: UserDevicesViewController!
-    
-    //var foundDevices: [CBPeripheral] = []
-    //var addedDevices: [CBPeripheral] = []
+//    var multiLightPeripheral: CBPeripheral!
+//    var multiLightCharacteristic: CBCharacteristic!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        noDevicesView.isHidden = true
-        CentralBluetoothManager.default.centralManager.scanForPeripherals(withServices: [multiLightCBUUID])
-        collectionView.reloadData()
+//        noDevicesView.isHidden = true
+//        CentralBluetoothManager.default.centralManager.scanForPeripherals(withServices: [multiLightCBUUID])
+//        collectionView.reloadData()
     }
     
 }
