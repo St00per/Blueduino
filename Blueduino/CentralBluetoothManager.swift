@@ -18,6 +18,7 @@ class CentralBluetoothManager: NSObject {
     
     var centralManager: CBCentralManager!
     var foundDevices: [CBPeripheral] = []
+    var multiLightCharacteristic: CBCharacteristic!
     
     override init() {
         super.init()
@@ -67,7 +68,7 @@ extension CentralBluetoothManager: CBCentralManagerDelegate {
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         print("Connected!")
-        //multiLightPeripheral.discoverServices(nil)
+        peripheral.discoverServices(nil)
     }
     
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
@@ -77,7 +78,7 @@ extension CentralBluetoothManager: CBCentralManagerDelegate {
     func connect(peripheral: CBPeripheral) {
         centralManager.stopScan()
 //        multiLightPeripheral = peripheral
-//        multiLightPeripheral.delegate = self
+        peripheral.delegate = self
         centralManager.connect(peripheral)
     }
     
@@ -93,37 +94,37 @@ extension CentralBluetoothManager: CBPeripheralDelegate {
         
         for service in services {
             print(service)
-            //peripheral.discoverCharacteristics(nil, for: service)
+            peripheral.discoverCharacteristics(nil, for: service)
         }
     }
     
     
     
-    //    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService,
-    //                    error: Error?) {
-    //        guard let characteristics = service.characteristics else { return }
-    //
-    //        for characteristic in characteristics {
-    //            print(characteristic)
-    //
-    //            if characteristic.properties.contains(.write) {
-    //                print("\(characteristic.uuid): properties contains .write")
-    //                if characteristic.uuid == moduleFunctionConfigurationCBUUID {
-    //                    multiLightCharacteristic = characteristic
-    //                    peripheral.writeValue(OnOff(), for: characteristic, type: CBCharacteristicWriteType.withResponse)
-    //                    peripheral.writeValue(frequency1000(), for: characteristic, type: CBCharacteristicWriteType.withResponse)
-    //                    print ("Characteristic FFE2 is found! READY TO WRITE...")
-    //                }
-    //            }
-    //        }
-    //    }
-    //
-    //
-    //    func peripheral(_ peripheral: CBPeripheral, didWriteValueFor characteristic: CBCharacteristic, error: Error?) {
-    //        guard error == nil else {
-    //            print("Error discovering services: error")
-    //            return
-    //        }
-    //        print("Message sent")
-    //    }
+        func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService,
+                        error: Error?) {
+            guard let characteristics = service.characteristics else { return }
+    
+            for characteristic in characteristics {
+                print(characteristic)
+    
+                if characteristic.properties.contains(.write) {
+                    print("\(characteristic.uuid): properties contains .write")
+                    if characteristic.uuid == moduleFunctionConfigurationCBUUID {
+                        CentralBluetoothManager.default.multiLightCharacteristic = characteristic
+//                        peripheral.writeValue(OnOff(), for: characteristic, type: CBCharacteristicWriteType.withResponse)
+//                        peripheral.writeValue(frequency1000(), for: characteristic, type: CBCharacteristicWriteType.withResponse)
+//                        print ("Characteristic FFE2 is found! READY TO WRITE...")
+                    }
+                }
+            }
+        }
+    
+    
+        func peripheral(_ peripheral: CBPeripheral, didWriteValueFor characteristic: CBCharacteristic, error: Error?) {
+            guard error == nil else {
+                print("Error discovering services: error")
+                return
+            }
+            print("Message sent")
+        }
 }

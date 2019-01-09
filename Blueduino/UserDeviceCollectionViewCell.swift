@@ -11,8 +11,9 @@ import CoreBluetooth
 
 class UserDeviceCollectionViewCell: UICollectionViewCell {
     
-    var viewController: DevicesSearchViewController?
-    var peripheral: CBPeripheral?
+    var viewController: UserDevicesViewController?
+    var peripheral: CBPeripheral!
+    var peripheralCharacteristic: CBCharacteristic!
     var deviceColor = UIColor.white
     
     @IBOutlet weak var deviceName: UILabel!
@@ -22,12 +23,29 @@ class UserDeviceCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var switchView: UIView!
     
     
+    @IBAction func ledOn(_ sender: UIButton) {
+        peripheralCharacteristic = CentralBluetoothManager.default.multiLightCharacteristic
+        peripheral.writeValue(OnOff(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+        peripheral.writeValue(frequency1000(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+        peripheral.writeValue(lightsOn(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+        
+    }
+    
+    @IBAction func ledOff(_ sender: UIButton) {
+        peripheralCharacteristic = CentralBluetoothManager.default.multiLightCharacteristic
+        peripheral.writeValue(OnOff(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+        peripheral.writeValue(frequency1000(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+        peripheral.writeValue(lightsOff(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+    }
+    
+    
     @IBAction func connect(_ sender: UIButton) {
         guard let selectedPeripheral = peripheral else { return }
         if connectButton.titleLabel?.text == "DISCONNECT" {
             CentralBluetoothManager.default.disconnect(peripheral: selectedPeripheral)
             connectButton.setTitle("CONNECT", for: .normal)
             connectButton.backgroundColor = UIColor(hexString: "#94ed74", alpha: 0.4)
+            
         } else {
             CentralBluetoothManager.default.connect(peripheral: selectedPeripheral)
             connectButton.backgroundColor = UIColor(hexString: "#CC4242", alpha: 0.6)
@@ -49,6 +67,50 @@ class UserDeviceCollectionViewCell: UICollectionViewCell {
         customSwitch.animationDuration = 0.25
         
         switchView.addSubview(customSwitch)
+    }
+    
+    func OnOff() -> Data {
+        
+        var dataToWrite = Data()
+        dataToWrite.append(0xE8)
+        dataToWrite.append(0xA1)
+        dataToWrite.append(0x02)
+        
+        return dataToWrite
+    }
+    
+    func lightsOn() -> Data {
+        
+        var dataToWrite = Data()
+        
+        dataToWrite.append(0xE8)
+        dataToWrite.append(0xA6)
+        dataToWrite.append(0x00)
+        
+        return dataToWrite
+    }
+    
+    func lightsOff() -> Data {
+        
+        var dataToWrite = Data()
+        
+        dataToWrite.append(0xE8)
+        dataToWrite.append(0xA6)
+        dataToWrite.append(0xFF)
+        
+        return dataToWrite
+    }
+    
+    func frequency1000() -> Data {
+        
+        var dataToWrite = Data()
+        
+        dataToWrite.append(0xE8)
+        dataToWrite.append(0xA2)
+        dataToWrite.append(0x03)
+        dataToWrite.append(0xE8)
+        
+        return dataToWrite
     }
     
     func configure(name: String, color: UIColor) {

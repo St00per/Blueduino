@@ -78,7 +78,9 @@ class UserDevicesViewController: UIViewController {
     
     
     @IBAction func customColorDone(_ sender: UIButton) {
-        selectedColor = colorPicker.color
+        
+        
+        sendColorToDevice()
         customColorView.removeFromSuperview()
         slider.removeFromSuperview()
         popoverView.removeFromSuperview()
@@ -100,6 +102,72 @@ class UserDevicesViewController: UIViewController {
         }
     }
     
+    
+    struct ColorToSet {
+        
+        var redColor: UInt8?
+        var greenColor: UInt8?
+        var blueColor: UInt8?
+        var alpha: UInt8?
+       
+    }
+    
+    func colorToHex(color: UIColor) -> ColorToSet {
+        var sendedColor = ColorToSet()
+        sendedColor.redColor = UInt8(color.redValue * 255)
+        sendedColor.greenColor = UInt8(color.greenValue * 255)
+        sendedColor.blueColor = UInt8(color.blueValue * 255)
+        sendedColor.alpha = UInt8(color.alphaValue * 255)
+        return sendedColor
+    }
+    
+    func colorCommand(colorValue: UInt8) -> Data {
+        
+        var dataToWrite = Data()
+        dataToWrite.append(0xE8)
+        dataToWrite.append(0xA6)
+        dataToWrite.append(colorValue)
+        
+        return dataToWrite
+    }
+    
+    func sendColorToDevice() {
+        UserDevicesManager.default.userDevices[pageControl.currentPage].color = colorPicker.color
+        guard let peripheral = UserDevicesManager.default.userDevices[pageControl.currentPage].peripheral,
+            let peripheralCharacteristic = CentralBluetoothManager.default.multiLightCharacteristic else { return }
+        peripheral.writeValue(OnOff(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+        peripheral.writeValue(frequency1000(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+        
+        let sendedColor = colorToHex(color: colorPicker.color)
+        
+        peripheral.writeValue(colorCommand(colorValue: sendedColor.blueColor ?? 0), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+        peripheral.writeValue(colorCommand(colorValue: sendedColor.greenColor ?? 0), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+        peripheral.writeValue(colorCommand(colorValue: sendedColor.redColor ?? 0), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+//        peripheral.writeValue(colorCommand(colorValue: sendedColor.alpha ?? 0), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+    }
+    
+    func OnOff() -> Data {
+        
+        var dataToWrite = Data()
+        dataToWrite.append(0xE8)
+        dataToWrite.append(0xA1)
+        dataToWrite.append(0x02)
+        
+        return dataToWrite
+    }
+    
+    func frequency1000() -> Data {
+        
+        var dataToWrite = Data()
+        
+        dataToWrite.append(0xE8)
+        dataToWrite.append(0xA2)
+        dataToWrite.append(0x03)
+        dataToWrite.append(0xE8)
+        
+        return dataToWrite
+    }
+    
     func setColor(color: UIColor, pressedButton: UIButton) {
         
         if pressedButton.image(for: UIControl.State.normal) != nil {
@@ -110,8 +178,7 @@ class UserDevicesViewController: UIViewController {
             collectionView.reloadData()
             selectedColor = UIColor.lightGray
         } else {
-            //print ("CURRENT PAGE IS - \(pageControl.currentPage)")
-            
+        
             UserDevicesManager.default.userDevices[pageControl.currentPage].color = color
             
             pressedButton.setImage(checkImage, for: .normal)
@@ -174,6 +241,7 @@ extension UserDevicesViewController: UICollectionViewDataSource, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserDeviceCollectionViewCell", for: indexPath) as? UserDeviceCollectionViewCell else { return UICollectionViewCell() }
         cell.peripheral = UserDevicesManager.default.userDevices[indexPath.row].peripheral
+        cell.peripheralCharacteristic = CentralBluetoothManager.default.multiLightCharacteristic
         cell.configure(name: UserDevicesManager.default.userDevices[indexPath.row].peripheral?.name ?? "Unnamed",
                        color: UserDevicesManager.default.userDevices[indexPath.row].color)
         return cell
@@ -249,15 +317,4 @@ extension UserDevicesViewController: GradientRingDelegate {
     }
 }
 
-//extension UserDevicesViewController: DevicesSearchDelegate {
-//    
-//    func addDevices(addedDevices: [CBPeripheral]) {
-//        
-//        for device in addedDevices {
-//            let userDevice = UserDevice()
-//            userDevice.peripheral = device
-//            UserDevices.default.userDevices.append(userDevice)
-//            collectionView.reloadData()
-//        }
-//    }
-//}
+
