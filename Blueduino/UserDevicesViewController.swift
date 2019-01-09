@@ -11,6 +11,12 @@ import CoreBluetooth
 
 class UserDevicesViewController: UIViewController {
     
+    let slider = MTCircularSlider(frame: CGRect(x: 27, y: 60, width: 350, height: 350))
+    
+    let colorPicker = SwiftHSVColorPicker(frame: CGRect(x: -10, y: -10, width: 350, height: 350))
+    var selectedColor = UIColor.lightGray
+    var selectedCustomColor: UIColor?
+    let checkImage = UIImage(named: "check")
     
     @IBOutlet var popoverView: UIView!
     @IBOutlet weak var customColorButton: UIButton!
@@ -83,15 +89,6 @@ class UserDevicesViewController: UIViewController {
     }
     
     
-    //var userDevices: [UserDevice] = []
-    
-    let slider = MTCircularSlider(frame: CGRect(x: 27, y: 60, width: 350, height: 350))
-    
-    let colorPicker = SwiftHSVColorPicker(frame: CGRect(x: -10, y: -10, width: 350, height: 350))
-    var selectedColor = UIColor.lightGray
-    var selectedCustomColor: UIColor?
-    let checkImage = UIImage(named: "check")
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         devicesCountLabel.text = "Devices: 0"
@@ -113,8 +110,10 @@ class UserDevicesViewController: UIViewController {
             collectionView.reloadData()
             selectedColor = UIColor.lightGray
         } else {
-            UserDevices.default.userDevices[0].color = color
-            //selectedColor = color
+            //print ("CURRENT PAGE IS - \(pageControl.currentPage)")
+            
+            UserDevices.default.userDevices[pageControl.currentPage].color = color
+            
             pressedButton.setImage(checkImage, for: .normal)
             popoverView.removeFromSuperview()
             collectionView.isUserInteractionEnabled = true
@@ -174,7 +173,7 @@ extension UserDevicesViewController: UICollectionViewDataSource, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserDeviceCollectionViewCell", for: indexPath) as? UserDeviceCollectionViewCell else { return UICollectionViewCell() }
-        //cell.deviceColor = selectedColor
+        
         cell.configure(name: UserDevices.default.userDevices[indexPath.row].peripheral?.name ?? "Unnamed",
                        color: UserDevices.default.userDevices[indexPath.row].color)
         return cell

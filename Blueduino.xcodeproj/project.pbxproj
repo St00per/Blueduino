@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0E2556E421D098DB0081A2E4 /* dots-vertical.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E2556E321D098DB0081A2E4 /* dots-vertical.png */; };
 		0E2556E621D099DF0081A2E4 /* ic_search_48px.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E2556E521D099DF0081A2E4 /* ic_search_48px.png */; };
-		0E62465F21D76BE000BC1E90 /* UserDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E62465E21D76BE000BC1E90 /* UserDevice.swift */; };
+		0E62465F21D76BE000BC1E90 /* UserDevices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E62465E21D76BE000BC1E90 /* UserDevices.swift */; };
 		0E8A3D2921C8B62C00EA680D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8A3D2821C8B62C00EA680D /* AppDelegate.swift */; };
 		0E8A3D2B21C8B62C00EA680D /* MultiLightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8A3D2A21C8B62C00EA680D /* MultiLightViewController.swift */; };
 		0E8A3D2E21C8B62C00EA680D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E8A3D2C21C8B62C00EA680D /* Main.storyboard */; };
@@ -19,6 +19,7 @@
 		0E8A3D3D21CA3F9000EA680D /* LightDeviceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8A3D3C21CA3F9000EA680D /* LightDeviceCollectionViewCell.swift */; };
 		0E8A3D4521CA482A00EA680D /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E8A3D4021CA482900EA680D /* check.png */; };
 		0E8A3D4721CA482A00EA680D /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E8A3D4221CA482900EA680D /* plus.png */; };
+		0EA7A73C21E5C78C005B56D3 /* CentralBluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA7A73B21E5C78C005B56D3 /* CentralBluetoothManager.swift */; };
 		0EB363CF21CA5BCE00492C45 /* white35x35plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ED1149821CA58C3007ABC8B /* white35x35plus.png */; };
 		0EB363D721CB91CE00492C45 /* ic_cached_48px.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EB363D621CB91CE00492C45 /* ic_cached_48px.png */; };
 		0EB363D921CB9A1500492C45 /* ic_network_cell_48px.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EB363D821CB9A1500492C45 /* ic_network_cell_48px.png */; };
@@ -47,7 +48,7 @@
 /* Begin PBXFileReference section */
 		0E2556E321D098DB0081A2E4 /* dots-vertical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dots-vertical.png"; sourceTree = "<group>"; };
 		0E2556E521D099DF0081A2E4 /* ic_search_48px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_search_48px.png; sourceTree = "<group>"; };
-		0E62465E21D76BE000BC1E90 /* UserDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDevice.swift; sourceTree = "<group>"; };
+		0E62465E21D76BE000BC1E90 /* UserDevices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDevices.swift; sourceTree = "<group>"; };
 		0E8A3D2521C8B62C00EA680D /* Blueduino.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blueduino.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E8A3D2821C8B62C00EA680D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E8A3D2A21C8B62C00EA680D /* MultiLightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiLightViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +60,7 @@
 		0E8A3D3C21CA3F9000EA680D /* LightDeviceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightDeviceCollectionViewCell.swift; sourceTree = "<group>"; };
 		0E8A3D4021CA482900EA680D /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
 		0E8A3D4221CA482900EA680D /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
+		0EA7A73B21E5C78C005B56D3 /* CentralBluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralBluetoothManager.swift; sourceTree = "<group>"; };
 		0EB363D621CB91CE00492C45 /* ic_cached_48px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_cached_48px.png; path = "../../../Downloads/Top Bars 2/ic_cached_48px.png"; sourceTree = "<group>"; };
 		0EB363D821CB9A1500492C45 /* ic_network_cell_48px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_network_cell_48px.png; sourceTree = "<group>"; };
 		0EB363DA21CBAB8D00492C45 /* UserDevicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDevicesViewController.swift; sourceTree = "<group>"; };
@@ -126,7 +128,8 @@
 				0EECA49621D4F12400862D4E /* SSAlphaPass */,
 				0EECA46D21D4A72000862D4E /* ColorPicker */,
 				0EB363DA21CBAB8D00492C45 /* UserDevicesViewController.swift */,
-				0E62465E21D76BE000BC1E90 /* UserDevice.swift */,
+				0E62465E21D76BE000BC1E90 /* UserDevices.swift */,
+				0EA7A73B21E5C78C005B56D3 /* CentralBluetoothManager.swift */,
 				0E8A3D3A21CA3C3C00EA680D /* DevicesSearchViewController.swift */,
 				0EB363DC21CBAF0100492C45 /* UserDeviceCollectionViewCell.swift */,
 				0E8A3D3C21CA3F9000EA680D /* LightDeviceCollectionViewCell.swift */,
@@ -321,7 +324,7 @@
 			files = (
 				0EECA49321D4F11A00862D4E /* SSAlphaPassView.m in Sources */,
 				0EB363DB21CBAB8D00492C45 /* UserDevicesViewController.swift in Sources */,
-				0E62465F21D76BE000BC1E90 /* UserDevice.swift in Sources */,
+				0E62465F21D76BE000BC1E90 /* UserDevices.swift in Sources */,
 				0E8A3D2B21C8B62C00EA680D /* MultiLightViewController.swift in Sources */,
 				0E8A3D3D21CA3F9000EA680D /* LightDeviceCollectionViewCell.swift in Sources */,
 				0EECA48721D4C40700862D4E /* ColorUtils.swift in Sources */,
@@ -330,6 +333,7 @@
 				0EB363E521CCF8EC00492C45 /* CustomSwitch.swift in Sources */,
 				0EECA48121D4C3F300862D4E /* MTCircularSlider.swift in Sources */,
 				0E8A3D3B21CA3C3C00EA680D /* DevicesSearchViewController.swift in Sources */,
+				0EA7A73C21E5C78C005B56D3 /* CentralBluetoothManager.swift in Sources */,
 				0EB363E721CCF96700492C45 /* CustomThumbView.swift in Sources */,
 				0EECA49421D4F11A00862D4E /* SSAlphaPass.m in Sources */,
 				0E8A3D2921C8B62C00EA680D /* AppDelegate.swift in Sources */,
