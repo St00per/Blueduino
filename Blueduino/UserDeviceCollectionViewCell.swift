@@ -28,8 +28,9 @@ class UserDeviceCollectionViewCell: UICollectionViewCell {
         peripheralCharacteristic = CentralBluetoothManager.default.multiLightCharacteristic
         peripheral.writeValue(OnOff(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
         peripheral.writeValue(frequency1000(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
-        peripheral.writeValue(lightsOn(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
-        
+        peripheral.writeValue(lightsGreenOn(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+        peripheral.writeValue(lightsRedOn(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+        peripheral.writeValue(lightsBlueOn(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
     }
     
     @IBAction func ledOff(_ sender: UIButton) {
@@ -37,7 +38,9 @@ class UserDeviceCollectionViewCell: UICollectionViewCell {
         peripheralCharacteristic = CentralBluetoothManager.default.multiLightCharacteristic
         peripheral.writeValue(OnOff(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
         peripheral.writeValue(frequency1000(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
-        peripheral.writeValue(lightsOff(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+        peripheral.writeValue(lightsGreenOff(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+        peripheral.writeValue(lightsRedOff(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+        peripheral.writeValue(lightsBlueOff(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
     }
     
     
@@ -81,7 +84,7 @@ class UserDeviceCollectionViewCell: UICollectionViewCell {
         return dataToWrite
     }
     
-    func lightsOn() -> Data {
+    func lightsGreenOn() -> Data {
         
         var dataToWrite = Data()
         
@@ -92,7 +95,51 @@ class UserDeviceCollectionViewCell: UICollectionViewCell {
         return dataToWrite
     }
     
-    func lightsOff() -> Data {
+    func lightsRedOn() -> Data {
+        
+        var dataToWrite = Data()
+        
+        dataToWrite.append(0xE8)
+        dataToWrite.append(0xA5)
+        dataToWrite.append(0x00)
+        
+        return dataToWrite
+    }
+    
+    func lightsBlueOn() -> Data {
+        
+        var dataToWrite = Data()
+        
+        dataToWrite.append(0xE8)
+        dataToWrite.append(0xA4)
+        dataToWrite.append(0x00)
+        
+        return dataToWrite
+    }
+    
+    func lightsBlueOff() -> Data {
+        
+        var dataToWrite = Data()
+        
+        dataToWrite.append(0xE8)
+        dataToWrite.append(0xA4)
+        dataToWrite.append(0xFF)
+        
+        return dataToWrite
+    }
+    
+    func lightsRedOff() -> Data {
+        
+        var dataToWrite = Data()
+        
+        dataToWrite.append(0xE8)
+        dataToWrite.append(0xA5)
+        dataToWrite.append(0xFF)
+        
+        return dataToWrite
+    }
+    
+    func lightsGreenOff() -> Data {
         
         var dataToWrite = Data()
         

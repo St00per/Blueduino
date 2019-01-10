@@ -112,10 +112,26 @@ class UserDevicesViewController: UIViewController {
     
     func colorToHex(color: UIColor) -> ColorToSet {
         var сolorToSend = ColorToSet()
-        сolorToSend.redColor = UInt8(color.redValue * 255)
-        сolorToSend.greenColor = UInt8(color.greenValue * 255)
-        сolorToSend.blueColor = UInt8(color.blueValue * 255)
-        сolorToSend.alpha = UInt8(color.alphaValue * 255)
+        var red = Int(color.redValue * 255)
+        var green = Int(color.greenValue * 255)
+        var blue = Int(color.blueValue * 255)
+        var alpha = Int(color.alphaValue * 255)
+        if red < 0 {
+            red = 0
+        }
+        if green < 0 {
+            green = 0
+        }
+        if blue < 0 {
+            blue = 0
+        }
+        if alpha < 0 {
+            alpha = 0
+        }
+        сolorToSend.redColor = UInt8(red)
+        сolorToSend.greenColor = UInt8(green)
+        сolorToSend.blueColor = UInt8(blue)
+        сolorToSend.alpha = UInt8(alpha)
         return сolorToSend
     }
     
@@ -130,9 +146,9 @@ class UserDevicesViewController: UIViewController {
         
         let sendedColor = colorToHex(color: color)
         
-        peripheral.writeValue(colorCommand(colorValue: sendedColor.blueColor ), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
-        peripheral.writeValue(colorCommand(colorValue: sendedColor.greenColor ), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
-        peripheral.writeValue(colorCommand(colorValue: sendedColor.redColor ), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+        peripheral.writeValue(colorRedCommand(colorValue: sendedColor.blueColor ), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+        peripheral.writeValue(colorGreenCommand(colorValue: sendedColor.greenColor ), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+        peripheral.writeValue(colorBlueCommand(colorValue: sendedColor.redColor ), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
 //        peripheral.writeValue(colorCommand(colorValue: sendedColor.alpha ?? 0), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
     }
     
@@ -159,11 +175,31 @@ class UserDevicesViewController: UIViewController {
         return dataToWrite
     }
     
-    func colorCommand(colorValue: UInt8) -> Data {
+    func colorGreenCommand(colorValue: UInt8) -> Data {
         
         var dataToWrite = Data()
         dataToWrite.append(0xE8)
         dataToWrite.append(0xA6)
+        dataToWrite.append(colorValue)
+        
+        return dataToWrite
+    }
+    
+    func colorRedCommand(colorValue: UInt8) -> Data {
+        
+        var dataToWrite = Data()
+        dataToWrite.append(0xE8)
+        dataToWrite.append(0xA5)
+        dataToWrite.append(colorValue)
+        
+        return dataToWrite
+    }
+    
+    func colorBlueCommand(colorValue: UInt8) -> Data {
+        
+        var dataToWrite = Data()
+        dataToWrite.append(0xE8)
+        dataToWrite.append(0xA4)
         dataToWrite.append(colorValue)
         
         return dataToWrite
