@@ -307,9 +307,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1H6-yH-P01">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1H6-yH-P01">
                                 <rect key="frame" x="0.0" y="20" width="414" height="716"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kdW-5E-4bo">
                                         <rect key="frame" x="0.0" y="87" width="414" height="548"/>
@@ -509,6 +508,12 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.090196078431372548" green="0.12549019607843137" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1H6-yH-P01" firstAttribute="trailing" secondItem="npq-3E-3cp" secondAttribute="trailing" id="atG-AI-0kw"/>
+                            <constraint firstItem="1H6-yH-P01" firstAttribute="top" secondItem="npq-3E-3cp" secondAttribute="top" id="gwI-gD-A8Z"/>
+                            <constraint firstItem="1H6-yH-P01" firstAttribute="bottom" secondItem="npq-3E-3cp" secondAttribute="bottom" id="nvv-Nc-pqU"/>
+                            <constraint firstItem="1H6-yH-P01" firstAttribute="leading" secondItem="npq-3E-3cp" secondAttribute="leading" id="qTp-8H-nss"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="npq-3E-3cp"/>
                     </view>
                     <connections>

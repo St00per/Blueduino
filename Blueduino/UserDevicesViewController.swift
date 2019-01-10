@@ -44,7 +44,7 @@ class UserDevicesViewController: UIViewController {
     
     @IBAction func colorSelection(_ sender: UIButton) {
         guard let buttonColor = sender.backgroundColor else { return }
-        setColor(color: buttonColor, pressedButton: sender)
+        setPaletteColor(color: buttonColor, pressedButton: sender)
     }
     
     @IBAction func pickColor(_ sender: UIButton) {
@@ -61,7 +61,7 @@ class UserDevicesViewController: UIViewController {
         self.view.addSubview(customColorView)
         customColorView.center = self.view.center
         
-        colorPicker.setViewColor(selectedColor)
+        colorPicker.setViewColor(UIColor.white)
         colorPicker.delegate = self
         customColorWheel.addSubview(colorPicker)
         
@@ -79,8 +79,8 @@ class UserDevicesViewController: UIViewController {
     
     @IBAction func customColorDone(_ sender: UIButton) {
         
+        sendColorToDevice(color: colorPicker.color)
         
-        sendColorToDevice()
         customColorView.removeFromSuperview()
         slider.removeFromSuperview()
         popoverView.removeFromSuperview()
@@ -102,50 +102,41 @@ class UserDevicesViewController: UIViewController {
         }
     }
     
-    
+    //Preparing colors to device sending
     struct ColorToSet {
-        
-        var redColor: UInt8?
-        var greenColor: UInt8?
-        var blueColor: UInt8?
-        var alpha: UInt8?
-       
+        var redColor: UInt8 = 0
+        var greenColor: UInt8 = 0
+        var blueColor: UInt8 = 0
+        var alpha: UInt8 = 0
     }
     
     func colorToHex(color: UIColor) -> ColorToSet {
-        var sendedColor = ColorToSet()
-        sendedColor.redColor = UInt8(color.redValue * 255)
-        sendedColor.greenColor = UInt8(color.greenValue * 255)
-        sendedColor.blueColor = UInt8(color.blueValue * 255)
-        sendedColor.alpha = UInt8(color.alphaValue * 255)
-        return sendedColor
+        var сolorToSend = ColorToSet()
+        сolorToSend.redColor = UInt8(color.redValue * 255)
+        сolorToSend.greenColor = UInt8(color.greenValue * 255)
+        сolorToSend.blueColor = UInt8(color.blueValue * 255)
+        сolorToSend.alpha = UInt8(color.alphaValue * 255)
+        return сolorToSend
     }
     
-    func colorCommand(colorValue: UInt8) -> Data {
-        
-        var dataToWrite = Data()
-        dataToWrite.append(0xE8)
-        dataToWrite.append(0xA6)
-        dataToWrite.append(colorValue)
-        
-        return dataToWrite
-    }
     
-    func sendColorToDevice() {
-        UserDevicesManager.default.userDevices[pageControl.currentPage].color = colorPicker.color
+    
+    func sendColorToDevice(color: UIColor) {
+        UserDevicesManager.default.userDevices[pageControl.currentPage].color = color
         guard let peripheral = UserDevicesManager.default.userDevices[pageControl.currentPage].peripheral,
             let peripheralCharacteristic = CentralBluetoothManager.default.multiLightCharacteristic else { return }
         peripheral.writeValue(OnOff(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
         peripheral.writeValue(frequency1000(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
         
-        let sendedColor = colorToHex(color: colorPicker.color)
+        let sendedColor = colorToHex(color: color)
         
-        peripheral.writeValue(colorCommand(colorValue: sendedColor.blueColor ?? 0), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
-        peripheral.writeValue(colorCommand(colorValue: sendedColor.greenColor ?? 0), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
-        peripheral.writeValue(colorCommand(colorValue: sendedColor.redColor ?? 0), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+        peripheral.writeValue(colorCommand(colorValue: sendedColor.blueColor ), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+        peripheral.writeValue(colorCommand(colorValue: sendedColor.greenColor ), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+        peripheral.writeValue(colorCommand(colorValue: sendedColor.redColor ), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
 //        peripheral.writeValue(colorCommand(colorValue: sendedColor.alpha ?? 0), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
     }
     
+    //Device commands functions
     func OnOff() -> Data {
         
         var dataToWrite = Data()
@@ -168,7 +159,17 @@ class UserDevicesViewController: UIViewController {
         return dataToWrite
     }
     
-    func setColor(color: UIColor, pressedButton: UIButton) {
+    func colorCommand(colorValue: UInt8) -> Data {
+        
+        var dataToWrite = Data()
+        dataToWrite.append(0xE8)
+        dataToWrite.append(0xA6)
+        dataToWrite.append(colorValue)
+        
+        return dataToWrite
+    }
+    
+    func setPaletteColor(color: UIColor, pressedButton: UIButton) {
         
         if pressedButton.image(for: UIControl.State.normal) != nil {
             pressedButton.setImage(nil, for: .normal)
@@ -180,7 +181,7 @@ class UserDevicesViewController: UIViewController {
         } else {
         
             UserDevicesManager.default.userDevices[pageControl.currentPage].color = color
-            
+            sendColorToDevice(color: color)
             pressedButton.setImage(checkImage, for: .normal)
             popoverView.removeFromSuperview()
             collectionView.isUserInteractionEnabled = true
