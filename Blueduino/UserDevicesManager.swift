@@ -16,7 +16,7 @@ class UserDevicesManager {
     var userDevices: [UserDevice] = []
 }
 
-class UserDevice {
+class UserDevice: NSObject {
     
     var peripheral: CBPeripheral? = nil
     

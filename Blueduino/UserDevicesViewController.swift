@@ -111,6 +111,7 @@ class UserDevicesViewController: UIViewController {
     }
     
     func colorToHex(color: UIColor) -> ColorToSet {
+        
         var сolorToSend = ColorToSet()
         var red = Int(color.redValue * 255)
         var green = Int(color.greenValue * 255)
@@ -297,7 +298,7 @@ extension UserDevicesViewController: UICollectionViewDataSource, UICollectionVie
         let comparedCellWidth = (cell?.frame.size.width ?? 0)/2
         
         //fast swipe
-        if velocity.x > 1, pageControl.currentPage < 2 {
+        if velocity.x > 1, pageControl.currentPage < (UserDevicesManager.default.userDevices.count - 1) {
             pageControl.currentPage += 1
             localIndex.row = (localIndex.row) + 1
             self.collectionView.scrollToItem(at: localIndex , at: .left, animated: true )

@@ -42,10 +42,18 @@ class LightDeviceCollectionViewCell: UICollectionViewCell {
         let appendedDevice = UserDevice()
         appendedDevice.peripheral = selectedPeripheral
         
-        UserDevicesManager.default.userDevices.append(appendedDevice)
-        
+        if !UserDevicesManager.default.userDevices.contains(appendedDevice) {
+            UserDevicesManager.default.userDevices.append(appendedDevice)
+        }
         addToListButton.setImage(UIImage(named: "check"), for: .normal)
     }
+    
+//    func userDevicesCheck(name: String) {
+//        let userDevices = UserDevicesManager.default.userDevices
+//        for device in userDevices {
+//            if device.peripheral?.name == name
+//        }
+//    }
     
     func configure(name: String) {
 
