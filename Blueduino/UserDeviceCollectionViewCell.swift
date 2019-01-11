@@ -185,7 +185,11 @@ class UserDeviceCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(name: String, color: UIColor) {
-        connectButton.backgroundColor = UIColor(hexString: "#94ed74", alpha: 0.4)
+        if connectButton.titleLabel?.text == "DISCONNECT" {
+            connectButton.backgroundColor = UIColor(hexString: "#CC4242", alpha: 0.6)
+        } else {
+            connectButton.backgroundColor = UIColor(hexString: "#94ed74", alpha: 0.4)
+        }
         pickColorButton.backgroundColor = color
         deviceName.text = name
     }
