@@ -111,8 +111,8 @@ extension CentralBluetoothManager: CBPeripheralDelegate {
                     print("\(characteristic.uuid): properties contains .write")
                     if characteristic.uuid == moduleFunctionConfigurationCBUUID {
                         CentralBluetoothManager.default.multiLightCharacteristic = characteristic
-//                        peripheral.writeValue(OnOff(), for: characteristic, type: CBCharacteristicWriteType.withResponse)
-//                        peripheral.writeValue(frequency1000(), for: characteristic, type: CBCharacteristicWriteType.withResponse)
+                        peripheral.writeValue(OnOff(), for: characteristic, type: CBCharacteristicWriteType.withResponse)
+                        peripheral.writeValue(frequency1000(), for: characteristic, type: CBCharacteristicWriteType.withResponse)
 //                        print ("Characteristic FFE2 is found! READY TO WRITE...")
                     }
                 }
@@ -127,4 +127,26 @@ extension CentralBluetoothManager: CBPeripheralDelegate {
             }
             print("Message sent")
         }
+    
+    func OnOff() -> Data {
+        
+        var dataToWrite = Data()
+        dataToWrite.append(0xE8)
+        dataToWrite.append(0xA1)
+        dataToWrite.append(0x02)
+        
+        return dataToWrite
+    }
+    
+    func frequency1000() -> Data {
+        
+        var dataToWrite = Data()
+        
+        dataToWrite.append(0xE8)
+        dataToWrite.append(0xA2)
+        dataToWrite.append(0x03)
+        dataToWrite.append(0xE8)
+        
+        return dataToWrite
+    }
 }

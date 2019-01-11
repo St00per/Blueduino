@@ -15,6 +15,7 @@ class UserDeviceCollectionViewCell: UICollectionViewCell {
     var peripheral: CBPeripheral!
     var peripheralCharacteristic: CBCharacteristic!
     var deviceColor = UIColor.white
+    let customSwitch = CustomSwitch(frame: CGRect(x: 0, y: 5, width: 55, height: 25))
     
     @IBOutlet weak var deviceName: UILabel!
     @IBOutlet weak var pickColorButton: UIButton!
@@ -26,21 +27,25 @@ class UserDeviceCollectionViewCell: UICollectionViewCell {
     @IBAction func ledOn(_ sender: UIButton) {
         guard peripheralCharacteristic != nil else { return }
         peripheralCharacteristic = CentralBluetoothManager.default.multiLightCharacteristic
-        peripheral.writeValue(OnOff(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
-        peripheral.writeValue(frequency1000(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+//        peripheral.writeValue(OnOff(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+//        peripheral.writeValue(frequency1000(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+        if customSwitch.isOn == true {
         peripheral.writeValue(lightsGreenOn(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
         peripheral.writeValue(lightsRedOn(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
         peripheral.writeValue(lightsBlueOn(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+        }
     }
     
     @IBAction func ledOff(_ sender: UIButton) {
         guard peripheralCharacteristic != nil else { return }
         peripheralCharacteristic = CentralBluetoothManager.default.multiLightCharacteristic
-        peripheral.writeValue(OnOff(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
-        peripheral.writeValue(frequency1000(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+//        peripheral.writeValue(OnOff(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+//        peripheral.writeValue(frequency1000(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+        if customSwitch.isOn == false {
         peripheral.writeValue(lightsGreenOff(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
         peripheral.writeValue(lightsRedOff(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
         peripheral.writeValue(lightsBlueOff(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+        }
     }
     
     
@@ -60,7 +65,9 @@ class UserDeviceCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        let customSwitch = CustomSwitch(frame: CGRect(x: 0, y: 5, width: 55, height: 25))
+        
+        //custom switch creating
+        //let customSwitch = CustomSwitch(frame: CGRect(x: 0, y: 5, width: 55, height: 25))
         customSwitch.isOn = false
         customSwitch.onTintColor = deviceColor
         customSwitch.offTintColor = UIColor.lightGray
@@ -70,9 +77,24 @@ class UserDeviceCollectionViewCell: UICollectionViewCell {
         customSwitch.thumbTintColor = UIColor.white
         customSwitch.padding = 0
         customSwitch.animationDuration = 0.25
+        customSwitch.addTarget(self, action: #selector(ledSwitch), for: .valueChanged)
         
         switchView.addSubview(customSwitch)
     }
+    
+    @objc func ledSwitch() {
+        peripheralCharacteristic = CentralBluetoothManager.default.multiLightCharacteristic
+        guard peripheralCharacteristic != nil else { return }
+        if customSwitch.isOn == true {
+            peripheral.writeValue(lightsGreenOn(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+            peripheral.writeValue(lightsRedOn(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+            peripheral.writeValue(lightsBlueOn(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+        }
+        if customSwitch.isOn == false {
+            peripheral.writeValue(lightsGreenOff(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+            peripheral.writeValue(lightsRedOff(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+            peripheral.writeValue(lightsBlueOff(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+        }    }
     
     func OnOff() -> Data {
         
