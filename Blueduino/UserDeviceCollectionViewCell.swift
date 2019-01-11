@@ -190,7 +190,16 @@ class UserDeviceCollectionViewCell: UICollectionViewCell {
         } else {
             connectButton.backgroundColor = UIColor(hexString: "#94ed74", alpha: 0.4)
         }
+        
         pickColorButton.backgroundColor = color
         deviceName.text = name
+        let compareColorBlueParameter = color.blueValue
+        let compareColorGreenParameter = color.greenValue
+        let compareColorRedParameter = color.redValue
+        if (compareColorRedParameter > 0.8 && compareColorGreenParameter > 0.8) || (compareColorBlueParameter > 0.8 && compareColorGreenParameter > 0.8) {
+            pickColorButton.setTitleColor(UIColor.black, for: .normal)
+        } else {
+            pickColorButton.setTitleColor(UIColor.white, for: .normal)
+        }
     }
 }

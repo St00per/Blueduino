@@ -158,7 +158,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SwA-GQ-rUy">
-                                                            <rect key="frame" x="119" y="54" width="172" height="38"/>
+                                                            <rect key="frame" x="119" y="54" width="180" height="38"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <color key="backgroundColor" red="0.16078431369999999" green="0.21960784310000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                             <state key="normal" title="CONNECT"/>
@@ -189,7 +189,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xVr-Gu-yBg">
-                                                            <rect key="frame" x="304" y="55" width="35" height="35"/>
+                                                            <rect key="frame" x="312" y="55" width="35" height="35"/>
                                                             <state key="normal" image="white35x35plus.png">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
@@ -198,7 +198,7 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C4L-wd-iEm">
-                                                            <rect key="frame" x="304" y="10" width="36" height="36"/>
+                                                            <rect key="frame" x="311" y="10" width="36" height="36"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="36" id="k5H-k2-mJd"/>
                                                                 <constraint firstAttribute="width" constant="36" id="nNC-LS-02U"/>
@@ -211,9 +211,9 @@
                                                 </view>
                                                 <color key="backgroundColor" red="0.1803921568627451" green="0.21568627450980393" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailingMargin" secondItem="xVr-Gu-yBg" secondAttribute="trailing" constant="20" id="6WY-mX-1gx"/>
+                                                    <constraint firstAttribute="trailingMargin" secondItem="xVr-Gu-yBg" secondAttribute="trailing" constant="12" id="6WY-mX-1gx"/>
                                                     <constraint firstAttribute="bottomMargin" secondItem="xVr-Gu-yBg" secondAttribute="bottom" constant="4" id="AYi-8h-XRa"/>
-                                                    <constraint firstAttribute="trailingMargin" secondItem="C4L-wd-iEm" secondAttribute="trailing" constant="19" id="NhO-Wc-AWR"/>
+                                                    <constraint firstAttribute="trailingMargin" secondItem="C4L-wd-iEm" secondAttribute="trailing" constant="10" id="NhO-Wc-AWR"/>
                                                     <constraint firstItem="C4L-wd-iEm" firstAttribute="top" secondItem="SBa-Hz-DJ2" secondAttribute="topMargin" constant="2" id="O9Q-sc-ob8"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
@@ -400,13 +400,6 @@
                                                                         <action selector="pickColor:" destination="qmY-Vx-yP5" eventType="touchUpInside" id="dMk-ac-bV5"/>
                                                                     </connections>
                                                                 </button>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OFF/ON" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xec-Cj-43Y">
-                                                                    <rect key="frame" x="185" y="354" width="55" height="38"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lcE-6V-LmK">
                                                                     <rect key="frame" x="87" y="55" width="186" height="291"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -444,6 +437,13 @@
                                                                     <rect key="frame" x="270" y="354" width="53" height="38"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 </view>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OFF/ON" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xec-Cj-43Y">
+                                                                    <rect key="frame" x="207" y="354" width="55" height="38"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
                                                             </subviews>
                                                             <color key="backgroundColor" red="0.1803921568627451" green="0.21568627450980393" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>

@@ -45,7 +45,7 @@ class LightDeviceCollectionViewCell: UICollectionViewCell {
         if !UserDevicesManager.default.userDevices.contains(appendedDevice) {
             UserDevicesManager.default.userDevices.append(appendedDevice)
         }
-        addToListButton.setImage(UIImage(named: "check"), for: .normal)
+        addToListButton.setImage(UIImage(named: "check 35x35"), for: .normal)
     }
     
 //    func userDevicesCheck(name: String) {

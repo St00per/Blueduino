@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0E2556E421D098DB0081A2E4 /* dots-vertical.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E2556E321D098DB0081A2E4 /* dots-vertical.png */; };
 		0E2556E621D099DF0081A2E4 /* ic_search_48px.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E2556E521D099DF0081A2E4 /* ic_search_48px.png */; };
+		0E4EE99221E85D1C00ED10AA /* check 35x35.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E4EE99121E85D1C00ED10AA /* check 35x35.png */; };
 		0E62465F21D76BE000BC1E90 /* UserDevicesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E62465E21D76BE000BC1E90 /* UserDevicesManager.swift */; };
 		0E8A3D2921C8B62C00EA680D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8A3D2821C8B62C00EA680D /* AppDelegate.swift */; };
 		0E8A3D2B21C8B62C00EA680D /* MultiLightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8A3D2A21C8B62C00EA680D /* MultiLightViewController.swift */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		0E2556E321D098DB0081A2E4 /* dots-vertical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dots-vertical.png"; sourceTree = "<group>"; };
 		0E2556E521D099DF0081A2E4 /* ic_search_48px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_search_48px.png; sourceTree = "<group>"; };
+		0E4EE99121E85D1C00ED10AA /* check 35x35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check 35x35.png"; sourceTree = "<group>"; };
 		0E62465E21D76BE000BC1E90 /* UserDevicesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDevicesManager.swift; sourceTree = "<group>"; };
 		0E8A3D2521C8B62C00EA680D /* Blueduino.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blueduino.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E8A3D2821C8B62C00EA680D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 		0E8A3D3E21CA47FD00EA680D /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				0E4EE99121E85D1C00ED10AA /* check 35x35.png */,
 				0EECA46A21D49A8D00862D4E /* narrow gradient ring 2.png */,
 				0EECA46721D4951C00862D4E /* transparent black gradient ring.png */,
 				0EECA46621D4951B00862D4E /* transparent white gradient ring.png */,
@@ -277,6 +280,7 @@
 				0E8A3D3321C8B63C00EA680D /* LaunchScreen.storyboard in Resources */,
 				0E8A3D3021C8B63C00EA680D /* Assets.xcassets in Resources */,
 				0EB363E321CCF0D000492C45 /* gray_ic_settings_remote_48px.png in Resources */,
+				0E4EE99221E85D1C00ED10AA /* check 35x35.png in Resources */,
 				0EECA46B21D49A8D00862D4E /* narrow gradient ring 2.png in Resources */,
 				0EECA46921D4951C00862D4E /* transparent black gradient ring.png in Resources */,
 				0E8A3D4721CA482A00EA680D /* plus.png in Resources */,
