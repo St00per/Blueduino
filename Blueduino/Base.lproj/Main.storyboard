@@ -158,17 +158,17 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SwA-GQ-rUy">
-                                                            <rect key="frame" x="119" y="54" width="180" height="38"/>
+                                                            <rect key="frame" x="119" y="54" width="228" height="38"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <color key="backgroundColor" red="0.16078431369999999" green="0.21960784310000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <state key="normal" title="CONNECT"/>
+                                                            <state key="normal" title="ADD DEVICE"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                     <integer key="value" value="8"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                             <connections>
-                                                                <action selector="connect:" destination="SBa-Hz-DJ2" eventType="touchUpInside" id="C5d-L2-27Z"/>
+                                                                <action selector="addToList:" destination="SBa-Hz-DJ2" eventType="touchUpInside" id="wcU-Dd-szg"/>
                                                             </connections>
                                                         </button>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZvO-0V-OwI">
@@ -188,15 +188,6 @@
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xVr-Gu-yBg">
-                                                            <rect key="frame" x="312" y="55" width="35" height="35"/>
-                                                            <state key="normal" image="white35x35plus.png">
-                                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </state>
-                                                            <connections>
-                                                                <action selector="addToList:" destination="SBa-Hz-DJ2" eventType="touchUpInside" id="Jqr-U8-fJH"/>
-                                                            </connections>
-                                                        </button>
                                                         <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C4L-wd-iEm">
                                                             <rect key="frame" x="311" y="10" width="36" height="36"/>
                                                             <constraints>
@@ -211,8 +202,6 @@
                                                 </view>
                                                 <color key="backgroundColor" red="0.1803921568627451" green="0.21568627450980393" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailingMargin" secondItem="xVr-Gu-yBg" secondAttribute="trailing" constant="12" id="6WY-mX-1gx"/>
-                                                    <constraint firstAttribute="bottomMargin" secondItem="xVr-Gu-yBg" secondAttribute="bottom" constant="4" id="AYi-8h-XRa"/>
                                                     <constraint firstAttribute="trailingMargin" secondItem="C4L-wd-iEm" secondAttribute="trailing" constant="10" id="NhO-Wc-AWR"/>
                                                     <constraint firstItem="C4L-wd-iEm" firstAttribute="top" secondItem="SBa-Hz-DJ2" secondAttribute="topMargin" constant="2" id="O9Q-sc-ob8"/>
                                                 </constraints>
@@ -222,8 +211,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <outlet property="addToListButton" destination="xVr-Gu-yBg" id="mzp-8u-aVo"/>
-                                                    <outlet property="connectButton" destination="SwA-GQ-rUy" id="FDv-dt-8LY"/>
+                                                    <outlet property="addToListButton" destination="SwA-GQ-rUy" id="OR8-aV-OZb"/>
                                                     <outlet property="deviceName" destination="ZzU-9J-ujd" id="jEa-HN-Uq2"/>
                                                 </connections>
                                             </collectionViewCell>
@@ -855,7 +843,6 @@
         <image name="ic_settings_remote_48px.png" width="97" height="96"/>
         <image name="transparent black gradient ring" width="120" height="119.51999664306641"/>
         <image name="transparent white gradient ring" width="120" height="119.51999664306641"/>
-        <image name="white35x35plus.png" width="35" height="35"/>
         <image name="window-close.png" width="35" height="35"/>
     </resources>
 </document>

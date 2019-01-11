@@ -44,17 +44,7 @@ class UserDevicesViewController: UIViewController {
     
     
     @IBAction func removeDevice(_ sender: UIButton) {
-        let currentDevice = pageControl.currentPage
-        UserDevicesManager.default.userDevices.remove(at: currentDevice)
-        devicesCountLabel.text = "Devices: \(String(UserDevicesManager.default.userDevices.count))"
-        pageControl.numberOfPages = UserDevicesManager.default.userDevices.count
-        
-        if UserDevicesManager.default.userDevices.count != 0 {
-            noUserDevices.isHidden = true
-        } else {
-            noUserDevices.isHidden = false
-        }
-        collectionView.reloadData()
+        showAlert(title: "Warning", message: "Remove Device?")
     }
     
     @IBAction func colorSelection(_ sender: UIButton) {
@@ -63,7 +53,10 @@ class UserDevicesViewController: UIViewController {
     }
     
     @IBAction func pickColor(_ sender: UIButton) {
-        
+        let currentDevice = pageControl.currentPage
+        guard UserDevicesManager.default.userDevices[currentDevice].peripheral?.state == .connected else {
+            return
+        }
         self.view.addSubview(popoverView)
         collectionView.isUserInteractionEnabled = false
         userDeviceView.alpha = 0.4
@@ -116,6 +109,36 @@ class UserDevicesViewController: UIViewController {
             pageControl.numberOfPages = UserDevicesManager.default.userDevices.count
         }
     }
+    
+    fileprivate func showAlert(title: String?, message: String?) {
+        guard
+            let title = title,
+            let message = message else {
+                return
+        }
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "Ok", style: .default) { (action) in
+            alert.dismiss(animated: true, completion: nil)
+            let currentDevice = self.pageControl.currentPage
+            UserDevicesManager.default.userDevices.remove(at: currentDevice)
+            self.devicesCountLabel.text = "Devices: \(String(UserDevicesManager.default.userDevices.count))"
+            self.pageControl.numberOfPages = UserDevicesManager.default.userDevices.count
+            
+            if UserDevicesManager.default.userDevices.count != 0 {
+                self.noUserDevices.isHidden = true
+            } else {
+                self.noUserDevices.isHidden = false
+            }
+            self.collectionView.reloadData()
+            }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .default) { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }
+        alert.addAction(ok)
+        alert.addAction(cancel)
+        present(alert, animated: true, completion: nil)
+}
     
     //Preparing colors to device sending
     struct ColorToSet {

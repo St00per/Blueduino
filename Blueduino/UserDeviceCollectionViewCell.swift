@@ -58,6 +58,7 @@ class UserDeviceCollectionViewCell: UICollectionViewCell {
             
         } else {
             CentralBluetoothManager.default.connect(peripheral: selectedPeripheral)
+            
             connectButton.backgroundColor = UIColor(hexString: "#CC4242", alpha: 0.6)
             connectButton.setTitle("DISCONNECT", for: .normal)
         }
@@ -94,7 +95,8 @@ class UserDeviceCollectionViewCell: UICollectionViewCell {
             peripheral.writeValue(lightsGreenOff(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
             peripheral.writeValue(lightsRedOff(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
             peripheral.writeValue(lightsBlueOff(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
-        }    }
+        }
+    }
     
     func OnOff() -> Data {
         

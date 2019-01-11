@@ -45,7 +45,8 @@ class LightDeviceCollectionViewCell: UICollectionViewCell {
         if !UserDevicesManager.default.userDevices.contains(appendedDevice) {
             UserDevicesManager.default.userDevices.append(appendedDevice)
         }
-        addToListButton.setImage(UIImage(named: "check 35x35"), for: .normal)
+        addToListButton.setTitle("ADDED", for: .normal)
+        addToListButton.backgroundColor = UIColor(hexString: "#94ed74", alpha: 0.6)
     }
     
 //    func userDevicesCheck(name: String) {
@@ -57,7 +58,7 @@ class LightDeviceCollectionViewCell: UICollectionViewCell {
     
     func configure(name: String) {
 
-        connectButton.backgroundColor = UIColor(hexString: "#94ed74", alpha: 0.4)
+        
         deviceName.text = name
 //        if UserDevices.default.userDevices.contains(selectedPeripheral) {
 //            addToListButton.setImage(UIImage(named: "check"), for: .normal)
