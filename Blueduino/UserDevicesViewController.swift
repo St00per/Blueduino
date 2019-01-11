@@ -42,6 +42,21 @@ class UserDevicesViewController: UIViewController {
         
     }
     
+    
+    @IBAction func removeDevice(_ sender: UIButton) {
+        let currentDevice = pageControl.currentPage
+        UserDevicesManager.default.userDevices.remove(at: currentDevice)
+        devicesCountLabel.text = "Devices: \(String(UserDevicesManager.default.userDevices.count))"
+        pageControl.numberOfPages = UserDevicesManager.default.userDevices.count
+        
+        if UserDevicesManager.default.userDevices.count != 0 {
+            noUserDevices.isHidden = true
+        } else {
+            noUserDevices.isHidden = false
+        }
+        collectionView.reloadData()
+    }
+    
     @IBAction func colorSelection(_ sender: UIButton) {
         guard let buttonColor = sender.backgroundColor else { return }
         setPaletteColor(color: buttonColor, pressedButton: sender)
