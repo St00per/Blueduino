@@ -19,6 +19,7 @@ class CentralBluetoothManager: NSObject {
     var centralManager: CBCentralManager!
     var foundDevices: [CBPeripheral] = []
     var multiLightCharacteristic: CBCharacteristic!
+    var viewController: DevicesSearchViewController?
     
     override init() {
         super.init()
@@ -45,11 +46,7 @@ extension CentralBluetoothManager: CBCentralManagerDelegate {
             print("central.state is .poweredOn")
             centralManager.scanForPeripherals(withServices: [multiLightCBUUID])
         }
-//        if foundDevices.isEmpty {
-//            noDevicesView.isHidden = false
-//        } else {
-//            noDevicesView.isHidden = true
-//        }
+
     }
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
@@ -58,12 +55,12 @@ extension CentralBluetoothManager: CBCentralManagerDelegate {
             CentralBluetoothManager.default.foundDevices.append(peripheral)
         }
         print(CentralBluetoothManager.default.foundDevices.count)
-//        collectionView.reloadData()
-//        if foundDevices.isEmpty {
-//            noDevicesView.isHidden = false
-//        } else {
-//            noDevicesView.isHidden = true
-//        }
+        guard let collectionView = viewController?.collectionView else { return }
+        if CentralBluetoothManager.default.foundDevices.count != 0 {
+            viewController?.noDevicesView.isHidden = true
+        }
+        collectionView.reloadData()
+
     }
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {

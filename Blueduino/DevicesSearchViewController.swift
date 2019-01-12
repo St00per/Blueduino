@@ -15,11 +15,10 @@ class DevicesSearchViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBAction func scanForDevices(_ sender: UIButton) {
+        CentralBluetoothManager.default.foundDevices = []
+        collectionView.reloadData()
+        noDevicesView.isHidden = false
         CentralBluetoothManager.default.centralManager.scanForPeripherals(withServices: [multiLightCBUUID])
-        if CentralBluetoothManager.default.foundDevices.count != 0 {
-            noDevicesView.isHidden = true
-            collectionView.reloadData()
-        }
     }
     
     @IBAction func back(_ sender: UIButton) {
@@ -29,6 +28,8 @@ class DevicesSearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        CentralBluetoothManager.default.foundDevices = []
+        CentralBluetoothManager.default.viewController = self
         CentralBluetoothManager.default.centralManager.scanForPeripherals(withServices: [multiLightCBUUID])
         if CentralBluetoothManager.default.foundDevices.count != 0 {
             noDevicesView.isHidden = true
