@@ -251,7 +251,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RZk-h2-Fe5">
                                         <rect key="frame" x="67.666666666666686" y="303" width="240" height="128"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_settings_remote_48px.png" translatesAutoresizingMaskIntoConstraints="NO" id="xKL-oV-WK8">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_white_settings_remote_48px" translatesAutoresizingMaskIntoConstraints="NO" id="xKL-oV-WK8">
                                                 <rect key="frame" x="82" y="8" width="76" height="77"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
@@ -564,7 +564,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJB-IC-M8n">
                                 <rect key="frame" x="67.666666666666686" y="342" width="240" height="128"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_settings_remote_48px" translatesAutoresizingMaskIntoConstraints="NO" id="2rW-cG-mGj">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_gray_settings_remote_48px" translatesAutoresizingMaskIntoConstraints="NO" id="2rW-cG-mGj">
                                         <rect key="frame" x="82" y="14" width="76" height="77"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -877,10 +877,10 @@
     <resources>
         <image name="ic_cached_24px" width="24" height="24"/>
         <image name="ic_clear" width="24" height="24"/>
+        <image name="ic_gray_settings_remote_48px" width="64" height="64"/>
         <image name="ic_network_cell_48px.png" width="36" height="36"/>
         <image name="ic_search_48px" width="24" height="24"/>
-        <image name="ic_settings_remote_48px" width="64" height="64"/>
-        <image name="ic_settings_remote_48px.png" width="64" height="64"/>
+        <image name="ic_white_settings_remote_48px" width="64" height="64"/>
         <image name="transparent black gradient ring" width="120" height="119.51999664306641"/>
         <image name="transparent white gradient ring" width="120" height="119.51999664306641"/>
     </resources>
