@@ -23,7 +23,8 @@ class DevicesSearchViewController: UIViewController {
     }
     
     @IBAction func back(_ sender: UIButton) {
-        performSegue(withIdentifier: "ShowUserDevices", sender: nil)
+        self.dismiss(animated: true, completion: nil)
+        //performSegue(withIdentifier: "ShowUserDevices", sender: nil)
     }
     
     override func viewDidLoad() {

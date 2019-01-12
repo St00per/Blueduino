@@ -108,7 +108,22 @@ class UserDevicesViewController: UIViewController {
             devicesCountLabel.text = "Devices: \(String(UserDevicesManager.default.userDevices.count))"
             pageControl.numberOfPages = UserDevicesManager.default.userDevices.count
         }
+        //collectionView.reloadData()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        if UserDevicesManager.default.userDevices.count != 0 {
+            noUserDevices.isHidden = true
+            devicesCountLabel.text = "Devices: \(String(UserDevicesManager.default.userDevices.count))"
+            pageControl.numberOfPages = UserDevicesManager.default.userDevices.count
+        }
+        collectionView.reloadData()
+    }
+//        viewWillAppear() {
+//        super.viewWillAppear(false)
+//        collectionView.reloadData()
+//}
     
     fileprivate func showAlert(title: String?, message: String?) {
         guard

@@ -11,6 +11,13 @@
 		0E2556E621D099DF0081A2E4 /* ic_search_48px.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E2556E521D099DF0081A2E4 /* ic_search_48px.png */; };
 		0E4EE99221E85D1C00ED10AA /* check 35x35.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E4EE99121E85D1C00ED10AA /* check 35x35.png */; };
 		0E4EE99421E8823900ED10AA /* window-close.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E4EE99321E8823900ED10AA /* window-close.png */; };
+		0E4EE9C321E8A59500ED10AA /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0E4EE9A521E8A59200ED10AA /* SF-Pro-Text-Regular.otf */; };
+		0E5B069B21E8B7AE00477DC5 /* ic_search_48px@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E5B069A21E8B7AE00477DC5 /* ic_search_48px@3x.png */; };
+		0E5B069D21E8B83900477DC5 /* ic_settings_remote_48px@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E5B069C21E8B83900477DC5 /* ic_settings_remote_48px@3x.png */; };
+		0E5B069F21E8BADF00477DC5 /* ic_cached_48px@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E5B069E21E8BADF00477DC5 /* ic_cached_48px@3x.png */; };
+		0E5B06A121E8BBF300477DC5 /* ic_clear_24px@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E5B06A021E8BBF200477DC5 /* ic_clear_24px@1x.png */; };
+		0E5B06A321E8BC0C00477DC5 /* ic_clear_24px@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E5B06A221E8BC0C00477DC5 /* ic_clear_24px@2x.png */; };
+		0E5B06A521E8BC3800477DC5 /* ic_clear_24px@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E5B06A421E8BC3800477DC5 /* ic_clear_24px@3x.png */; };
 		0E62465F21D76BE000BC1E90 /* UserDevicesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E62465E21D76BE000BC1E90 /* UserDevicesManager.swift */; };
 		0E8A3D2921C8B62C00EA680D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8A3D2821C8B62C00EA680D /* AppDelegate.swift */; };
 		0E8A3D2B21C8B62C00EA680D /* MultiLightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8A3D2A21C8B62C00EA680D /* MultiLightViewController.swift */; };
@@ -52,6 +59,13 @@
 		0E2556E521D099DF0081A2E4 /* ic_search_48px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_search_48px.png; sourceTree = "<group>"; };
 		0E4EE99121E85D1C00ED10AA /* check 35x35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check 35x35.png"; sourceTree = "<group>"; };
 		0E4EE99321E8823900ED10AA /* window-close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "window-close.png"; sourceTree = "<group>"; };
+		0E4EE9A521E8A59200ED10AA /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
+		0E5B069A21E8B7AE00477DC5 /* ic_search_48px@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_search_48px@3x.png"; sourceTree = "<group>"; };
+		0E5B069C21E8B83900477DC5 /* ic_settings_remote_48px@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_settings_remote_48px@3x.png"; sourceTree = "<group>"; };
+		0E5B069E21E8BADF00477DC5 /* ic_cached_48px@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_cached_48px@3x.png"; sourceTree = "<group>"; };
+		0E5B06A021E8BBF200477DC5 /* ic_clear_24px@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_clear_24px@1x.png"; sourceTree = "<group>"; };
+		0E5B06A221E8BC0C00477DC5 /* ic_clear_24px@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_clear_24px@2x.png"; sourceTree = "<group>"; };
+		0E5B06A421E8BC3800477DC5 /* ic_clear_24px@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_clear_24px@3x.png"; sourceTree = "<group>"; };
 		0E62465E21D76BE000BC1E90 /* UserDevicesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDevicesManager.swift; sourceTree = "<group>"; };
 		0E8A3D2521C8B62C00EA680D /* Blueduino.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blueduino.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E8A3D2821C8B62C00EA680D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +122,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E4EE99521E8A53700ED10AA /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0E4EE9A521E8A59200ED10AA /* SF-Pro-Text-Regular.otf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 		0E8A3D1C21C8B62C00EA680D = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +151,7 @@
 		0E8A3D2721C8B62C00EA680D /* Blueduino */ = {
 			isa = PBXGroup;
 			children = (
+				0E4EE99521E8A53700ED10AA /* fonts */,
 				0EECA49621D4F12400862D4E /* SSAlphaPass */,
 				0EECA46D21D4A72000862D4E /* ColorPicker */,
 				0EB363DA21CBAB8D00492C45 /* UserDevicesViewController.swift */,
@@ -155,6 +178,10 @@
 		0E8A3D3E21CA47FD00EA680D /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				0E5B06A421E8BC3800477DC5 /* ic_clear_24px@3x.png */,
+				0E5B06A221E8BC0C00477DC5 /* ic_clear_24px@2x.png */,
+				0E5B06A021E8BBF200477DC5 /* ic_clear_24px@1x.png */,
+				0E5B069E21E8BADF00477DC5 /* ic_cached_48px@3x.png */,
 				0E4EE99321E8823900ED10AA /* window-close.png */,
 				0E4EE99121E85D1C00ED10AA /* check 35x35.png */,
 				0EECA46A21D49A8D00862D4E /* narrow gradient ring 2.png */,
@@ -168,6 +195,8 @@
 				0EB363D821CB9A1500492C45 /* ic_network_cell_48px.png */,
 				0EB363D621CB91CE00492C45 /* ic_cached_48px.png */,
 				0ED1149821CA58C3007ABC8B /* white35x35plus.png */,
+				0E5B069A21E8B7AE00477DC5 /* ic_search_48px@3x.png */,
+				0E5B069C21E8B83900477DC5 /* ic_settings_remote_48px@3x.png */,
 				0E8A3D4021CA482900EA680D /* check.png */,
 				0E8A3D4221CA482900EA680D /* plus.png */,
 			);
@@ -278,23 +307,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E4EE99421E8823900ED10AA /* window-close.png in Resources */,
+				0E5B069F21E8BADF00477DC5 /* ic_cached_48px@3x.png in Resources */,
 				0E8A3D4521CA482A00EA680D /* check.png in Resources */,
 				0EECA46821D4951C00862D4E /* transparent white gradient ring.png in Resources */,
 				0EB363CF21CA5BCE00492C45 /* white35x35plus.png in Resources */,
 				0E8A3D3321C8B63C00EA680D /* LaunchScreen.storyboard in Resources */,
 				0E8A3D3021C8B63C00EA680D /* Assets.xcassets in Resources */,
 				0EB363E321CCF0D000492C45 /* gray_ic_settings_remote_48px.png in Resources */,
+				0E5B069D21E8B83900477DC5 /* ic_settings_remote_48px@3x.png in Resources */,
+				0E5B06A321E8BC0C00477DC5 /* ic_clear_24px@2x.png in Resources */,
 				0E4EE99221E85D1C00ED10AA /* check 35x35.png in Resources */,
 				0EECA46B21D49A8D00862D4E /* narrow gradient ring 2.png in Resources */,
 				0EECA46921D4951C00862D4E /* transparent black gradient ring.png in Resources */,
+				0E5B06A521E8BC3800477DC5 /* ic_clear_24px@3x.png in Resources */,
 				0E8A3D4721CA482A00EA680D /* plus.png in Resources */,
 				0EB363DF21CBB86C00492C45 /* Back Arrow White.png in Resources */,
 				0E2556E621D099DF0081A2E4 /* ic_search_48px.png in Resources */,
 				0EB363D721CB91CE00492C45 /* ic_cached_48px.png in Resources */,
+				0E5B069B21E8B7AE00477DC5 /* ic_search_48px@3x.png in Resources */,
 				0E2556E421D098DB0081A2E4 /* dots-vertical.png in Resources */,
+				0E4EE9C321E8A59500ED10AA /* SF-Pro-Text-Regular.otf in Resources */,
 				0E8A3D2E21C8B62C00EA680D /* Main.storyboard in Resources */,
 				0EB363D921CB9A1500492C45 /* ic_network_cell_48px.png in Resources */,
 				0EB363E121CCBBC900492C45 /* ic_settings_remote_48px.png in Resources */,
+				0E5B06A121E8BBF300477DC5 /* ic_clear_24px@1x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
