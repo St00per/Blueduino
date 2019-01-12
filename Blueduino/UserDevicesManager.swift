@@ -13,7 +13,7 @@ class UserDevicesManager {
     
     public static let `default` = UserDevicesManager()
     
-    var userDevices: [UserDevice] = []
+    var userDevices: [UserDevice] = [UserDevice(),UserDevice(),UserDevice()]
 }
 
 class UserDevice: Equatable {

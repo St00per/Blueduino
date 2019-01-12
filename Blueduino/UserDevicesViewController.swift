@@ -54,9 +54,9 @@ class UserDevicesViewController: UIViewController {
     
     @IBAction func pickColor(_ sender: UIButton) {
         let currentDevice = pageControl.currentPage
-        guard UserDevicesManager.default.userDevices[currentDevice].peripheral?.state == .connected else {
-            return
-        }
+//        guard UserDevicesManager.default.userDevices[currentDevice].peripheral?.state == .connected else {
+//            return
+//        }
         self.view.addSubview(popoverView)
         collectionView.isUserInteractionEnabled = false
         userDeviceView.alpha = 0.4
