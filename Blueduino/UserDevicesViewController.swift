@@ -37,7 +37,6 @@ class UserDevicesViewController: UIViewController {
         guard let desVC = mainStoryboard.instantiateViewController(withIdentifier: "DevicesSearchViewController") as? DevicesSearchViewController else {
             return
         }
-        //desVC.userDevicesController = self
         show(desVC, sender: nil)
         
     }
@@ -53,7 +52,7 @@ class UserDevicesViewController: UIViewController {
     }
     
     @IBAction func pickColor(_ sender: UIButton) {
-        let currentDevice = pageControl.currentPage
+//        let currentDevice = pageControl.currentPage
 //        guard UserDevicesManager.default.userDevices[currentDevice].peripheral?.state == .connected else {
 //            return
 //        }
@@ -120,10 +119,7 @@ class UserDevicesViewController: UIViewController {
         }
         collectionView.reloadData()
     }
-//        viewWillAppear() {
-//        super.viewWillAppear(false)
-//        collectionView.reloadData()
-//}
+
     
     fileprivate func showAlert(title: String?, message: String?) {
         guard
@@ -203,7 +199,76 @@ class UserDevicesViewController: UIViewController {
         peripheral.writeValue(colorRedCommand(colorValue: sendedColor.blueColor ), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
         peripheral.writeValue(colorGreenCommand(colorValue: sendedColor.greenColor ), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
         peripheral.writeValue(colorBlueCommand(colorValue: sendedColor.redColor ), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
-//        peripheral.writeValue(colorCommand(colorValue: sendedColor.alpha ?? 0), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+    }
+    
+    
+    
+    func setPaletteColor(color: UIColor, pressedButton: UIButton) {
+        
+//        if pressedButton.image(for: UIControl.State.normal) != nil {
+//            pressedButton.setImage(nil, for: .normal)
+//            popoverView.removeFromSuperview()
+//            collectionView.isUserInteractionEnabled = true
+//            userDeviceView.alpha = 1
+//            collectionView.reloadData()
+//            selectedColor = UIColor.lightGray
+//        } else {
+        
+            UserDevicesManager.default.userDevices[pageControl.currentPage].color = color
+            sendColorToDevice(color: color)
+            //pressedButton.setImage(checkImage, for: .normal)
+            popoverView.removeFromSuperview()
+            collectionView.isUserInteractionEnabled = true
+            userDeviceView.alpha = 1
+            collectionView.reloadData()
+        //}
+    }
+    
+    func сircleSliderConfigure()  {
+        
+        let attributes = [
+            /* Track */
+            Attributes.minTrackTint(UIColor.clear.withAlphaComponent(0.01)),
+            Attributes.maxTrackTint(UIColor.clear.withAlphaComponent(0.01)),
+            Attributes.trackWidth(CGFloat(35)),
+            Attributes.trackShadowRadius(CGFloat(0)),
+            Attributes.trackShadowDepth(CGFloat(0)),
+            Attributes.trackMinAngle(CGFloat(-85)),
+            Attributes.trackMaxAngle(CGFloat(265)),
+            
+            /* Thumb */
+            Attributes.hasThumb(true),
+            Attributes.thumbTint(UIColor.white),
+            Attributes.thumbRadius(15),
+            Attributes.thumbShadowRadius(16),
+            Attributes.thumbShadowDepth(10)
+        ]
+        slider.isUserInteractionEnabled = true
+        slider.applyAttributes(attributes)
+        slider.addTarget(self, action: #selector(brightnessUpdate), for: .valueChanged)
+    }
+    
+    @objc func brightnessUpdate() {
+        
+        let sliderAngle = slider.getThumbAngle()
+        let brightness = (sliderAngle - 1.65)/6.11
+        colorPicker.brightnessSelected(brightness)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch: UITouch? = touches.first
+        //location is relative to the current view
+        // do something with the touched point
+        if touch?.view != popoverView, popoverView.isUserInteractionEnabled != false {
+            popoverView.removeFromSuperview()
+            userDeviceView.alpha = 1
+            collectionView.isUserInteractionEnabled = true
+        }
+        if touch?.view != customColorView, touch?.view != customColorWheel, touch?.view != slider, touch?.view != colorPicker {
+            customColorView.removeFromSuperview()
+            slider.removeFromSuperview()
+            popoverView.isUserInteractionEnabled = true
+        }
     }
     
     //Device commands functions
@@ -259,68 +324,6 @@ class UserDevicesViewController: UIViewController {
         return dataToWrite
     }
     
-    func setPaletteColor(color: UIColor, pressedButton: UIButton) {
-        
-        if pressedButton.image(for: UIControl.State.normal) != nil {
-            pressedButton.setImage(nil, for: .normal)
-            popoverView.removeFromSuperview()
-            collectionView.isUserInteractionEnabled = true
-            userDeviceView.alpha = 1
-            collectionView.reloadData()
-            selectedColor = UIColor.lightGray
-        } else {
-        
-            UserDevicesManager.default.userDevices[pageControl.currentPage].color = color
-            sendColorToDevice(color: color)
-            pressedButton.setImage(checkImage, for: .normal)
-            popoverView.removeFromSuperview()
-            collectionView.isUserInteractionEnabled = true
-            userDeviceView.alpha = 1
-            collectionView.reloadData()
-        }
-    }
-    
-    func сircleSliderConfigure()  {
-        
-        let attributes = [
-            /* Track */
-            Attributes.minTrackTint(UIColor.clear.withAlphaComponent(0.01)),
-            Attributes.maxTrackTint(UIColor.clear.withAlphaComponent(0.01)),
-            Attributes.trackWidth(CGFloat(35)),
-            Attributes.trackShadowRadius(CGFloat(0)),
-            Attributes.trackShadowDepth(CGFloat(0)),
-            Attributes.trackMinAngle(CGFloat(-85)),
-            Attributes.trackMaxAngle(CGFloat(265)),
-            
-            /* Thumb */
-            Attributes.hasThumb(true),
-            Attributes.thumbTint(UIColor.white),
-            Attributes.thumbRadius(15),
-            Attributes.thumbShadowRadius(16),
-            Attributes.thumbShadowDepth(10)
-        ]
-        slider.isUserInteractionEnabled = true
-        slider.applyAttributes(attributes)
-        slider.addTarget(self, action: #selector(brightnessUpdate), for: .valueChanged)
-    }
-    
-    @objc func brightnessUpdate() {
-        
-        let sliderAngle = slider.getThumbAngle()
-        let brightness = (sliderAngle - 1.65)/6.11
-        colorPicker.brightnessSelected(brightness)
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let touch: UITouch? = touches.first
-        //location is relative to the current view
-        // do something with the touched point
-        if touch?.view != popoverView {
-            popoverView.removeFromSuperview()
-            userDeviceView.alpha = 1
-            collectionView.isUserInteractionEnabled = true
-        }
-    }
 }
 
 extension UserDevicesViewController: UICollectionViewDataSource, UICollectionViewDelegate {
