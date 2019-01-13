@@ -18,6 +18,7 @@ class UserDevicesViewController: UIViewController {
     let checkImage = UIImage(named: "check")
     
     
+    @IBOutlet weak var colorButtonsView: UIView!
     @IBOutlet var popoverView: UIView!
     @IBOutlet weak var customColorButton: UIButton!
     @IBOutlet var customColorView: UIView!
@@ -213,23 +214,18 @@ class UserDevicesViewController: UIViewController {
     
     func setPaletteColor(color: UIColor, pressedButton: UIButton) {
         
-//        if pressedButton.image(for: UIControl.State.normal) != nil {
-//            pressedButton.setImage(nil, for: .normal)
-//            popoverView.removeFromSuperview()
-//            collectionView.isUserInteractionEnabled = true
-//            userDeviceView.alpha = 1
-//            collectionView.reloadData()
-//            selectedColor = UIColor.lightGray
-//        } else {
-        
+
+        let buttons = colorButtonsView.subviews as! [UIButton]
+            for button in buttons {
+                button.setImage(nil, for: .normal)
+                    }
             UserDevicesManager.default.userDevices[pageControl.currentPage].color = color
             sendColorToDevice(color: color)
-            //pressedButton.setImage(checkImage, for: .normal)
+            pressedButton.setImage(checkImage, for: .normal)
             popoverView.removeFromSuperview()
             collectionView.isUserInteractionEnabled = true
             userDeviceView.alpha = 1
             collectionView.reloadData()
-        //}
     }
     
     func сircleSliderConfigure()  {

@@ -36,9 +36,7 @@ class DevicesSearchViewController: UIViewController {
             noDevicesView.isHidden = true
             collectionView.reloadData()
         }
-//        noDevicesView.isHidden = true
     }
-    
 }
 
 extension DevicesSearchViewController: UICollectionViewDataSource, UICollectionViewDelegate {
