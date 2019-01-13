@@ -10,8 +10,20 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Medium.otf">
+            <string>SFProDisplay-Medium</string>
+        </array>
+        <array key="SF-Pro-Display-Regular.otf">
+            <string>SFProDisplay-Regular</string>
+        </array>
+        <array key="SF-Pro-Text-Medium.otf">
+            <string>SFProText-Medium</string>
+        </array>
         <array key="SF-Pro-Text-Regular.otf">
             <string>SFProText-Regular</string>
+        </array>
+        <array key="SF-Pro-Text-Semibold.otf">
+            <string>SFProText-Semibold</string>
         </array>
     </customFonts>
     <scenes>
@@ -166,7 +178,7 @@
                                                             <rect key="frame" x="119" y="54" width="228" height="38"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <color key="backgroundColor" red="0.23921568627450979" green="0.30588235294117649" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="17"/>
                                                             <state key="normal" title="ADD DEVICE"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -190,7 +202,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZzU-9J-ujd">
                                                             <rect key="frame" x="119" y="20" width="210" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -228,16 +240,16 @@
                                         </connections>
                                     </collectionView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search Device" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrJ-Ly-Ooc">
-                                        <rect key="frame" x="119.66666666666667" y="8" width="135.66666666666663" height="50"/>
+                                        <rect key="frame" x="118.33333333333333" y="8" width="138.33333333333337" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="CIS-ki-LJw"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8A-q5-rMC">
-                                        <rect key="frame" x="4.6666666666666679" y="8" width="40" height="40"/>
+                                        <rect key="frame" x="3.3333333333333321" y="8" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="3rC-XJ-R3f"/>
                                             <constraint firstAttribute="width" constant="40" id="caR-vD-ryg"/>
@@ -258,7 +270,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Other devices not found" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mhv-Zz-MJy">
                                                 <rect key="frame" x="24" y="99" width="208" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -269,7 +281,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KlU-u6-QQi">
-                                        <rect key="frame" x="325.33333333333331" y="5" width="50" height="50"/>
+                                        <rect key="frame" x="326.66666666666669" y="5" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="34w-z5-0aI"/>
                                             <constraint firstAttribute="height" constant="50" id="CQ6-VF-e6T"/>
@@ -343,7 +355,7 @@
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxf-WD-kYl">
                                                 <rect key="frame" x="0.0" y="0.0" width="250" height="50"/>
-                                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="20"/>
                                                 <state key="normal" title="         Search Device">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -399,16 +411,16 @@
                                                             <rect key="frame" x="17" y="0.0" width="341" height="446"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DeviceName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuU-wA-7mc">
-                                                                    <rect key="frame" x="16" y="16" width="119" height="24"/>
-                                                                    <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="20"/>
+                                                                    <rect key="frame" x="16" y="14" width="111" height="24"/>
+                                                                    <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="20"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xk6-WL-stb" userLabel="Connect Button">
-                                                                    <rect key="frame" x="19" y="400" width="304" height="38"/>
+                                                                    <rect key="frame" x="18" y="387" width="304" height="45"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <color key="backgroundColor" red="0.25882352941176467" green="0.32156862745098036" blue="0.38823529411764707" alpha="0.40297645246478875" colorSpace="calibratedRGB"/>
-                                                                    <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
+                                                                    <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="17"/>
                                                                     <state key="normal" title="CONNECT"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -420,10 +432,10 @@
                                                                     </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEe-JW-fI4">
-                                                                    <rect key="frame" x="19" y="354" width="158" height="38"/>
+                                                                    <rect key="frame" x="18" y="328" width="158" height="45"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <color key="backgroundColor" red="0.16078431369999999" green="0.21960784310000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
+                                                                    <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="17"/>
                                                                     <state key="normal" title="PICK COLOR"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -435,7 +447,7 @@
                                                                     </connections>
                                                                 </button>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lcE-6V-LmK">
-                                                                    <rect key="frame" x="87" y="55" width="186" height="291"/>
+                                                                    <rect key="frame" x="83" y="55" width="175" height="249"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <color key="backgroundColor" red="0.396078431372549" green="0.41176470588235292" blue="0.49019607843137253" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <userDefinedRuntimeAttributes>
@@ -462,17 +474,6 @@
                                                                         <action selector="ledOff:" destination="I6e-Xi-RmV" eventType="touchUpInside" id="LII-Id-X7Z"/>
                                                                     </connections>
                                                                 </button>
-                                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YP4-h8-Gyi">
-                                                                    <rect key="frame" x="270" y="354" width="53" height="38"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                </view>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OFF/ON" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xec-Cj-43Y">
-                                                                    <rect key="frame" x="196" y="354" width="66" height="38"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
-                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gT-3D-lPG">
                                                                     <rect key="frame" x="267" y="11" width="30" height="30"/>
                                                                     <constraints>
@@ -492,11 +493,22 @@
                                                                         <action selector="removeDevice:" destination="qmY-Vx-yP5" eventType="touchUpInside" id="g5x-WF-tbP"/>
                                                                     </connections>
                                                                 </button>
+                                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YP4-h8-Gyi">
+                                                                    <rect key="frame" x="256" y="332" width="53" height="38"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                </view>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OFF/ON" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xec-Cj-43Y">
+                                                                    <rect key="frame" x="184" y="332" width="66" height="38"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
                                                             </subviews>
                                                             <color key="backgroundColor" red="0.1803921568627451" green="0.21568627450980393" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstItem="fuU-wA-7mc" firstAttribute="leading" secondItem="4Ty-qK-cpy" secondAttribute="leading" constant="16" id="HpW-cd-Vuo"/>
-                                                                <constraint firstItem="fuU-wA-7mc" firstAttribute="top" secondItem="4Ty-qK-cpy" secondAttribute="top" constant="16" id="JKo-wJ-QoQ"/>
+                                                                <constraint firstItem="fuU-wA-7mc" firstAttribute="top" secondItem="4Ty-qK-cpy" secondAttribute="top" constant="14" id="JKo-wJ-QoQ"/>
                                                                 <constraint firstAttribute="height" constant="446" id="P3E-M6-W4c"/>
                                                                 <constraint firstItem="3gT-3D-lPG" firstAttribute="top" secondItem="4Ty-qK-cpy" secondAttribute="top" constant="11" id="Rli-WC-4ny"/>
                                                                 <constraint firstAttribute="trailing" secondItem="iiu-L5-nB6" secondAttribute="trailing" constant="6" id="Rr7-oO-gqZ"/>
@@ -570,9 +582,9 @@
                                         <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You have no devices right now" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iek-Ir-v2R">
-                                        <rect key="frame" x="-2" y="99" width="243" height="21"/>
+                                        <rect key="frame" x="-2" y="99" width="214" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -618,7 +630,7 @@
                             <rect key="frame" x="26" y="152" width="318" height="45"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.21330484817329484" green="0.2585295521626409" blue="0.29717330873939041" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="17"/>
                             <state key="normal" title="Custom Color">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -634,7 +646,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pick Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPW-Qa-yho">
                             <rect key="frame" x="26" y="13" width="110" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -831,7 +843,7 @@
                                 <constraint firstAttribute="width" constant="50" id="XnG-fW-wmj"/>
                                 <constraint firstAttribute="height" constant="35" id="uTS-YB-9eT"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
                             <state key="normal" title="DONE">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -845,7 +857,7 @@
                                 <constraint firstAttribute="width" constant="70" id="RMv-SM-2ER"/>
                                 <constraint firstAttribute="height" constant="35" id="mzQ-bG-8Qn"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
                             <state key="normal" title="CANCEL">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -854,9 +866,9 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Custom color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egV-hy-lGk">
-                            <rect key="frame" x="20" y="20" width="109" height="22"/>
+                            <rect key="frame" x="20" y="20" width="112" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>

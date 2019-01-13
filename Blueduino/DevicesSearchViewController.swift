@@ -29,7 +29,6 @@ class DevicesSearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         CentralBluetoothManager.default.foundDevices = []
-        UserDevicesManager.default.userDevices = []
         CentralBluetoothManager.default.searchViewController = self
         CentralBluetoothManager.default.centralManager.scanForPeripherals(withServices: [multiLightCBUUID])
         if CentralBluetoothManager.default.foundDevices.count != 0 {
@@ -49,7 +48,7 @@ extension DevicesSearchViewController: UICollectionViewDataSource, UICollectionV
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LightDeviceCollectionViewCell", for: indexPath) as? LightDeviceCollectionViewCell, let deviceName = CentralBluetoothManager.default.foundDevices[indexPath.row].name else {
             return UICollectionViewCell ()
         }
-        //cell.delegate = userDevicesController
+        
         cell.viewController = self
         cell.peripheral = CentralBluetoothManager.default.foundDevices[indexPath.row]
         cell.configure(name: deviceName)

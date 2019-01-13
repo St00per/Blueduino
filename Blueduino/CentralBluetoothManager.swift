@@ -49,7 +49,7 @@ extension CentralBluetoothManager: CBCentralManagerDelegate {
             print("central.state is .poweredOn")
             if isFirstDidLoad {
                 centralManager.scanForPeripherals(withServices: [multiLightCBUUID])
-                isFirstDidLoad = false
+                
             }
         }
 
@@ -60,8 +60,11 @@ extension CentralBluetoothManager: CBCentralManagerDelegate {
         if !CentralBluetoothManager.default.foundDevices.contains(peripheral) {
             CentralBluetoothManager.default.foundDevices.append(peripheral)
         }
+        if isFirstDidLoad {
+            UserDevicesManager.default.userDeviceInitialFilter()
+            isFirstDidLoad = false
+        }
         
-        UserDevicesManager.default.userDeviceInitialFilter()
         if UserDevicesManager.default.userDevices.count != 0 {
             userDevicesViewController?.collectionView.reloadData()
             userDevicesViewController?.noUserDevices.isHidden = true

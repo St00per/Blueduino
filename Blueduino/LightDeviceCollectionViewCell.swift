@@ -57,13 +57,6 @@ class LightDeviceCollectionViewCell: UICollectionViewCell {
         addToListButton.backgroundColor = UIColor(hexString: "#94ed74", alpha: 0.6)
     }
     
-//    func userDevicesCheck(name: String) {
-//        let userDevices = UserDevicesManager.default.userDevices
-//        for device in userDevices {
-//            if device.peripheral?.name == name
-//        }
-//    }
-    
     func configure(name: String) {
         deviceName.text = name
         let userDevices = UserDevicesManager.default.userDevices

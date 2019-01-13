@@ -86,6 +86,11 @@ class UserDevicesViewController: UIViewController {
     
     @IBAction func customColorDone(_ sender: UIButton) {
         
+        guard let buttons = colorButtonsView.subviews as? [UIButton] else { return }
+        for button in buttons {
+            button.setImage(nil, for: .normal)
+        }
+        
         sendColorToDevice(color: colorPicker.color)
         
         customColorView.removeFromSuperview()
