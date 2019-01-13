@@ -21,6 +21,7 @@ class CentralBluetoothManager: NSObject {
     var multiLightCharacteristic: CBCharacteristic!
     var userDevicesViewController: UserDevicesViewController?
     var searchViewController: DevicesSearchViewController?
+    var isFirstDidLoad = true
     
     
     override init() {
@@ -46,7 +47,10 @@ extension CentralBluetoothManager: CBCentralManagerDelegate {
             print("central.state is .poweredOff")
         case .poweredOn:
             print("central.state is .poweredOn")
-            //centralManager.scanForPeripherals(withServices: [multiLightCBUUID])
+            if isFirstDidLoad {
+                centralManager.scanForPeripherals(withServices: [multiLightCBUUID])
+                isFirstDidLoad = false
+            }
         }
 
     }

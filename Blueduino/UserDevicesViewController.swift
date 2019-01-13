@@ -16,7 +16,7 @@ class UserDevicesViewController: UIViewController {
     var selectedColor = UIColor.lightGray
     var selectedCustomColor: UIColor?
     let checkImage = UIImage(named: "check")
-    var isFirstDidLoad = true
+    
     
     @IBOutlet var popoverView: UIView!
     @IBOutlet weak var customColorButton: UIButton!
@@ -102,10 +102,11 @@ class UserDevicesViewController: UIViewController {
         devicesCountLabel.text = "Devices: 0"
         pageControl.numberOfPages = 0
         CentralBluetoothManager.default.userDevicesViewController = self
-        if isFirstDidLoad {
-            CentralBluetoothManager.default.centralManager.scanForPeripherals(withServices: [multiLightCBUUID])
-            isFirstDidLoad = false
-        }
+//        if isFirstDidLoad {
+//            
+//            CentralBluetoothManager.default.centralManager.scanForPeripherals(withServices: [multiLightCBUUID])
+//            isFirstDidLoad = false
+//        }
         
         if UserDevicesManager.default.userDevices.count != 0 {
             noUserDevices.isHidden = true
