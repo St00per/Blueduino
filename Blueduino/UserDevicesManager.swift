@@ -14,9 +14,30 @@ class UserDevicesManager {
     public static let `default` = UserDevicesManager()
     
     var userDevices: [UserDevice] = [UserDevice(),UserDevice(),UserDevice()]
+    
+    init() {}
+    
+    func userDeviceInitialFilter() {
+        
+        let foundDevices = CentralBluetoothManager.default.foundDevices
+        let defaults = UserDefaults.standard
+        let addedDevicesNamesArray = defaults.stringArray(forKey: "AddedDevicesNames") ?? [String]()
+        
+        if addedDevicesNamesArray.count != 0 {
+            for device in foundDevices {
+                guard let deviceName = device.name else { return }
+                if addedDevicesNamesArray.contains(deviceName) {
+                    let userDevice = UserDevice()
+                    userDevice.peripheral = device
+                    UserDevicesManager.default.userDevices.append(userDevice)
+                }
+            }
+        }
+    }
 }
 
 class UserDevice: Equatable {
+    
     static func == (lhs: UserDevice, rhs: UserDevice) -> Bool {
         guard let first = lhs.peripheral, let second = rhs.peripheral else {
             return false
@@ -24,11 +45,7 @@ class UserDevice: Equatable {
         return first.identifier == second.identifier
     }
     
-    
-    
-    
     var peripheral: CBPeripheral? = nil
-    
     var color = UIColor.lightGray
     
 }

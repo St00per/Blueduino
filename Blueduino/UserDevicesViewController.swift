@@ -102,6 +102,8 @@ class UserDevicesViewController: UIViewController {
         super.viewDidLoad()
         devicesCountLabel.text = "Devices: 0"
         pageControl.numberOfPages = 0
+        
+        
         if UserDevicesManager.default.userDevices.count != 0 {
             noUserDevices.isHidden = true
             devicesCountLabel.text = "Devices: \(String(UserDevicesManager.default.userDevices.count))"

@@ -45,6 +45,13 @@ class LightDeviceCollectionViewCell: UICollectionViewCell {
         if !UserDevicesManager.default.userDevices.contains(appendedDevice) {
             UserDevicesManager.default.userDevices.append(appendedDevice)
         }
+        let defaults = UserDefaults.standard
+        var namesArray: [String] = []
+        for device in UserDevicesManager.default.userDevices {
+            guard let deviceName = device.peripheral?.name else { return }
+            namesArray.append(deviceName)
+        }
+        defaults.set(namesArray, forKey: "AddedDevicesNames")
         addToListButton.setTitle("ADDED", for: .normal)
         addToListButton.backgroundColor = UIColor(hexString: "#94ed74", alpha: 0.6)
     }

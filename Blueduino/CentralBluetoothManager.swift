@@ -54,7 +54,7 @@ extension CentralBluetoothManager: CBCentralManagerDelegate {
         if !CentralBluetoothManager.default.foundDevices.contains(peripheral) {
             CentralBluetoothManager.default.foundDevices.append(peripheral)
         }
-        print(CentralBluetoothManager.default.foundDevices.count)
+        print("\(CentralBluetoothManager.default.foundDevices.count) devices have found")
         guard let collectionView = viewController?.collectionView else { return }
         if CentralBluetoothManager.default.foundDevices.count != 0 {
             viewController?.noDevicesView.isHidden = true
@@ -73,7 +73,9 @@ extension CentralBluetoothManager: CBCentralManagerDelegate {
     }
     
     func connect(peripheral: CBPeripheral) {
+        
         centralManager.stopScan()
+        print ("Scan stopped")
 //        multiLightPeripheral = peripheral
         peripheral.delegate = self
         centralManager.connect(peripheral)
