@@ -38,7 +38,7 @@ class LightDeviceCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func addToList(_ sender: UIButton) {
-        guard  let selectedPeripheral = peripheral else { return }
+        guard  let selectedPeripheral = peripheral, addToListButton.titleLabel?.text == "ADD DEVICE" else { return }
         let appendedDevice = UserDevice()
         appendedDevice.peripheral = selectedPeripheral
         
@@ -47,7 +47,8 @@ class LightDeviceCollectionViewCell: UICollectionViewCell {
         }
         let defaults = UserDefaults.standard
         var namesArray: [String] = []
-        for device in UserDevicesManager.default.userDevices {
+        let userDevices = UserDevicesManager.default.userDevices
+        for device in userDevices {
             guard let deviceName = device.peripheral?.name else { return }
             namesArray.append(deviceName)
         }
@@ -64,11 +65,20 @@ class LightDeviceCollectionViewCell: UICollectionViewCell {
 //    }
     
     func configure(name: String) {
-
-        
         deviceName.text = name
-//        if UserDevices.default.userDevices.contains(selectedPeripheral) {
-//            addToListButton.setImage(UIImage(named: "check"), for: .normal)
-//        }
+        let userDevices = UserDevicesManager.default.userDevices
+        let foundDevices = CentralBluetoothManager.default.foundDevices
+        var checkingDevices: [UserDevice] = []
+            for device in foundDevices {
+            let appendedDevice = UserDevice()
+                appendedDevice.peripheral = device
+                checkingDevices.append(appendedDevice)
+            }
+        for device in checkingDevices {
+        if userDevices.contains(device) {
+            addToListButton.setTitle("ADDED", for: .normal)
+            addToListButton.backgroundColor = UIColor(hexString: "#94ed74", alpha: 0.6)
+            }
+        }
     }
 }

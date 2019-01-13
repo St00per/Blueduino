@@ -19,7 +19,9 @@ class CentralBluetoothManager: NSObject {
     var centralManager: CBCentralManager!
     var foundDevices: [CBPeripheral] = []
     var multiLightCharacteristic: CBCharacteristic!
-    var viewController: DevicesSearchViewController?
+    var userDevicesViewController: UserDevicesViewController?
+    var searchViewController: DevicesSearchViewController?
+    
     
     override init() {
         super.init()
@@ -44,7 +46,7 @@ extension CentralBluetoothManager: CBCentralManagerDelegate {
             print("central.state is .poweredOff")
         case .poweredOn:
             print("central.state is .poweredOn")
-            centralManager.scanForPeripherals(withServices: [multiLightCBUUID])
+            //centralManager.scanForPeripherals(withServices: [multiLightCBUUID])
         }
 
     }
@@ -54,13 +56,21 @@ extension CentralBluetoothManager: CBCentralManagerDelegate {
         if !CentralBluetoothManager.default.foundDevices.contains(peripheral) {
             CentralBluetoothManager.default.foundDevices.append(peripheral)
         }
+        
+        UserDevicesManager.default.userDeviceInitialFilter()
+        if UserDevicesManager.default.userDevices.count != 0 {
+            userDevicesViewController?.collectionView.reloadData()
+            userDevicesViewController?.noUserDevices.isHidden = true
+            userDevicesViewController?.devicesCountLabel.text = "Devices: \(String(UserDevicesManager.default.userDevices.count))"
+            userDevicesViewController?.pageControl.numberOfPages = UserDevicesManager.default.userDevices.count
+        }
+        
         print("\(CentralBluetoothManager.default.foundDevices.count) devices have found")
-        guard let collectionView = viewController?.collectionView else { return }
+        guard let collectionView = searchViewController?.collectionView else { return }
         if CentralBluetoothManager.default.foundDevices.count != 0 {
-            viewController?.noDevicesView.isHidden = true
+            searchViewController?.noDevicesView.isHidden = true
         }
         collectionView.reloadData()
-
     }
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {

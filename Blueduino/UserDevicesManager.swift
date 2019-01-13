@@ -13,7 +13,7 @@ class UserDevicesManager {
     
     public static let `default` = UserDevicesManager()
     
-    var userDevices: [UserDevice] = [UserDevice(),UserDevice(),UserDevice()]
+    var userDevices: [UserDevice] = []
     
     init() {}
     

@@ -29,7 +29,8 @@ class DevicesSearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         CentralBluetoothManager.default.foundDevices = []
-        CentralBluetoothManager.default.viewController = self
+        UserDevicesManager.default.userDevices = []
+        CentralBluetoothManager.default.searchViewController = self
         CentralBluetoothManager.default.centralManager.scanForPeripherals(withServices: [multiLightCBUUID])
         if CentralBluetoothManager.default.foundDevices.count != 0 {
             noDevicesView.isHidden = true

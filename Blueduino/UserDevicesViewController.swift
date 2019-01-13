@@ -12,11 +12,11 @@ import CoreBluetooth
 class UserDevicesViewController: UIViewController {
     
     let slider = MTCircularSlider(frame: CGRect(x: 27, y: 60, width: 350, height: 350))
-    
     let colorPicker = SwiftHSVColorPicker(frame: CGRect(x: -10, y: -10, width: 350, height: 350))
     var selectedColor = UIColor.lightGray
     var selectedCustomColor: UIColor?
     let checkImage = UIImage(named: "check")
+    var isFirstDidLoad = true
     
     @IBOutlet var popoverView: UIView!
     @IBOutlet weak var customColorButton: UIButton!
@@ -38,7 +38,6 @@ class UserDevicesViewController: UIViewController {
             return
         }
         show(desVC, sender: nil)
-        
     }
     
     
@@ -102,7 +101,11 @@ class UserDevicesViewController: UIViewController {
         super.viewDidLoad()
         devicesCountLabel.text = "Devices: 0"
         pageControl.numberOfPages = 0
-        
+        CentralBluetoothManager.default.userDevicesViewController = self
+        if isFirstDidLoad {
+            CentralBluetoothManager.default.centralManager.scanForPeripherals(withServices: [multiLightCBUUID])
+            isFirstDidLoad = false
+        }
         
         if UserDevicesManager.default.userDevices.count != 0 {
             noUserDevices.isHidden = true
@@ -129,20 +132,12 @@ class UserDevicesViewController: UIViewController {
             let message = message else {
                 return
         }
+        var userDevices = UserDevicesManager.default.userDevices
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let ok = UIAlertAction(title: "Ok", style: .default) { (action) in
             alert.dismiss(animated: true, completion: nil)
-            let currentDevice = self.pageControl.currentPage
-            UserDevicesManager.default.userDevices.remove(at: currentDevice)
-            self.devicesCountLabel.text = "Devices: \(String(UserDevicesManager.default.userDevices.count))"
-            self.pageControl.numberOfPages = UserDevicesManager.default.userDevices.count
             
-            if UserDevicesManager.default.userDevices.count != 0 {
-                self.noUserDevices.isHidden = true
-            } else {
-                self.noUserDevices.isHidden = false
-            }
-            self.collectionView.reloadData()
+            self.removeDevice()
             }
         
         let cancel = UIAlertAction(title: "Cancel", style: .default) { (action) in
@@ -151,7 +146,27 @@ class UserDevicesViewController: UIViewController {
         alert.addAction(ok)
         alert.addAction(cancel)
         present(alert, animated: true, completion: nil)
-}
+    }
+    
+    func removeDevice() {
+        let currentDevice = self.pageControl.currentPage
+        var userDevices = UserDevicesManager.default.userDevices
+        userDevices.remove(at: currentDevice)
+        UserDevicesManager.default.userDevices = userDevices
+        let defaults = UserDefaults.standard
+        var addedDevicesNamesArray = defaults.stringArray(forKey: "AddedDevicesNames") ?? [String]()
+        addedDevicesNamesArray.remove(at: currentDevice)
+        defaults.set(addedDevicesNamesArray, forKey: "AddedDevicesNames")
+        self.devicesCountLabel.text = "Devices: \(String(UserDevicesManager.default.userDevices.count))"
+        self.pageControl.numberOfPages = UserDevicesManager.default.userDevices.count
+        
+        if UserDevicesManager.default.userDevices.count != 0 {
+            self.noUserDevices.isHidden = true
+        } else {
+            self.noUserDevices.isHidden = false
+        }
+        self.collectionView.reloadData()
+    }
     
     //Preparing colors to device sending
     struct ColorToSet {
