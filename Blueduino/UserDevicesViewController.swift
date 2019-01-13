@@ -11,7 +11,7 @@ import CoreBluetooth
 
 class UserDevicesViewController: UIViewController {
     
-    let slider = MTCircularSlider(frame: CGRect(x: 27, y: 60, width: 350, height: 350))
+    let slider = MTCircularSlider(frame: CGRect(x: 12, y: 55, width: 350, height: 350))
     let colorPicker = SwiftHSVColorPicker(frame: CGRect(x: -10, y: -10, width: 350, height: 350))
     var selectedColor = UIColor.lightGray
     var selectedCustomColor: UIColor?
@@ -21,9 +21,9 @@ class UserDevicesViewController: UIViewController {
     @IBOutlet weak var colorButtonsView: UIView!
     @IBOutlet var popoverView: UIView!
     @IBOutlet weak var customColorButton: UIButton!
+    
     @IBOutlet var customColorView: UIView!
     @IBOutlet weak var customColorWheel: UIView!
-    
     @IBOutlet weak var gradientRing: UIImageView!
     
     @IBOutlet weak var userDeviceView: UIView!
@@ -215,7 +215,7 @@ class UserDevicesViewController: UIViewController {
     func setPaletteColor(color: UIColor, pressedButton: UIButton) {
         
 
-        let buttons = colorButtonsView.subviews as! [UIButton]
+        guard let buttons = colorButtonsView.subviews as? [UIButton] else { return }
             for button in buttons {
                 button.setImage(nil, for: .normal)
                     }

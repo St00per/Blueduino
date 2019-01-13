@@ -822,12 +822,15 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" id="VNW-FG-Az8" userLabel="Custom Color">
-                    <rect key="frame" x="0.0" y="0.0" width="400" height="470"/>
+                    <rect key="frame" x="0.0" y="0.0" width="370" height="470"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2y-bf-u0f">
-                            <rect key="frame" x="309" y="419" width="47" height="33"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2y-bf-u0f">
+                            <rect key="frame" x="290" y="415" width="50" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="XnG-fW-wmj"/>
+                                <constraint firstAttribute="height" constant="35" id="uTS-YB-9eT"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <state key="normal" title="DONE">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -836,9 +839,12 @@
                                 <action selector="customColorDone:" destination="qmY-Vx-yP5" eventType="touchUpInside" id="O89-Aj-wRx"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1h-uQ-21f">
-                            <rect key="frame" x="44" y="419" width="66" height="33"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1h-uQ-21f">
+                            <rect key="frame" x="30" y="415" width="70" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="70" id="RMv-SM-2ER"/>
+                                <constraint firstAttribute="height" constant="35" id="mzQ-bG-8Qn"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <state key="normal" title="CANCEL">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -854,22 +860,44 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="transparent black gradient ring" translatesAutoresizingMaskIntoConstraints="NO" id="bDb-Dw-hFj">
-                            <rect key="frame" x="30" y="65" width="344" height="340"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="transparent black gradient ring" translatesAutoresizingMaskIntoConstraints="NO" id="bDb-Dw-hFj">
+                            <rect key="frame" x="13" y="104" width="344" height="340"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="344" id="4EC-AD-5LI"/>
+                                <constraint firstAttribute="height" constant="340" id="eLX-sL-3YE"/>
+                            </constraints>
                         </imageView>
-                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="transparent white gradient ring" translatesAutoresizingMaskIntoConstraints="NO" id="a8S-gH-Vh2">
-                            <rect key="frame" x="30" y="65" width="344" height="340"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="transparent white gradient ring" translatesAutoresizingMaskIntoConstraints="NO" id="a8S-gH-Vh2">
+                            <rect key="frame" x="13" y="104" width="344" height="340"/>
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="344" id="8uH-pe-TfU"/>
+                                <constraint firstAttribute="height" constant="340" id="d92-wx-Nd1"/>
+                            </constraints>
                         </imageView>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qOF-Fs-YNS" customClass="SwiftHSVColorPicker" customModule="Blueduino" customModuleProvider="target">
-                            <rect key="frame" x="37" y="70" width="326" height="331"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qOF-Fs-YNS" customClass="SwiftHSVColorPicker" customModule="Blueduino" customModuleProvider="target">
+                            <rect key="frame" x="20" y="89" width="326" height="331"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="331" id="Lkf-fU-i1U"/>
+                                <constraint firstAttribute="width" constant="326" id="RGk-T8-jYY"/>
+                            </constraints>
                         </view>
                     </subviews>
                     <color key="backgroundColor" red="0.1803921568627451" green="0.21568627450980393" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="udR-Xs-3OG" firstAttribute="trailing" secondItem="R2y-bf-u0f" secondAttribute="trailing" constant="30" id="1Z7-bg-s5h"/>
+                        <constraint firstItem="qOF-Fs-YNS" firstAttribute="leading" secondItem="udR-Xs-3OG" secondAttribute="leading" constant="20" id="3Eo-zP-B1I"/>
+                        <constraint firstAttribute="bottom" secondItem="R2y-bf-u0f" secondAttribute="bottom" constant="20" id="QSh-mc-YQv"/>
+                        <constraint firstItem="qOF-Fs-YNS" firstAttribute="top" secondItem="udR-Xs-3OG" secondAttribute="top" constant="45" id="Wf8-uk-WbV"/>
+                        <constraint firstItem="bDb-Dw-hFj" firstAttribute="top" secondItem="udR-Xs-3OG" secondAttribute="top" constant="60" id="Yls-Ha-twR"/>
+                        <constraint firstItem="J1h-uQ-21f" firstAttribute="leading" secondItem="udR-Xs-3OG" secondAttribute="leading" constant="30" id="aCZ-hf-dpG"/>
+                        <constraint firstItem="a8S-gH-Vh2" firstAttribute="top" secondItem="udR-Xs-3OG" secondAttribute="top" constant="60" id="avd-6H-Vkj"/>
+                        <constraint firstAttribute="bottom" secondItem="J1h-uQ-21f" secondAttribute="bottom" constant="20" id="bQi-2k-lFA"/>
+                        <constraint firstItem="udR-Xs-3OG" firstAttribute="trailing" secondItem="qOF-Fs-YNS" secondAttribute="trailing" constant="24" id="c73-ey-f2G"/>
+                        <constraint firstItem="a8S-gH-Vh2" firstAttribute="centerX" secondItem="VNW-FG-Az8" secondAttribute="centerX" id="i61-Xn-pbj"/>
+                        <constraint firstItem="bDb-Dw-hFj" firstAttribute="centerX" secondItem="VNW-FG-Az8" secondAttribute="centerX" id="vwc-b6-WGd"/>
+                    </constraints>
                     <viewLayoutGuide key="safeArea" id="udR-Xs-3OG"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">

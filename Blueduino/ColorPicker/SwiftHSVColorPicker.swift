@@ -60,7 +60,7 @@ open class SwiftHSVColorPicker: UIView, ColorWheelDelegate, BrightnessViewDelega
         let centeredX = (self.bounds.width - colorWheelSize) / 2.0
         
         // Init SelectedColorView subview
-        selectedColorView = SelectedColorView(frame: CGRect(x: 300, y:-5, width: 34, height: selectedColorViewHeight), color: self.color)
+        selectedColorView = SelectedColorView(frame: CGRect(x: 300, y:15, width: 34, height: selectedColorViewHeight), color: self.color)
         selectedColorView.layer.cornerRadius = selectedColorView.frame.width/2
         // Add selectedColorView as a subview of this view
         self.addSubview(selectedColorView)
