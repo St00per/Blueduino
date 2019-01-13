@@ -12,6 +12,10 @@ import CoreBluetooth
 let multiLightCBUUID = CBUUID(string: "0xFFE0")
 let moduleFunctionConfigurationCBUUID = CBUUID(string: "FFE2")
 
+public protocol BluetoothManagerConnectDelegate {
+    func connectingStateSet()
+}
+
 class CentralBluetoothManager: NSObject {
     
     public static let `default` = CentralBluetoothManager()
@@ -22,7 +26,7 @@ class CentralBluetoothManager: NSObject {
     var userDevicesViewController: UserDevicesViewController?
     var searchViewController: DevicesSearchViewController?
     var isFirstDidLoad = true
-    
+    var delegate: BluetoothManagerConnectDelegate?
     
     override init() {
         super.init()
@@ -81,6 +85,7 @@ extension CentralBluetoothManager: CBCentralManagerDelegate {
     }
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
+        delegate?.connectingStateSet()
         print("Connected!")
         peripheral.discoverServices(nil)
     }

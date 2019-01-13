@@ -59,8 +59,8 @@ class UserDeviceCollectionViewCell: UICollectionViewCell {
         } else {
             CentralBluetoothManager.default.connect(peripheral: selectedPeripheral)
             
-            connectButton.backgroundColor = UIColor(hexString: "#CC4242", alpha: 0.6)
-            connectButton.setTitle("DISCONNECT", for: .normal)
+            connectButton.backgroundColor = UIColor(hexString: "#EBC337", alpha: 0.8)
+            connectButton.setTitle("CONNECTING...", for: .normal)
         }
     }
     
@@ -68,7 +68,7 @@ class UserDeviceCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         
         //custom switch creating
-        //let customSwitch = CustomSwitch(frame: CGRect(x: 0, y: 5, width: 55, height: 25))
+        
         customSwitch.isOn = false
         customSwitch.onTintColor = deviceColor
         customSwitch.offTintColor = UIColor.lightGray
@@ -189,7 +189,11 @@ class UserDeviceCollectionViewCell: UICollectionViewCell {
     func configure(name: String, color: UIColor) {
         if connectButton.titleLabel?.text == "DISCONNECT" {
             connectButton.backgroundColor = UIColor(hexString: "#CC4242", alpha: 0.6)
-        } else {
+        }
+        if connectButton.titleLabel?.text == "CONNECTING..." {
+            connectButton.backgroundColor = UIColor(hexString: "#EBC337", alpha: 0.8)
+        }
+        if connectButton.titleLabel?.text == "CONNECT" {
             connectButton.backgroundColor = UIColor(hexString: "#94ed74", alpha: 0.4)
         }
         
@@ -203,5 +207,11 @@ class UserDeviceCollectionViewCell: UICollectionViewCell {
         } else {
             pickColorButton.setTitleColor(UIColor.white, for: .normal)
         }
+    }
+}
+extension UserDeviceCollectionViewCell: BluetoothManagerConnectDelegate {
+    func connectingStateSet() {
+        connectButton.backgroundColor = UIColor(hexString: "#CC4242", alpha: 0.6)
+        connectButton.setTitle("DISCONNECT", for: .normal)
     }
 }

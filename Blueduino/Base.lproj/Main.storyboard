@@ -419,7 +419,7 @@
                                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xk6-WL-stb" userLabel="Connect Button">
                                                                     <rect key="frame" x="18" y="387" width="304" height="45"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <color key="backgroundColor" red="0.25882352941176467" green="0.32156862745098036" blue="0.38823529411764707" alpha="0.40297645246478875" colorSpace="calibratedRGB"/>
+                                                                    <color key="backgroundColor" red="0.92156862745098034" green="0.76470588235294112" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="17"/>
                                                                     <state key="normal" title="CONNECT"/>
                                                                     <userDefinedRuntimeAttributes>
