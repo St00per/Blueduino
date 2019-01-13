@@ -102,18 +102,12 @@ class UserDevicesViewController: UIViewController {
         devicesCountLabel.text = "Devices: 0"
         pageControl.numberOfPages = 0
         CentralBluetoothManager.default.userDevicesViewController = self
-//        if isFirstDidLoad {
-//            
-//            CentralBluetoothManager.default.centralManager.scanForPeripherals(withServices: [multiLightCBUUID])
-//            isFirstDidLoad = false
-//        }
         
         if UserDevicesManager.default.userDevices.count != 0 {
             noUserDevices.isHidden = true
             devicesCountLabel.text = "Devices: \(String(UserDevicesManager.default.userDevices.count))"
             pageControl.numberOfPages = UserDevicesManager.default.userDevices.count
         }
-        //collectionView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -133,11 +127,9 @@ class UserDevicesViewController: UIViewController {
             let message = message else {
                 return
         }
-        var userDevices = UserDevicesManager.default.userDevices
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let ok = UIAlertAction(title: "Ok", style: .default) { (action) in
             alert.dismiss(animated: true, completion: nil)
-            
             self.removeDevice()
             }
         
@@ -151,13 +143,16 @@ class UserDevicesViewController: UIViewController {
     
     func removeDevice() {
         let currentDevice = self.pageControl.currentPage
+        
         var userDevices = UserDevicesManager.default.userDevices
         userDevices.remove(at: currentDevice)
         UserDevicesManager.default.userDevices = userDevices
+        
         let defaults = UserDefaults.standard
         var addedDevicesNamesArray = defaults.stringArray(forKey: "AddedDevicesNames") ?? [String]()
         addedDevicesNamesArray.remove(at: currentDevice)
         defaults.set(addedDevicesNamesArray, forKey: "AddedDevicesNames")
+        
         self.devicesCountLabel.text = "Devices: \(String(UserDevicesManager.default.userDevices.count))"
         self.pageControl.numberOfPages = UserDevicesManager.default.userDevices.count
         
@@ -180,30 +175,25 @@ class UserDevicesViewController: UIViewController {
     func colorToHex(color: UIColor) -> ColorToSet {
         
         var сolorToSend = ColorToSet()
-        var red = Int(color.redValue * 255)
-        var green = Int(color.greenValue * 255)
-        var blue = Int(color.blueValue * 255)
-        var alpha = Int(color.alphaValue * 255)
-        if red < 0 {
-            red = 0
-        }
-        if green < 0 {
-            green = 0
-        }
-        if blue < 0 {
-            blue = 0
-        }
-        if alpha < 0 {
-            alpha = 0
-        }
-        сolorToSend.redColor = UInt8(red)
-        сolorToSend.greenColor = UInt8(green)
-        сolorToSend.blueColor = UInt8(blue)
-        сolorToSend.alpha = UInt8(alpha)
+        let red = Int(color.redValue * 255)
+        let green = Int(color.greenValue * 255)
+        let blue = Int(color.blueValue * 255)
+        let alpha = Int(color.alphaValue * 255)
+ 
+        сolorToSend.redColor = UInt8(checkToZero(value: red))
+        сolorToSend.greenColor = UInt8(checkToZero(value: green))
+        сolorToSend.blueColor = UInt8(checkToZero(value: blue))
+        сolorToSend.alpha = UInt8(checkToZero(value: alpha))
         return сolorToSend
     }
     
-    
+    func checkToZero(value: Int) -> Int {
+        if value < 0 {
+            return 0
+        } else {
+            return value
+        }
+    }
     
     func sendColorToDevice(color: UIColor) {
         UserDevicesManager.default.userDevices[pageControl.currentPage].color = color
