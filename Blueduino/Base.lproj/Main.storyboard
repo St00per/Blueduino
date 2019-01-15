@@ -240,7 +240,7 @@
                                         </connections>
                                     </collectionView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search Device" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrJ-Ly-Ooc">
-                                        <rect key="frame" x="118.33333333333333" y="8" width="138.33333333333337" height="50"/>
+                                        <rect key="frame" x="123" y="8" width="129" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="CIS-ki-LJw"/>
                                         </constraints>
@@ -249,7 +249,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8A-q5-rMC">
-                                        <rect key="frame" x="3.3333333333333321" y="8" width="40" height="40"/>
+                                        <rect key="frame" x="8" y="8" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="3rC-XJ-R3f"/>
                                             <constraint firstAttribute="width" constant="40" id="caR-vD-ryg"/>
@@ -281,7 +281,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KlU-u6-QQi">
-                                        <rect key="frame" x="326.66666666666669" y="5" width="50" height="50"/>
+                                        <rect key="frame" x="322" y="5" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="34w-z5-0aI"/>
                                             <constraint firstAttribute="height" constant="50" id="CQ6-VF-e6T"/>
@@ -411,7 +411,7 @@
                                                             <rect key="frame" x="17" y="0.0" width="341" height="446"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DeviceName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuU-wA-7mc">
-                                                                    <rect key="frame" x="16" y="14" width="111" height="24"/>
+                                                                    <rect key="frame" x="16" y="14" width="114" height="24"/>
                                                                     <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="20"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>

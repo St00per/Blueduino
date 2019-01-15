@@ -16,6 +16,12 @@ public protocol BluetoothManagerConnectDelegate {
     func connectingStateSet()
 }
 
+enum DeviceConnectionState {
+    case disconnected
+    case connecting
+    case connected
+}
+
 class CentralBluetoothManager: NSObject {
     
     public static let `default` = CentralBluetoothManager()
@@ -27,6 +33,7 @@ class CentralBluetoothManager: NSObject {
     var searchViewController: DevicesSearchViewController?
     var isFirstDidLoad = true
     var delegate: BluetoothManagerConnectDelegate?
+    
     
     override init() {
         super.init()
@@ -85,22 +92,30 @@ extension CentralBluetoothManager: CBCentralManagerDelegate {
     }
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
-        delegate?.connectingStateSet()
+        guard let currentDevice = userDevicesViewController?.pageControl.currentPage else { return }
+        UserDevicesManager.default.userDevices[currentDevice].deviceConnectionState = .connected
         print("Connected!")
+        userDevicesViewController?.collectionView.reloadData()
         peripheral.discoverServices(nil)
     }
     
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
+        guard let currentDevice = userDevicesViewController?.pageControl.currentPage else { return }
+        UserDevicesManager.default.userDevices[currentDevice].deviceConnectionState = .disconnected
+        userDevicesViewController?.collectionView.reloadData()
         print("Disconnected!")
     }
     
     func connect(peripheral: CBPeripheral) {
         
         centralManager.stopScan()
-        print ("Scan stopped")
-//        multiLightPeripheral = peripheral
+        print ("Scan stopped, try to connect...")
+
         peripheral.delegate = self
         centralManager.connect(peripheral)
+        guard let currentDevice = userDevicesViewController?.pageControl.currentPage else { return }
+        UserDevicesManager.default.userDevices[currentDevice].deviceConnectionState = .connecting
+        userDevicesViewController?.collectionView.reloadData()
     }
     
     func disconnect(peripheral: CBPeripheral) {

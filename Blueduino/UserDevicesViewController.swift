@@ -346,7 +346,8 @@ extension UserDevicesViewController: UICollectionViewDataSource, UICollectionVie
         cell.peripheral = UserDevicesManager.default.userDevices[indexPath.row].peripheral
         cell.peripheralCharacteristic = CentralBluetoothManager.default.multiLightCharacteristic
         cell.configure(name: UserDevicesManager.default.userDevices[indexPath.row].peripheral?.name ?? "Unnamed",
-                       color: UserDevicesManager.default.userDevices[indexPath.row].color)
+                       color: UserDevicesManager.default.userDevices[indexPath.row].color,
+                       state: UserDevicesManager.default.userDevices[indexPath.row].deviceConnectionState)
         return cell
     }
     

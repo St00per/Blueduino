@@ -38,14 +38,14 @@ class UserDevicesManager {
 
 class UserDevice: Equatable {
     
+    var peripheral: CBPeripheral? = nil
+    var color = UIColor.lightGray
+    var deviceConnectionState: DeviceConnectionState = .disconnected
+    
     static func == (lhs: UserDevice, rhs: UserDevice) -> Bool {
         guard let first = lhs.peripheral, let second = rhs.peripheral else {
             return false
         }
         return first.identifier == second.identifier
     }
-    
-    var peripheral: CBPeripheral? = nil
-    var color = UIColor.lightGray
-    
 }
