@@ -29,7 +29,13 @@ class CentralBluetoothManager: NSObject {
     var centralManager: CBCentralManager!
     var foundDevices: [CBPeripheral] = []
     var multiLightCharacteristic: CBCharacteristic!
-    var userDevicesViewController: UserDevicesViewController?
+    
+    var userDevicesViewController: UserDevicesViewController? {
+        didSet {
+            print ("UserDevicesViewController is changed")
+        }
+    }
+    
     var searchViewController: DevicesSearchViewController?
     var isFirstDidLoad = true
     var delegate: BluetoothManagerConnectDelegate?
@@ -113,9 +119,10 @@ extension CentralBluetoothManager: CBCentralManagerDelegate {
 
         peripheral.delegate = self
         centralManager.connect(peripheral)
-        guard let currentDevice = userDevicesViewController?.pageControl.currentPage else { return }
-        UserDevicesManager.default.userDevices[currentDevice].deviceConnectionState = .connecting
-        userDevicesViewController?.collectionView.reloadData()
+        guard let currentIndex = userDevicesViewController?.pageControl.currentPage else { return }
+        let currentDevice = UserDevicesManager.default.userDevices[currentIndex]
+        currentDevice.deviceConnectionState = .connecting
+        userDevicesViewController?.reloadCollection()
     }
     
     func disconnect(peripheral: CBPeripheral) {

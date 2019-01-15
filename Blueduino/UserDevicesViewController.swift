@@ -52,10 +52,10 @@ class UserDevicesViewController: UIViewController {
     }
     
     @IBAction func pickColor(_ sender: UIButton) {
-//        let currentDevice = pageControl.currentPage
-//        guard UserDevicesManager.default.userDevices[currentDevice].peripheral?.state == .connected else {
-//            return
-//        }
+        let currentDevice = pageControl.currentPage
+        guard UserDevicesManager.default.userDevices[currentDevice].peripheral?.state == .connected else {
+            return
+        }
         self.view.addSubview(popoverView)
         collectionView.isUserInteractionEnabled = false
         userDeviceView.alpha = 0.4
@@ -90,9 +90,7 @@ class UserDevicesViewController: UIViewController {
         for button in buttons {
             button.setImage(nil, for: .normal)
         }
-        
         sendColorToDevice(color: colorPicker.color)
-        
         customColorView.removeFromSuperview()
         slider.removeFromSuperview()
         popoverView.removeFromSuperview()
@@ -105,6 +103,8 @@ class UserDevicesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        collectionView.delegate = self
+//        collectionView.dataSource = self
         devicesCountLabel.text = "Devices: 0"
         pageControl.numberOfPages = 0
         CentralBluetoothManager.default.userDevicesViewController = self
@@ -117,7 +117,9 @@ class UserDevicesViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        super.viewWillAppear(true)
+        collectionView.delegate = self
+        collectionView.dataSource = self
         if UserDevicesManager.default.userDevices.count != 0 {
             noUserDevices.isHidden = true
             devicesCountLabel.text = "Devices: \(String(UserDevicesManager.default.userDevices.count))"
@@ -205,8 +207,7 @@ class UserDevicesViewController: UIViewController {
         UserDevicesManager.default.userDevices[pageControl.currentPage].color = color
         guard let peripheral = UserDevicesManager.default.userDevices[pageControl.currentPage].peripheral,
             let peripheralCharacteristic = CentralBluetoothManager.default.multiLightCharacteristic else { return }
-        peripheral.writeValue(OnOff(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
-        peripheral.writeValue(frequency1000(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+
         
         let sendedColor = colorToHex(color: color)
         
@@ -218,7 +219,6 @@ class UserDevicesViewController: UIViewController {
     
     
     func setPaletteColor(color: UIColor, pressedButton: UIButton) {
-        
 
         guard let buttons = colorButtonsView.subviews as? [UIButton] else { return }
             for button in buttons {
@@ -263,6 +263,8 @@ class UserDevicesViewController: UIViewController {
         let brightness = (sliderAngle - 1.65)/6.11
         colorPicker.brightnessSelected(brightness)
     }
+    
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch: UITouch? = touches.first
@@ -333,16 +335,23 @@ class UserDevicesViewController: UIViewController {
         return dataToWrite
     }
     
+    func reloadCollection() {
+        let userDevices = UserDevicesManager.default.userDevices
+        collectionView.reloadData()
+    }
 }
 
 extension UserDevicesViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        let userDevices = UserDevicesManager.default.userDevices
         return UserDevicesManager.default.userDevices.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserDeviceCollectionViewCell", for: indexPath) as? UserDeviceCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserDeviceCollectionViewCell", for: indexPath) as? UserDeviceCollectionViewCell else {
+            return UICollectionViewCell()
+        }
         cell.peripheral = UserDevicesManager.default.userDevices[indexPath.row].peripheral
         cell.peripheralCharacteristic = CentralBluetoothManager.default.multiLightCharacteristic
         cell.configure(name: UserDevicesManager.default.userDevices[indexPath.row].peripheral?.name ?? "Unnamed",

@@ -29,8 +29,7 @@ class UserDeviceCollectionViewCell: UICollectionViewCell {
     @IBAction func ledOn(_ sender: UIButton) {
         guard peripheralCharacteristic != nil else { return }
         peripheralCharacteristic = CentralBluetoothManager.default.multiLightCharacteristic
-//        peripheral.writeValue(OnOff(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
-//        peripheral.writeValue(frequency1000(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+
         if customSwitch.isOn == true {
         peripheral.writeValue(lightsGreenOn(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
         peripheral.writeValue(lightsRedOn(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
@@ -41,8 +40,7 @@ class UserDeviceCollectionViewCell: UICollectionViewCell {
     @IBAction func ledOff(_ sender: UIButton) {
         guard peripheralCharacteristic != nil else { return }
         peripheralCharacteristic = CentralBluetoothManager.default.multiLightCharacteristic
-//        peripheral.writeValue(OnOff(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
-//        peripheral.writeValue(frequency1000(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
+
         if customSwitch.isOn == false {
         peripheral.writeValue(lightsGreenOff(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
         peripheral.writeValue(lightsRedOff(), for: peripheralCharacteristic, type: CBCharacteristicWriteType.withResponse)
@@ -53,16 +51,10 @@ class UserDeviceCollectionViewCell: UICollectionViewCell {
     
     @IBAction func connect(_ sender: UIButton) {
         guard let selectedPeripheral = peripheral else { return }
-        if connectionState == .connecting {
+        if connectionState == .connecting || connectionState == .connected {
             CentralBluetoothManager.default.disconnect(peripheral: selectedPeripheral)
-            connectButton.setTitle("CONNECT", for: .normal)
-            connectButton.backgroundColor = UIColor(hexString: "#94ed74", alpha: 0.4)
-            
         } else {
             CentralBluetoothManager.default.connect(peripheral: selectedPeripheral)
-            
-//            connectButton.backgroundColor = UIColor(hexString: "#EBC337", alpha: 0.8)
-//            connectButton.setTitle("CONNECTING...", for: .normal)
         }
     }
     
